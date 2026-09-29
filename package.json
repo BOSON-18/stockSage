@@ -1,0 +1,27 @@
+{
+  "name": "stocksage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "npx tsx src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.4",
+    "groq-sdk": "^1.6.0",
+    "yahoo-finance2": "^4.0.2",
+    "zod": "^4.6.5"
+  }
+}
