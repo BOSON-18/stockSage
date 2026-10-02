@@ -1,7 +1,38 @@
 import { MAX_RETRIES, RETRY_DELAY_MS, USE_LOCAL } from "../config";
-import { buildBatchJevPrompt, buildSingleJevPrompt } from "../prompts";
-import { JevBatchResponseSchema, JevDecision, JevDecisionSchema, StockAnalysis, StockSnapshot } from "../types";
+import { buildBatchJevPrompt, buildNewsClassifyPrompt, buildSingleJevPrompt } from "../prompts";
+import { JevBatchResponseSchema, JevDecision, JevDecisionSchema, JevNewsClassification, JevNewsClassificationBatchSchema, ScoredNewsItem, StockAnalysis, StockSnapshot } from "../types";
 import { callLLM } from "./llm-client";
+
+
+
+//  NEWS CLASSIFIER v0.4 
+
+export async function jevClassifyNews(
+    scoredNews: ScoredNewsItem[]
+): Promise<JevNewsClassification[]> {
+    if (scoredNews.length === 0) return [];
+
+    const prompt = buildNewsClassifyPrompt(scoredNews);
+
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+
+        try {
+            const raw = await callLLM(prompt);
+            const parsed = JSON.parse(raw);
+            const validated = JevNewsClassificationBatchSchema.parse(parsed);
+            return validated.classifications;
+        } catch (error) {
+            console.warn(`News Classifier attempt ${attempt} failed:`, error);
+            if (attempt < MAX_RETRIES) {
+                await new Promise((r) => setTimeout(r, RETRY_DELAY_MS))
+            }
+
+        }
+    }
+
+    console.warn('jev news classification failed. Using code scores only.')
+    return [];
+}
 
 
 const AVOID_DECISION: JevDecision = {

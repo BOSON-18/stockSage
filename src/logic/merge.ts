@@ -15,10 +15,10 @@ export function mergeResults(
         const decision = decisions[i];
 
         // LLM PERCENT
-        const upside = analysis?.expectedUpsidePercent ??0;
-        const downside = analysis?.riskDownsidePercent ??0;
-        const targetPrice = stock.price * (1 + upside/100);
-        const stopLoss = stock.price * (1 - downside/100);
+        const upside = analysis?.expectedUpsidePercent ?? 0;
+        const downside = analysis?.riskDownsidePercent ?? 0;
+        const targetPrice = stock.price * (1 + upside / 100);
+        const stopLoss = stock.price * (1 - downside / 100);
 
         return {
             ticker: stock.ticker,

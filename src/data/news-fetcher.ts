@@ -1,44 +1,21 @@
 import { XMLParser } from 'fast-xml-parser';
 import { NewsItem } from '../types';
+import { NEWS_QUERY } from '../config';
 
 
 
-export async function fetchnews(): Promise<NewsItem[]> {
+async function fetchRssFeed(query: string): Promise<NewsItem[]> {
 
-    // if (!NEWS_API_KEY) {
-    //     console.log(' No NEWS_API_KEY set - running without news context.');
-    //     return [];
-    // }
 
     try {
-        // const url = `https://newsapi.org/v2/top-headlines?` + `country=in&category=business&pageSize=10&apiKey=${NEWS_API_KEY}`;
-        // const response = await fetch(url);
-
-        // const params = new URLSearchParams({
-        //     q: "(Sensex OR Nifty OR \"stock market\") AND India",
-        //     language: "en",
-        //     sortBy: "publishedAt",
-        //     pageSize: "10",
-        //     apiKey: NEWS_API_KEY!,
-        // });
-        // const response = await fetch(`https://newsapi.org/v2/everything?${params}`);
-        // const data = await response.json();
-
-        const query = encodeURIComponent('Indian stock market Sensex Nifty');
-        const url = `https://news.google.com/rss/search?q=${query}&hl=en-IN&gl=IN&ceid=IN:en`;
+        const encoded = encodeURIComponent(query);
+        const url = `https://news.google.com/rss/search?q=${encoded}&hl=en-IN&gl=IN&ceid=IN:en`;
 
         const response = await fetch(url);
         const xmlText = await response.text();
 
-        // if (data.status !== 'ok' || !data.articles) {
-        //     console.warn(' News APi returned unexpected response, skipping news.');
-        //     return [];
-        // }
-
         const parser = new XMLParser({ ignoreAttributes: false });
         const parsed = parser.parse(xmlText);
-
-        // console.log('Fetching news: ', data)
 
         const items = parsed?.rss?.channel?.item;
         if (!items || !Array.isArray(items)) {
@@ -46,15 +23,36 @@ export async function fetchnews(): Promise<NewsItem[]> {
             return [];
         }
 
-        return items.slice(0, 10).map((article: any) => ({
-            title: article.title ?? '',
-            description: article.description ?? '',
-            source: article.source ?? 'Google News',
-            publishedAt: article.pubDate ?? ''
-        }))
+        return items.slice(0, 25).map((article: any) => {
+
+            const rawSource = article.source;
+            const sourceName = typeof rawSource === 'string' ? rawSource : rawSource?.['#text'] ?? rawSource?.['$text'] ?? 'Google News'
+
+            return {
+                title: article.title ?? '',
+                description: article.description ?? '',
+                source: sourceName,
+                publishedAt: article.pubDate ?? ''
+            }
+        })
     } catch (error) {
         console.warn(' News fetch failed, continuing without news:', error);
         return [];
     }
 
+}
+
+
+
+export async function fetchAllNews(): Promise<NewsItem[]> {
+
+    const [indianNews, globalNews] = await Promise.all([
+        fetchRssFeed(NEWS_QUERY.indian),
+        fetchRssFeed(NEWS_QUERY.global),
+    ]);
+
+    console.log(` Indian news : ${indianNews.length} articles`);
+    console.log(` Global news : ${globalNews.length} articles`);
+
+    return [...indianNews, ...globalNews];
 }

@@ -1,4 +1,5 @@
-import { NewsItem, StockAnalysis, StockSnapshot } from "./types";
+import { SECTOR_MAP } from "./config";
+import { NewsItem, StockAnalysis, StockSnapshot, ScoredNewsItem, MarketContext } from "./types";
 
 // FORAMT one stock data into redable text fro prompts
 
@@ -23,9 +24,15 @@ function formatStockData(s: StockSnapshot): string {
 }
 
 // LLM ANALYSIS PROMPT - ASK LLM NOT DECIDE
-export function buildAnalysisPrompt(stocks: StockSnapshot[], news: NewsItem[]): string {
+export function buildAnalysisPrompt(stocks: StockSnapshot[], news: NewsItem[],selectionReason?: Record<string,string>): string {
 
-    const stockDataText = stocks.map((s) => `\nSTOCK: ${s.ticker}\n${formatStockData(s)}`).join('\n');
+    // const stockDataText = stocks.map((s) => `\nSTOCK: ${s.ticker}\n${formatStockData(s)}`).join('\n');
+    const stockDataText = stocks.map((s) => {
+        const reason = selectionReason?.[s.ticker];
+        const reasonLine = reason ? `\n SELECTED BECAUSE: ${reason}`:'';
+        return `\nSTOCK: ${s.ticker}${reasonLine}\n${formatStockData(s)}`;
+    }).join('\n');
+
 
     const newsText = news.length > 0 ?
         `\n RECENT INDIAN MARKET NEWS:\n${news.map((n) => `-${n.title} (${n.source}, ${n.publishedAt})`).join('\n')}` : ' \nNEWS: No recent news data available. Analyze based on stock data only';
@@ -167,4 +174,133 @@ export function buildBatchJevPrompt(stocks: StockSnapshot[], analyses: StockAnal
     }
    
         `
+}
+
+
+// Jev News CLASSIFICATION PROMPT - Jev swipes each article
+// is it relevant - imapct - severe - actionable?
+
+export function buildNewsClassifyPrompt(articles: ScoredNewsItem[]): string {
+    const articleList = articles.map((a, i) => {
+        return `
+        ARTICLE ${i + 1}:
+        Title: ${a.title}
+        Description: ${a.description}
+        Source: ${a.source} (credibility: ${a.sourceTierWeight})
+        Published: ${a.publishedAt}`
+    }).join('\n\n');
+
+    return `Your are a NEWS CLASSIFIER for an Indian stock market trading system. For EACH article below, make 4 assessments. Do NOT explain your reasoning.
+    
+    ASSESSMENT RULES:
+    - relevance: probability (0.0 to 1.0) that this news is relevant to Indian stock market (NSE/BSE). Global news counts IF it affects Indian markets (US tarrifs, crude oil, Fed rates = relevant).
+    - impactType: MACRO (affects entire market, e.g. RBI decision), SECTOR (affects one sector, e.g. crude oil affects oil stocks), COMPANY (affects specific compnay, e.g. quaterly results), NOISE (not market-relevant, e.g. clebrity news tagged as business).
+    - severity: HIGH (can move stokcs 2%+), MEDIUM (can move stokcs 0.5-2%), LOW (minor effect).
+    - actionable: probability (0.0 to 1.0) that a trader should act on this news TODAY. Old or vague news = low actionable. Breaking news with clear impact = high actionable.
+    
+    ARTICLES:
+    ${articleList}
+
+    Respond with ONE classification per article, in the SAME ORDER.
+    Replace ALL placeholder values with your actual assessment:
+    {
+        "classifications" :[
+        {
+            "relevance" : <0.0_TO_1.0>,
+            "impactType" : "<MACRO/SECTOR/COMPANY/NOISE>",
+            "severity" : "<HIGH/MEDIUM/LOW>",
+            "actionable" : <0.0_TO_1.0>
+        }
+        ]
+    }
+
+    `
+}
+
+
+// LLM STOCK EXTRACTIOJN PROMPT
+
+export function buildStockExtractPrompt(articles: ScoredNewsItem[], maxBudget: number): string {
+
+    const sectorRules = Object.entries(SECTOR_MAP).map(([sector, tickers]) => `- ${sector} -> ${tickers.join(', ')}`).join('\n\n');
+
+    const articleList = articles.map((a, i) => `${i + 1}. ${a.title}\n  ${a.description}`).join('\n\n');
+
+
+    return `You are a STOCK IDENTIFIER for the Indian market (NSE). Read the news articles below and identify which specific NSE stocks are mentioned or DIRECTLY affected.
+    
+    USER BUDGET: Rs.${maxBudget} per stock maximumm.
+    IMPORTANT: Only suggest stocks priced BELOW Rs.${maxBudget} per share.
+    Skip expensive stocks like MRF (Rs. 1,20,000+), BOSCHLTD (Rs. 30,000+),etc.
+    Focus on stocks a retail investor with limited budget can actually buy.
+
+    SECTOR MAPPING 9use these to connect news to stocks):
+    ${sectorRules}
+    
+    RULES:
+    - Only output NSE tickers with .NS suffix (e.g, RELIANCE.NS)
+    - Only suggest stocks priced BELOW Rs.${maxBudget} per share
+    - If a news article mentions a company directly, include that ticker(if affordable)
+    - If a news article affects a SECTOR, include the AFFORDABLE tickers from the mapping above
+    - For each ticker, write a short reason WHY this news affects it
+    - Do NOT guess or include stocks that are not clearly affected
+    - Maximum 20 tickers total
+    
+    NEWS ARTICLES:
+    ${articleList}
+    
+    Respond in this JSON structure:
+    {
+    "stocks":[
+    {
+    "ticker": "<TICKER.NS>;
+    "reason": ">why this stock is affected by the news>"
+    
+    }]
+    
+    }`
+};
+
+
+// JEV STOCK GATE PROMPT - It decided which are worth for deep analysis
+
+export function buildJevGatePrompt(
+    stocks: StockSnapshot[],
+    articles: ScoredNewsItem[],
+    marketContext: MarketContext
+): string {
+    const newsHeadlines = articles.map((a) => `- ${a.title}`).join('\n');
+
+    const stockList = stocks.map((s) => {
+        const volumeRatio = s.avgVolume > 0 ? (s.volume / s.avgVolume).toFixed(1) : 'N/A';
+        return `${s.ticker}: Rs.${s.price.toFixed(2)} (${s.changePercent >= 0 ? '+' : ''}${s.changePercent.toFixed(2)}%), vol ${volumeRatio}% avg, PE ${s.pe?.toFixed(1) ?? 'N/A'}`;
+    }).join('\n');
+
+
+    return `You are a STOCK SCREENER. Decide which stocks are worth deep analysis TODAY. Do NOT explain your reasoning - just output probabilities.
+
+MARKET CONTEXT:
+    NIFTY: ${marketContext.niftyChangePercent >= 0 ? '+' : ''}${marketContext.niftyChangePercent.toFixed(2)}%
+    Regime: ${marketContext.regime}
+
+TODAY'S KEY NEWS:
+${newsHeadlines}
+
+CANDIDATE STOCKS:
+${stockList}
+
+For EACH stock, answer: "Is this stock worth deep analysis today?"
+Consider: Does it have a news catalyst? Is it moving significantly? Is volume unusual?
+Probability 1.0 = definitely analyze, 0.0 = definitely skip.
+
+Respond in this JSON structure:
+{
+"gates":[
+{
+"ticker": "<TICKER.NS>",
+"worthAnalyzing" : <0.0_TO_1.0>
+}]
+}
+    
+`
 }
