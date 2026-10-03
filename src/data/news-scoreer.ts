@@ -142,7 +142,7 @@ export function scoreNewsBatch(rawNews: NewsItem[]): ScoredNewsItem[] {
     });
 
     // Step 4 : Pre filter - only top 15
-    const MAX_FOR_JEV = 15;
+    const MAX_FOR_JEV = 8;
 
     return scored.sort((a,b)=>{
         const scoreA = a.sourceTierWeight*a.freshnessScore*a.crossSourceMultiplier;

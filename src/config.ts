@@ -27,7 +27,14 @@ export const WATCHLIST: string[] = [
 
 export const MAX_CANDIDATES = 25;
 export const MAX_TO_ANALYZE = 10;
-export const MAX_PRICE_PER_STOCK = 500;
+// export const MAX_PRICE_PER_STOCK = 2000;
+export const MIN_CONFIDENCE_THRESHOLD = 30;
+
+// BUDGET
+export const TOTAL_BUDGET = 2000;
+export const MAX_STOCKS = 5;
+export const PER_STOCK_BUDGET = Math.floor(TOTAL_BUDGET / MAX_STOCKS);
+export const MAX_PRICE_PER_STOCK = PER_STOCK_BUDGET
 
 // MARKET REGIME THRESHOLDS
 

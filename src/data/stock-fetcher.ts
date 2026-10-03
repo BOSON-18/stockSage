@@ -45,6 +45,24 @@ export async function fetchMarketContext(): Promise<MarketContext> {
         const niftyPrice = (nifty as any).regularMarketPrice ?? 0;
         const niftyChange = (nifty as any).regularMarketChangePercent ?? 0;
         const sensexChange = (sensex as any).regularMarketChangePercent ?? 0;
+        const marketState = (nifty as any).marketState ?? 'CLOSED';
+
+        // If market closed used relaxed thresolds
+        if (marketState === 'CLOSED' || marketState == "POSTPOST") {
+
+            console.log('MARKET is CLOSED - using relaxed thresholds for testing');
+
+            return {
+                niftyPrice,
+                niftyChangePercent: niftyChange,
+                sensexChangePercent: sensexChange,
+                regime: 'VOLATILE' as const,
+                upsideRange: REGIME_THRESHOLD.VOLATILE.upside,
+                downsideRange: REGIME_THRESHOLD.VOLATILE.downside,
+                jevGateThreshold: 0.40,
+            }
+
+        }
 
         return buildMarketContext(niftyPrice, niftyChange, sensexChange);
 
@@ -72,7 +90,7 @@ export async function fetchStockData(tickers: string[]): Promise<Record<string, 
     console.log('[STOCK-FETCHER] fetching stock data...')
     for (const ticker of tickers) {
         try {
-            const quote = await yahooFinance.quote(ticker);
+            const quote = await yahooFinance.quote(ticker, {}, { validateResult: false });
             // console.log("data: ", quote)
             if (quote === undefined) continue;
             rawQuotes.push(quote as Record<string, any>);

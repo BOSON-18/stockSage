@@ -1,5 +1,5 @@
 import { SECTOR_MAP } from "./config";
-import { NewsItem, StockAnalysis, StockSnapshot, ScoredNewsItem, MarketContext } from "./types";
+import { NewsItem, StockAnalysis, StockSnapshot, ScoredNewsItem, MarketContext, TechnicalIndicators } from "./types";
 
 // FORAMT one stock data into redable text fro prompts
 
@@ -24,12 +24,12 @@ function formatStockData(s: StockSnapshot): string {
 }
 
 // LLM ANALYSIS PROMPT - ASK LLM NOT DECIDE
-export function buildAnalysisPrompt(stocks: StockSnapshot[], news: NewsItem[],selectionReason?: Record<string,string>): string {
+export function buildAnalysisPrompt(stocks: StockSnapshot[], news: NewsItem[], selectionReason?: Record<string, string>): string {
 
     // const stockDataText = stocks.map((s) => `\nSTOCK: ${s.ticker}\n${formatStockData(s)}`).join('\n');
     const stockDataText = stocks.map((s) => {
         const reason = selectionReason?.[s.ticker];
-        const reasonLine = reason ? `\n SELECTED BECAUSE: ${reason}`:'';
+        const reasonLine = reason ? `\n SELECTED BECAUSE: ${reason}` : '';
         return `\nSTOCK: ${s.ticker}${reasonLine}\n${formatStockData(s)}`;
     }).join('\n');
 
@@ -220,9 +220,10 @@ export function buildNewsClassifyPrompt(articles: ScoredNewsItem[]): string {
 
 // LLM STOCK EXTRACTIOJN PROMPT
 
-export function buildStockExtractPrompt(articles: ScoredNewsItem[], maxBudget: number): string {
+export function buildStockExtractPrompt(articles: ScoredNewsItem[], maxBudget: number, dynamicSectorMap?: Record<string, string[]>): string {
+    const mapToUse = dynamicSectorMap ?? SECTOR_MAP;
 
-    const sectorRules = Object.entries(SECTOR_MAP).map(([sector, tickers]) => `- ${sector} -> ${tickers.join(', ')}`).join('\n\n');
+    const sectorRules = Object.entries(mapToUse).map(([sector, tickers]) => `- ${sector} -> ${tickers.join(', ')}`).join('\n\n');
 
     const articleList = articles.map((a, i) => `${i + 1}. ${a.title}\n  ${a.description}`).join('\n\n');
 
@@ -303,4 +304,243 @@ Respond in this JSON structure:
 }
     
 `
+}
+
+// COMMITTEEE AGENTS PROMPTS
+// -- RISK AGENT - EXCEPTION -Sees everything 
+
+const AGENT_VERDICT_FORMAT = `
+{
+
+"verdicts":[
+    {
+        "ticker": "<TICKER.NS>",
+        "sentiment":"<BULLISH_OR_BEARISH_OR_NEUTRAL_OR_CAUTION>",
+        "confidence": <0_TO_100>,
+        "expectedMovePercent: <POSITIVE_OR_NEGATIVE_NUMBER>,
+        "reasoning":"<YOUR_REASONING_HERE>"
+    }
+]
+}
+`
+
+//  AGENT - 1 NEWS ANALYST - sees ONLY news+stock names
+
+export function buildNewsAgentPrompt(
+    tickers: string[],
+    news: ScoredNewsItem[]
+): string {
+
+    const tickerList = tickers.join(', ');
+    const newsText = news.map((n) => `${n.title}\n ${n.description}`).join('\n');
+
+    return ` 
+        You are a NEWS ANALYST. You assess how today's news affects specific stocks. You do NOT look at prices, PE ratios, or charts - only NEWS.
+
+        STOCKS TO ANALYZE: ${tickerList}
+
+        TODAY'S NEWS:
+        ${newsText}
+
+    For EACH stock, assess:
+    - Does any news directly or indirectly affect it?
+    - Is the news sentiment positive or negative for this tock?
+    - How much could the news move the stock? (estimate %)
+
+    If now news affects a stock, say NEUTRAL with low confidence.
+    Respond in this JSON strcuture:
+    ${AGENT_VERDICT_FORMAT} 
+
+    `
+}
+
+// AGENT 2 TECHNICAL ANALYST - sees only price, volume, Mas, 52W range
+
+
+export function buildTechnicalAgentPrompt(stocks: StockSnapshot[], indicators?: Record<string, TechnicalIndicators>): string {
+    const stockData = stocks.map((s) => {
+        const volRatio = s.avgVolume > 0 ? (s.volume / s.avgVolume).toFixed(1) : 'N/A';
+        const pos52W = s.fiftyTwoWeekHigh > s.fiftyTwoWeekLow ? (((s.price - s.fiftyTwoWeekLow) / (s.fiftyTwoWeekHigh - s.fiftyTwoWeekLow)) * 100).toFixed(0) : 'N/A';
+
+        // return `${s.ticker}: Rs.${s.price.toFixed(2)} (${s.changePercent >= 0 ? '+' : ''}${s.changePercent.toFixed(2)}%), Vol ${volRatio}x avg, 52W pos: ${pos52W}%, 50DMA: Rs.${s.fiftyDayAvg.toFixed(2)}, 200DMA: Rs.${s.twoHundredDayAvg.toFixed(2)}, ${s.price > s.twoHundredDayAvg ? 'ABOVE' : 'BELOW'} 200DMA`
+
+        let line = `${s.ticker}: Rs.${s.price.toFixed(2)} (${s.changePercent >= 0 ? '+' : ''}${s.changePercent.toFixed(2)}%), Vol ${volRatio}x avg, 52W pos: ${pos52W}%, ${s.price > s.twoHundredDayAvg ? 'ABOVE' : 'BELOW'}200DMA`
+        const ind = indicators?.[s.ticker];
+
+        if (ind) {
+            line += `\n RSI: ${ind.rsi.toFixed(1)} (${ind.rsiSignal})`;
+            line += `\n MACD: line ${ind.macdLine.toFixed(2)}, signal ${ind.signalLine.toFixed(2)} | histogram ${ind.histogram.toFixed(2)} (${ind.macdSignal})`;
+            line += `\n Bollinger: lower Rs.${ind.bollingerLower.toFixed(2)} | mid Rs.${ind.bollingerMiddle.toFixed(2)} | upper Rs.${ind.bollingerUpper.toFixed(2)} (at ${ind.bollingerSqueeze ? ', SQUEEZE detected' : ''})`;
+            if (ind.nearestSupport > 0 || ind.nearestResistance > 0) {
+                line += `\n Support: Rs.${ind.atr.toFixed(2)} (${ind.atrPercent.toFixed(1)}% daily volatility)`;
+            }
+
+        }
+
+        return line;
+
+    }).join('\n');
+
+    return `
+        You are a TECHNICAL ANALYST. You assess stocks based ONLY on price action, indicators, and chart patterns. You do NOT look at news, PE ratios, or company fundamentals.
+
+        INDICATOR RULES:
+        - RSI > 70 = overbought (might fall). RSI <30 = oversold (might bounce).
+        - MACD bullish crossover = momentum turning positive. Bearish = negative.
+        - Bollinger SQUEEZE = big move coming, direction unclear. At LOWER band = mean reversion opportunity.
+        - Price near support = low risk entry. Near resistance = caution.
+        - High ATR = volatile stock, needs wider stop loss.
+        - Above 200DMA = long-term uptrend. Below = downtrend.
+
+    STOCK DATA:
+    ${stockData}
+
+    For EACH stock, assess the technical picture.
+    Respond in this JSOn structure: ${AGENT_VERDICT_FORMAT}
+    `
+}
+
+// AGENT 3 - FUNDAMANETAL ANALYST - Sees ONLY PE, market cap , sector
+export function buildFundamentalAgentPrompt(stocks: StockSnapshot[]): string {
+
+    const stockData = stocks.map((s) => `${s.ticker} (${s.companyName}): PE ${s.pe?.toFixed(1) ?? 'N/A'}, Market Cap Rs.${(s.marketCap / 1e7).toFixed(0)} Cr`).join('\n')
+
+
+    return `
+        You are a FUNDAMENTAL ANALYST. You assess wether stocks are overvalued or undervalued.
+        You do NOT look at news, price charts, or volume - only VALUATION.
+
+        RULES:
+        - PE below sector average = potentially undervalued
+        - PE above sector average = potentially overvalued
+        - PE N/A = loss-making comapny, higher risk
+        - Large cap (>20,000 Cr) = stable. Mid cap (5,000 - 20,000) = moderate. Small cap (<5,000) = volatile.
+
+        STOCK DATA:
+        ${stockData}
+
+        For EACH stock, assess the valuation.
+        Respond in this JSOn structure:${AGENT_VERDICT_FORMAT}
+    `;
+}
+
+// AGENT 4: MACRO/SECTOR ANALYST - sees ONLY market context + stock names
+
+export function buildMacroAgentPrompt(
+    tickers: string[],
+    marketContext: MarketContext
+) {
+
+    return ` 
+    You are a MACRO/SECTOR ANALYST. Assess the broader market environemt. Do NOT look at individual stock prices or news - only the BIG PICTURE.
+
+    MARKET:
+        Nifty: ${marketContext.niftyChangePercent >= 0 ? '+' : ''}${marketContext.niftyChangePercent.toFixed(2)}%
+        Sensex: ${marketContext.sensexChangePercent >= 0 ? '+' : ''}${marketContext.sensexChangePercent.toFixed(2)}%
+        Regime: ${marketContext.regime}
+
+    STOCKS: ${tickers.join(', ')}
+
+    Is the market favorable? Is each stock's sector likely to outperform or underperform?
+    Respond in JSON:${AGENT_VERDICT_FORMAT}
+    `;
+
+}
+
+// AGENT 5: RISK - sees everything
+
+export function buildRiskAgentPrompt(
+    stocks: StockSnapshot[], news: ScoredNewsItem[], marketContext: MarketContext, indicators?: Record<string, TechnicalIndicators>
+): string {
+    const data = stocks.map((s) => {
+        const vol = s.avgVolume > 0 ? (s.volume / s.avgVolume).toFixed(1) : 'N/A';
+        const pos = s.fiftyTwoWeekHigh > s.fiftyTwoWeekLow ? (((s.price - s.fiftyTwoWeekLow) / (s.fiftyTwoWeekHigh - s.fiftyTwoWeekLow)) * 100).toFixed(0) : 'N/A';
+
+        // return `${s.ticker}: Rs.${s.price.toFixed(2)} (${s.changePercent >= 0 ? '+' : ''}${s.changePercent.toFixed(2)}%), PE ${s.pe?.toFixed(1) ?? 'N/A'}, Vol ${vol}x, 52W: ${pos}%`;
+
+        let line = `${s.ticker}: Rs.${s.price.toFixed(2)} (${s.changePercent >= 0 ? '+' : ''}${s.changePercent.toFixed(2)}%), PE ${s.pe?.toFixed(1) ?? 'N/A'}, Vol${vol}x, 52W: ${pos}%`
+
+        const ind = indicators?.[s.ticker];
+
+        if (ind) {
+            line += `\n RSI: ${ind.rsi.toFixed(1)}(${ind.rsiSignal})`;
+            line += ` | ATR: Rs. ${ind.atr.toFixed(2)} (${ind.atrPercent.toFixed(1)}% daily swing)`;
+            if (ind.bollingerSqueeze) line += ' | BOLLINGER SQUEEZE 9big move iminent)';
+            if (ind.rsi > 70) line += '| ⚠️ OVERBOUGHT';
+            if (ind.rsi < 30) line += ' | ⚠️ OVERSOLD  -could keep falling';
+
+
+        }
+
+        return line;
+
+    }).join('\n');
+
+
+    const newsText = news.slice(0, 5).map((n) => `- ${n.title}`).join('\n');
+    return `
+    You are a RISK ANALYST. Find what could GO WRONG. Be pessimistic - your job is to PROTECT.
+    You see ALL data + technical indicators because risk comes from unexpected connections.
+    
+    MARKET: Nifty ${marketContext.niftyChangePercent >= 0 ? '+' : ''}${marketContext.niftyChangePercent.toFixed(2)}%, Regime: ${marketContext.regime}
+
+    RISK INDICATORS RULES:
+    - RSI >70 = overbought, vulnerable to pullback
+    - RSI < 30 = oversold, but coulkd keep falling in a downtrend (don't catch falling knife)
+    - High ATR% = volatile stock, stop loss must be wider than usual
+    - Bollinger SQUEEZE = big move coming - could go either direction
+    - Near 52W high (>90%) = limited upside, potential reversal
+    
+    NEWS:
+    ${newsText}
+
+    STOCKS:
+    ${data}
+
+    For EACH stock: worst case? Overbought/oversold risk? Volatility risk? Macro risks?
+    expectedMovePercent should be NEGATIVE (showing downside risk).
+    Respond in JSON: ${AGENT_VERDICT_FORMAT} 
+    `
+}
+
+
+//  JEV COMITTEE Voting Prompt
+
+export function buildJevVotePrompt(
+    stocks: StockSnapshot[],
+    allVerdicts: Record<string, { agent: string; sentiment: string; confidence: number; reasoning: string }[]>
+): string {
+
+    const verdictText = stocks.map((s) => {
+        const v = allVerdicts[s.ticker] ?? [];
+        const lines = v.map((x) => ` ${x.agent}: ${x.sentiment} (${x.confidence}%) - ${x.reasoning}`).join('\n');
+        return `STOCK: ${s.ticker} (Rs.${s.price.toFixed(2)})\n${lines}`;
+    }).join('\n\n');
+
+    return `   
+    You are the FINAL DECISION MAKER. 5 experts gave opinions. Weigh ALL and decide.
+
+    RULES:
+    - Strong RISK warning can override multiple bullish opinions
+    - If agents disagree heavily -> lower confidence
+    - If most are NEUTRAL -> HOLD or AVOID
+    - Probabilities must sum to 1.0
+
+    COMMITTEE:
+    ${verdictText}
+
+    Final decision per stock:
+    {
+        "decisions": [
+            {
+                "action": "<BUY_OR_SELL_OR_HOLD_OR_AVOID>",
+                "actionProbabilities": {"BUY":<0.0-1.0>,"SELL":<0.0-1.0>,"HOLD":<0.0-1.0>,"AVOID":<0.0-1.0>},
+                "holdingPeriod": "<INTRADAY_OR_SWING_OR_POSITIONAL>",
+                "confidence": <0_TO_100>,
+                "riskLevel":"<LOW_OR_MEDIUM_OR_HIGH>"
+            }
+        ]
+    }
+
+    `
 }

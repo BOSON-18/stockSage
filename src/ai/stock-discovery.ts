@@ -23,12 +23,12 @@ const JevGateSchema = z.object({
 
 
 export async function extractStocksFromNews(
-    filteredNews: ScoredNewsItem[]
+    filteredNews: ScoredNewsItem[], sectorMap?: Record<string, string[]>
 ): Promise<CandidateStock[]> {
 
     if (filteredNews.length === 0) return [];
 
-    const prompt = buildStockExtractPrompt(filteredNews, MAX_PRICE_PER_STOCK);
+    const prompt = buildStockExtractPrompt(filteredNews, MAX_PRICE_PER_STOCK, sectorMap);
 
     try {
         const raw = await callLLM(prompt);
