@@ -45,19 +45,19 @@ export const REGIME_THRESHOLD = {
         maxNiftyChange: 1.0,
         upside: { min: 1, max: 0 },
         downside: { min: 1, max: 2 },
-        jevGate: 0.65
+        jevGate: 0.60
     },
     VOLATILE: {
         maxNiftyChange: 3.0,
         upside: { min: 2, max: 5 },
         downside: { min: 1.5, max: 3 },
-        jevGate: 0.55
+        jevGate: 0.50
     },
     CRASH_OR_RALLY: {
         maxNiftyChange: Infinity,
-        upside: { min: 3, max: 10 },
-        downside: { min: 2, max: 5 },
-        jevGate: 0.50
+        upside: { min: 3, max: 15 },
+        downside: { min: 2, max: 15 },
+        jevGate: 0.40
     },
 
 }

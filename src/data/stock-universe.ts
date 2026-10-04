@@ -13,15 +13,15 @@ export interface StockUniverseEntry {
     // avgVolume: number;
 }
 
-const toYahooTicker = (s: string) => (s.endsWith('.NS') ? s : `${s}.NS`);
+// const toYahooTicker = (s: string) => (s.endsWith('.NS') ? s : `${s}.NS`);
 
 
 
 const csvFiles = [
-    { file: 'EQUITY_L.csv', symbolCol: 2, industryCol: 2 },
-    { file: 'ind_nifty500list.csv', symbolCol: 2, industryCol: 1 },
-    { file: 'ind_nifty200list.csv', symbolCol: 2, industryCol: 1 },
-    { file: 'ind_nifty50list.csv', symbolCol: 2, industryCol: 1 },
+    // { path: 'equities/EQUITY_L.csv', symbolCol: 2, industryCol: 2 },
+    { path: 'indices/ind_nifty500list.csv', symbolCol: 2, industryCol: 1 },
+    { path: 'indices/ind_nifty200list.csv', symbolCol: 2, industryCol: 1 },
+    { path: 'indices/ind_nifty50list.csv', symbolCol: 2, industryCol: 1 },
 ]
 
 async function fetchNiftyCSV(): Promise<{ symbol: string, industry: string }[]> {
@@ -30,8 +30,8 @@ async function fetchNiftyCSV(): Promise<{ symbol: string, industry: string }[]> 
     for (const csv of csvFiles) {
         // const url = 'https://archives.nseindia.com/content/equities/EQUITY_L.csv';
         try {
-            const url = `https://archives.nseindia.com/content/indices/${csv.file}`;
-            console.log(`Fetching ${csv.file} from NSE Archives...`);
+            const url = `https://archives.nseindia.com/content/${csv.path}`;
+            console.log(`Fetching ${csv.path} from NSE Archives...`);
 
             const response = await fetch(url, {
                 headers: {
@@ -62,14 +62,14 @@ async function fetchNiftyCSV(): Promise<{ symbol: string, industry: string }[]> 
             }
 
             if (stocks.length > 0) {
-                console.log(`NSE CSV: ${stocks.length} stocks from ${csv.file}`);
+                console.log(`NSE CSV: ${stocks.length} stocks from ${csv.path}`);
                 return stocks;
             }
 
 
         } catch (error) {
             // console.error(`Failed to fetch ${file}:`, error);
-            console.warn(`${csv.file} failed,trying next...`)
+            console.warn(`${csv.path} failed,trying next...`)
         }
     }
 

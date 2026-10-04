@@ -50,7 +50,7 @@ export async function fetchHistoricalBatch(
     for (const ticker of tickers) {
         console.log(`Fetching history for ${ticker}...`);
         result[ticker] = await fetchHistoricalData(ticker, months);
-        console.log(`$[ticker]: ${result[ticker].length} data points`);
+        console.log(`${ticker}: ${result[ticker].length} data points`);
     }
     return result;
 }

@@ -19,9 +19,11 @@
     "typescript": "^7.0.2"
   },
   "dependencies": {
+    "@typesafe-ai/sdk": "^0.6.0",
     "dotenv": "^18.0.4",
     "fast-xml-parser": "^5.11.2",
     "groq-sdk": "^1.6.0",
+    "growwapi": "^1.1.3",
     "openai": "^7.25.0",
     "yahoo-finance2": "^4.0.2",
     "zod": "^4.6.5"

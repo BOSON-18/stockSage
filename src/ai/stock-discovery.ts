@@ -3,6 +3,7 @@ import { CandidateStock, MarketContext, ScoredNewsItem, StockSnapshot } from '..
 import { buildJevGatePrompt, buildStockExtractPrompt } from '../prompts';
 import { callLLM } from './llm-client';
 import { MAX_CANDIDATES, MAX_PRICE_PER_STOCK, WATCHLIST } from '../config';
+import { jevGateStock } from './jev-decision';
 
 
 
@@ -14,12 +15,12 @@ const ExtractedStockSchema = z.object({
     }))
 });
 
-const JevGateSchema = z.object({
-    gates: z.array(z.object({
-        ticker: z.string(),
-        worthAnalyzing: z.number().min(0).max(1)
-    }))
-});
+// const JevGateSchema = z.object({
+//     gates: z.array(z.object({
+//         ticker: z.string(),
+//         worthAnalyzing: z.number().min(0).max(1)
+//     }))
+// });
 
 
 export async function extractStocksFromNews(
@@ -72,7 +73,7 @@ async function fetchTopMovers(): Promise<CandidateStock[]> {
     console.log('[DISCOVERY] fetching top movers...')
 
     const raw = await fetchStockData(DISCOVERY_POOL);
-    console.log('[DISCOVERY] raw data:', raw);
+    // console.log('[DISCOVERY] raw data:', raw);
     const stocks = formatStockData(raw);
 
     return stocks.filter((s: StockSnapshot) => s.price <= MAX_PRICE_PER_STOCK).sort((a: StockSnapshot, b: StockSnapshot) => Math.abs(b.changePercent) - Math.abs(a.changePercent)).slice(0, 10).map((s: StockSnapshot) => ({
@@ -136,23 +137,42 @@ export async function jevGateCandidates(
 ): Promise<string[]> {
 
     if (stocks.length === 0) return [];
-    const prompt = buildJevGatePrompt(stocks, filteredNews, marketContext);
+    // const prompt = buildJevGatePrompt(stocks, filteredNews, marketContext);
 
     try {
-        const raw = await callLLM(prompt);
-        const parsed = JSON.parse(raw);
+        // const raw = await callLLM(prompt);
+        // const parsed = JSON.parse(raw);
 
-        console.log('[JEV-GATE] Checking parsed output: ', parsed)
-        const validated = JevGateSchema.parse(parsed);
+        // // console.log('[JEV-GATE] Checking parsed output: ', parsed)
+        // const validated = JevGateSchema.parse(parsed);
 
+        // const passed = validated.gates.filter((g) => g.worthAnalyzing >= threshold).map((g) => g.ticker)
+        // validated.gates.forEach((g) => {
+        //     const status = g.worthAnalyzing >= threshold ? 'PASS' : 'FAIL';
+        //     console.log(`${status} ${g.ticker}: ${(g.worthAnalyzing * 100).toFixed(0)}%`)
+        // })
+        // console.log(`🚀 JEV GATE: Passed ${passed.length}`)
         const threshold = marketContext.jevGateThreshold;
-        const passed = validated.gates.filter((g) => g.worthAnalyzing >= threshold).map((g) => g.ticker)
         console.log(`Gate results (threshold ${(threshold * 100).toFixed(0)}%):`);
-        validated.gates.forEach((g) => {
-            const status = g.worthAnalyzing >= threshold ? 'PASS' : 'FAIL';
-            console.log(`${status} ${g.ticker}: ${(g.worthAnalyzing * 100).toFixed(0)}%`)
-        })
-        console.log(`🚀 JEV GATE: Passed ${passed.length}`)
+
+        const passed: string[] = [];
+        const newsHeadlines = filteredNews.map(n => n.title).join('; ').slice(0, 300);
+
+        for (const stock of stocks) {
+            const volRatio = stock.avgVolume > 0 ? (stock.volume / stock.avgVolume).toFixed(1) : 'N/A';
+            const context = `Stock: ${stock.ticker}, Price: Rs.${stock.price.toFixed(2)}, Change: ${stock.changePercent >= 0 ? '+' : ''}${stock.changePercent.toFixed(2)}%, PE: ${stock.pe?.toFixed(1) ?? 'N/A'}, Vol: ${volRatio}x avg\nMarket: Nifty ${marketContext.niftyChangePercent.toFixed(2)}%, Regime: ${marketContext.regime}\nNews: ${newsHeadlines}`;
+            const probability = await jevGateStock(context);
+
+            const status = probability >= threshold ? 'PASS' : 'FAIL';
+
+            console.log(`${status} ${stock.ticker}: ${(probability * 100).toFixed(0)}%`);
+
+            if (probability >= threshold) passed.push(stock.ticker);
+        }
+        if (passed.length === 0) {
+            console.warn('No stocks passed gate - passing all as fallback');
+            return stocks.map(s => s.ticker);
+        }
 
         return passed;
     } catch (error) {

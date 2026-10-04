@@ -1,5 +1,5 @@
 import { jevCommitteeVote, runCommittee } from "./ai/committee";
-import { jevClassifyNews, runJevDecisions } from "./ai/jev-decision";
+import { jevClassifyNews, } from "./ai/jev-decision";
 import { callLLM } from "./ai/llm-client";
 import { buildCandidateList, extractStocksFromNews, filterByBudget, jevGateCandidates } from "./ai/stock-discovery";
 import { computeAllIndicators } from "./analysis/compute-all";
@@ -7,28 +7,46 @@ import { DELAY_BETWEEN_CALLS_MS, LLM_MODEL, MAX_RETRIES, RETRY_DELAY_MS, WATCHLI
 import { fetchHistoricalBatch } from "./data/historical-fetcher";
 import { fetchAllNews } from "./data/news-fetcher";
 import { filterByScore, scoreNewsBatch } from "./data/news-scoreer";
+import { fetchPortfolio } from "./data/portfolio-fetcher";
 import { fetchMarketContext, fetchStockData, formatStockData } from "./data/stock-fetcher";
 import { buildDynamicSectorMap, fetchStockUniverse } from "./data/stock-universe";
 import { displayResults } from "./display";
 import { mergeResults } from "./logic/merge";
 import { rankAndFilter } from "./logic/rank";
 import { buildAnalysisPrompt } from "./prompts";
-import { AnalysisResponseSchema, Recommendation, StockAnalysis, TechnicalIndicators } from "./types";
+import { sanitizePortfolio } from "./security/sanitizer";
+import { AnalysisResponseSchema, Recommendation, SanitizedPortfoilio, StockAnalysis, TechnicalIndicators } from "./types";
 
 
 
 // ORCHESTRATOR -> Refer LLD Dig for steps
 
 async function main(): Promise<void> {
-    console.log('Stock sage v0.5 starting...\n');
+    console.log('Stock sage v0.6 starting...\n');
     console.log(` Mode: ${USE_LOCAL ? 'LOCAL (Ollama)' : 'CLOUD (Groq)'}`);
     console.log(` Model: ${LLM_MODEL}\n`)
 
     console.log('Phase 0: Building stock universe...');
     const universe = await fetchStockUniverse();
     const dynamicSectorMap = buildDynamicSectorMap(universe);
+    console.log('[MAIN] Checking Sector Map: ', dynamicSectorMap)
+
+    console.log('Phase 0.5 Fetching Portfolio...');
+    const rawPortfolio = await fetchPortfolio();
+    let sanitizedPortfolio: SanitizedPortfoilio | null = null;
+
+    if (rawPortfolio) {
+        // console.log("Raw Portifolio: ", rawPortfolio)
+        sanitizedPortfolio = sanitizePortfolio(rawPortfolio);
+        console.log(`${sanitizedPortfolio.overallStatus}`);
+        console.log(`Existing tickers: ${sanitizedPortfolio.existingTickers.join(', ') || 'none'}`);
+        console.log('[MAIN] Checking Portfolio: ', sanitizedPortfolio)
+
+
+    } else {
+        console.log('No portfolio data - running without portfolio context');
+    }
     console.log()
-    
 
     // STEP ! -> Fetch STOCK
     console.log('Phase 1: Collecting market context + news (Parallel) ...');
@@ -36,23 +54,14 @@ async function main(): Promise<void> {
     const [marketContext, allNews] = await Promise.all([
         fetchMarketContext(),
         fetchAllNews(),
-        // fetchStockData(WATCHLIST)
+
     ]);
     console.log(` Market: Nifty ${marketContext.niftyChangePercent >= 0 ? '+' : ''}${marketContext.niftyChangePercent.toFixed(2)}% -> regime: ${marketContext.regime}`)
     console.log(` News: ${allNews.length} articles fetched.`)
-    // console.log(` Watchlist:  ${rawQuotes.length} stocks fetched.`)
 
-    // console.log('Checking rawQuotes', rawQuotes)
-
-    // if (rawQuotes.length === 0) {
-    //     console.error('No stock data could be fetched. Exiting.');
-    //     process.exit(1);
-    // }
 
     //  Step 2 : Format - extract only the 8 fields we need
-    // const stocks = formatStockData(rawQuotes);
-    // console.log(` Stocks: ${stocks.length} fetched`)
-    // 
+
     //  2.a Code score news
     console.log('Phase 2: Filtering news...');
     const scoredNews = scoreNewsBatch(allNews);
@@ -84,8 +93,17 @@ async function main(): Promise<void> {
     // newsStocks.forEach((s) => console.log(`${s.ticker}-${s.reason}`));
 
     // Step 3b: Build candidate list (news+watchlist+dedup)
-    const candidates = await buildCandidateList(newsStocks);
+    let candidates = await buildCandidateList(newsStocks);
     console.log(`Total candidates: ${candidates.length}`);
+
+    if (sanitizedPortfolio && sanitizedPortfolio.existingTickers.length > 0) {
+        const before = candidates.length;
+        candidates = candidates.filter((c) => !sanitizedPortfolio!.existingTickers.includes(c.ticker));
+        const removed = before - candidates.length;
+        if (removed > 0) {
+            console.log(`Removed ${removed} stocks already in portfolio`);
+        }
+    }
 
     // Step 3c: Fetch stock data for ALL candidates (dynamic not fixed)
     console.log('Fetching stock data for candidates...')
@@ -184,7 +202,7 @@ async function main(): Promise<void> {
     // console.log(` Generating trading signals... `);
 
     console.log('Phase 4: Running 5 agent committee');
-    const verdictMap = await runCommittee(gatedStocks, filteredNews, marketContext, indicatorsMap);
+    const { verdictMap, verificationMap } = await runCommittee(gatedStocks, filteredNews, marketContext, indicatorsMap, sanitizedPortfolio);
     console.log(`Committee completed.\n`);
 
 
@@ -265,7 +283,7 @@ async function main(): Promise<void> {
 
 
     // Step 9 Display results
-    displayResults(ranked, marketContext, indicatorsMap);
+    displayResults(ranked, marketContext, indicatorsMap, verificationMap);
 
 }
 

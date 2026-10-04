@@ -1,5 +1,6 @@
-import { SECTOR_MAP } from "./config";
-import { NewsItem, StockAnalysis, StockSnapshot, ScoredNewsItem, MarketContext, TechnicalIndicators } from "./types";
+import { MAX_STOCKS, PER_STOCK_BUDGET, SECTOR_MAP, TOTAL_BUDGET } from "./config";
+import { sanitizePortfolio } from "./security/sanitizer";
+import { NewsItem, StockAnalysis, StockSnapshot, ScoredNewsItem, MarketContext, TechnicalIndicators, SanitizedPortfoilio } from "./types";
 
 // FORAMT one stock data into redable text fro prompts
 
@@ -255,7 +256,7 @@ export function buildStockExtractPrompt(articles: ScoredNewsItem[], maxBudget: n
     "stocks":[
     {
     "ticker": "<TICKER.NS>;
-    "reason": ">why this stock is affected by the news>"
+    "reason": "<why this stock is affected by the news>"
     
     }]
     
@@ -450,13 +451,13 @@ export function buildMacroAgentPrompt(
 // AGENT 5: RISK - sees everything
 
 export function buildRiskAgentPrompt(
-    stocks: StockSnapshot[], news: ScoredNewsItem[], marketContext: MarketContext, indicators?: Record<string, TechnicalIndicators>
+    stocks: StockSnapshot[], news: ScoredNewsItem[], marketContext: MarketContext, indicators?: Record<string, TechnicalIndicators>, portfolio?: SanitizedPortfoilio | null
 ): string {
     const data = stocks.map((s) => {
         const vol = s.avgVolume > 0 ? (s.volume / s.avgVolume).toFixed(1) : 'N/A';
         const pos = s.fiftyTwoWeekHigh > s.fiftyTwoWeekLow ? (((s.price - s.fiftyTwoWeekLow) / (s.fiftyTwoWeekHigh - s.fiftyTwoWeekLow)) * 100).toFixed(0) : 'N/A';
 
-        // return `${s.ticker}: Rs.${s.price.toFixed(2)} (${s.changePercent >= 0 ? '+' : ''}${s.changePercent.toFixed(2)}%), PE ${s.pe?.toFixed(1) ?? 'N/A'}, Vol ${vol}x, 52W: ${pos}%`;
+
 
         let line = `${s.ticker}: Rs.${s.price.toFixed(2)} (${s.changePercent >= 0 ? '+' : ''}${s.changePercent.toFixed(2)}%), PE ${s.pe?.toFixed(1) ?? 'N/A'}, Vol${vol}x, 52W: ${pos}%`
 
@@ -483,6 +484,12 @@ export function buildRiskAgentPrompt(
     You see ALL data + technical indicators because risk comes from unexpected connections.
     
     MARKET: Nifty ${marketContext.niftyChangePercent >= 0 ? '+' : ''}${marketContext.niftyChangePercent.toFixed(2)}%, Regime: ${marketContext.regime}
+
+    USER BUDGET:
+        Rs.${TOTAL_BUDGET} total, Rs.${PER_STOCK_BUDGET} per stock, max ${MAX_STOCKS} stocks.
+         - Small budget = small positions = limited loss per stock but can't recover easily
+         - Consider: is the potential loss acceptable relative to total budget?
+    ${portfolio ? `\nUSER PORTFOLIO: ${portfolio.overallStatus}\n Existing Sectors: ${portfolio.existingSectors.join(', ')}\n Consider: buying more of same sector increases concentration risk` : ''}
 
     RISK INDICATORS RULES:
     - RSI >70 = overbought, vulnerable to pullback
@@ -520,11 +527,16 @@ export function buildJevVotePrompt(
     return `   
     You are the FINAL DECISION MAKER. 5 experts gave opinions. Weigh ALL and decide.
 
+    USER BUDGET:
+        Rs.${TOTAL_BUDGET} total, Rs.${PER_STOCK_BUDGET} per stock, max ${MAX_STOCKS} stocks.
+        Factor this into decisions - with small budget, favour HIGH confidence picks over risky bets.
+    
     RULES:
     - Strong RISK warning can override multiple bullish opinions
     - If agents disagree heavily -> lower confidence
     - If most are NEUTRAL -> HOLD or AVOID
     - Probabilities must sum to 1.0
+    - With small budget (Rs.${TOTAL_BUDGET}), pefer SAFE picks over HIGH RISK ones.
 
     COMMITTEE:
     ${verdictText}

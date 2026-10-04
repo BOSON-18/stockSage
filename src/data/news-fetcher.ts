@@ -23,7 +23,7 @@ async function fetchRssFeed(query: string): Promise<NewsItem[]> {
             return [];
         }
 
-        return items.slice(0, 25).map((article: any) => {
+        return items.slice(0, 100).map((article: any) => {
 
             const rawSource = article.source;
             const sourceName = typeof rawSource === 'string' ? rawSource : rawSource?.['#text'] ?? rawSource?.['$text'] ?? 'Google News'

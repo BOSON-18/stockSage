@@ -1,10 +1,11 @@
 import { maxLength } from "zod";
 import { MAX_STOCKS, PER_STOCK_BUDGET, TOTAL_BUDGET } from "./config";
 import { MarketContext, Recommendation, TechnicalIndicators } from "./types";
+import { VerfiedClaim } from "./ai/verifier";
 
 
 
-export function displayResults(recommendations: Recommendation[], marketContext?: MarketContext, indicators?: Record<string, TechnicalIndicators>): void {
+export function displayResults(recommendations: Recommendation[], marketContext?: MarketContext, indicators?: Record<string, TechnicalIndicators>, verificationMap?: Record<string, VerfiedClaim[]>): void {
     const date = new Date().toLocaleString('en-IN', {
         day: 'numeric',
         month: 'short',
@@ -97,6 +98,17 @@ export function displayResults(recommendations: Recommendation[], marketContext?
             console.log();
             console.log('NEWS CONTEXT: ');
             rec.newsContext.forEach((n) => console.log(` . ${n}`))
+        }
+
+
+        const claims = verificationMap?.[rec.ticker];
+        if (claims && claims.length > 0) {
+            console.log();
+            console.log('CLAIM VERIFICATION:');
+            claims.forEach((c) => {
+                const icon = c.status === 'VERIFIED' ? '✅' : c.status === 'INFERRED' ? '⚠️' : '❌';
+                console.log(`${icon} ${c.status}: ${c.claim}`)
+            })
         }
 
         console.log(` ` + '='.repeat(40))

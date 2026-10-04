@@ -142,7 +142,7 @@ export function scoreNewsBatch(rawNews: NewsItem[]): ScoredNewsItem[] {
     });
 
     // Step 4 : Pre filter - only top 15
-    const MAX_FOR_JEV = 8;
+    const MAX_FOR_JEV = 25;
 
     return scored.sort((a,b)=>{
         const scoreA = a.sourceTierWeight*a.freshnessScore*a.crossSourceMultiplier;
@@ -167,14 +167,14 @@ const SEVERITY_WEIGHTS: Record<string, number> = {
 
 export function filterByScore(
     scoredNews: ScoredNewsItem[],
-    jevClassificatios: JevNewsClassification[]
+    jevClassifications: JevNewsClassification[]
 ): ScoredNewsItem[] {
 
     const results: { article: ScoredNewsItem; finalScore: number }[] = [];
 
     for (let i = 0; i < scoredNews.length; i++) {
         const article = scoredNews[i];
-        const jev = jevClassificatios[i];
+        const jev = jevClassifications[i];
 
         //  No jev classiication or classified as NOISE -> skip
         if (!jev || jev.impactType === 'NOISE') continue;

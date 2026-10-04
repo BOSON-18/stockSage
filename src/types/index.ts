@@ -7,6 +7,7 @@ export * from './news'
 export * from './recommendation'
 export * from './stock'
 export * from './technical'
+export * from './portfolio'
 
 
 

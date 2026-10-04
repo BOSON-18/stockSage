@@ -10,12 +10,15 @@ const llmClient = new OpenAI(
 
 
 export async function callLLM(prompt: string): Promise<string> {
-   
+
 
 
     const response = await llmClient.chat.completions.create({
         model: LLM_MODEL,
         messages: [
+            {
+                role: 'system', 'content': 'Always respond in valid JSON format'
+            },
             {
                 role: 'user',
                 content: prompt
