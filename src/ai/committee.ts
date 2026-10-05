@@ -32,7 +32,8 @@ export async function runCommittee(
     news: ScoredNewsItem[],
     marketContext: MarketContext,
     indicators?: Record<string, TechnicalIndicators>,
-    portfolio?: SanitizedPortfoilio | null
+    portfolio?: SanitizedPortfoilio | null,
+    stockNewsMap?: Record<string, { title: string; description: string; source: string; publishedAt: string }[]>
 ): Promise<{
     verdictMap: Record<string, { agent: string; sentiment: string; confidence: number; expectedMovePercent: number; reasoning: string }[]>;
     verificationMap: Record<string, VerfiedClaim[]>;
@@ -40,8 +41,9 @@ export async function runCommittee(
 
     const tickers = stocks.map((s) => s.ticker)
     console.log(' Running committee (2LLm + 3Jev Agents)...\n');
-    const newsVerdicts = await runLLMAgent('NEWS ANALYST', buildNewsAgentPrompt(tickers, news));
-    const riskVerdicts = await runLLMAgent('RISK ANALYST', buildRiskAgentPrompt(stocks, news, marketContext, indicators, portfolio));
+    const allStockNews: ScoredNewsItem[] = stockNewsMap ? [...new Map([...news, ...Object.values(stockNewsMap).flat()].map(n => [n.title, n])).values()] as ScoredNewsItem[] : news
+    const newsVerdicts = await runLLMAgent('NEWS ANALYST', buildNewsAgentPrompt(tickers, allStockNews));
+    const riskVerdicts = await runLLMAgent('RISK ANALYST', buildRiskAgentPrompt(stocks, allStockNews, marketContext, indicators, portfolio));
     // const techVerdicts = await runLLMAgent('TECHNICAL ANALYST', buildTechnicalAgentPrompt(stocks, indicators));
     // const fundVerdicts = await runLLMAgent('FUNDAMENTAL ANALYST', buildFundamentalAgentPrompt(stocks));
     // const macroVerdicts = await runLLMAgent('MACRO ANALYST', buildMacroAgentPrompt(tickers, marketContext));
@@ -58,16 +60,7 @@ export async function runCommittee(
     const macroVerdicts = await macroAgentJev(stocks, marketContext);
     console.log(`MACRO: ${techVerdicts.length} verdicts`)
 
-    // Combine all verdicts per stock
-    // const allAgentResults = [
-    //     { name: 'NEWS', verdicts: newsVerdicts },
-    //     { name: 'TECHNICAL', verdicts: techVerdicts },
-    //     { name: 'FUNDAMENTAL', verdicts: fundVerdicts },
-    //     { name: 'MACRO', verdicts: macroVerdicts },
-    //     { name: 'RISK', verdicts: riskVerdicts }
-    // ]
 
-    //  Build map: ticker -> all verdicts for that stock
 
     const verdictMap: Record<string, { agent: string; sentiment: string; confidence: number; expectedMovePercent: number; reasoning: string }[]> = {};
 
@@ -89,19 +82,11 @@ export async function runCommittee(
         const riskV = riskVerdicts.find((v) => v.ticker === ticker);
         if (riskV) verdictMap[ticker].push({ agent: 'RISK', sentiment: riskV.sentiment, confidence: riskV.confidence, expectedMovePercent: riskV.expectedMovePercent, reasoning: riskV.reasoning });
 
-        // for (const agentResult of allAgentResults) {
-        //     const verdict = agentResult.verdicts.find((v) => v.ticker === ticker);
-        //     if (verdict) {
-        //         verdictMap[ticker].push({
-        //             agent: agentResult.name,
-        //             sentiment: verdict.sentiment,
-        //             confidence: verdict.confidence,
-        //             expectedMovePercent: verdict.expectedMovePercent,
-        //             reasoning: verdict.reasoning
-        //         })
-        //     }
-        // }
+
     }
+
+        console.log('[COMMITTEE.js] Checking Verdict Map: ',verdictMap)
+
 
 
     console.log('\n Running claim  verification {Jev)...');
@@ -110,6 +95,10 @@ export async function runCommittee(
         const ind = indicators?.[stock.ticker];
         // dataContexts[stock.ticker] = `Price: Rs.${stock.price}, Change: ${stock.changePercent}%, PE: ${stock.pe ?? 'N/A'}, Volume: ${stock.volume}${ind ? `, RSI: ${ind?.rsi.toFixed(1)}, MACD: ${ind?.macdSignal}` : ''}`
         const volRatio = stock.avgVolume > 0 ? (stock.volume / stock.avgVolume).toFixed(1) : 'N/A';
+        const stockSpecificNews = stockNewsMap?.[stock.ticker] ?? [];
+        const allNewsForStock = [...stockSpecificNews.map(n => n.title), ...news.map(n => n.title)];
+        const uniqueNews = [...new Set(allNewsForStock)]
+        const relevantNewsText = uniqueNews.slice(0, 15).map(n => `- ${n}`).join('\n')
         dataContexts[stock.ticker] = `VERIFIED DATA FOR ${stock.ticker}:
         Price: Rs.${stock.price.toFixed(2)}, Change today: ${stock.changePercent >= 0 ? '+' : ''}${stock.changePercent.toFixed(2)}%
         PE Ratio: ${stock.pe?.toFixed(1) ?? 'N/A'}, Market Cap: Rs.${(stock.marketCap / 1e7).toFixed(2)} Cr.
@@ -117,9 +106,13 @@ export async function runCommittee(
         52W Range: Rs.${stock.fiftyTwoWeekLow.toFixed(2)} - Rs.${stock.fiftyTwoWeekHigh.toFixed(2)}
         52-DMA: Rs.${stock.fiftyDayAvg.toFixed(2)}, 200-DMA: Rs.${stock.twoHundredDayAvg.toFixed(2)}
         ${ind ? `RSI: ${ind.rsi.toFixed(1)} (${ind.rsiSignal}), MACD: ${ind.macdSignal}, Bollinger: ${ind.bollingerPosition}, ATR: ${ind.atrPercent.toFixed(1)}%` : 'No technical indicators available'}
+        
+        TODAY'S NEWS (for verifying news-based claims):
+        ${relevantNewsText}
         `
     }
     const verificationMap = await verifyCommitteeResults(verdictMap, dataContexts);
+    console.log('[COMMITTEE] Verfication Map: ', verificationMap);
 
     const totalClaims = Object.values(verificationMap).flat();
     const verified = totalClaims.filter(c => c.status === 'VERIFIED').length;

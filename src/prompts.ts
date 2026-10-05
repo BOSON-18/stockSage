@@ -1,5 +1,4 @@
 import { MAX_STOCKS, PER_STOCK_BUDGET, SECTOR_MAP, TOTAL_BUDGET } from "./config";
-import { sanitizePortfolio } from "./security/sanitizer";
 import { NewsItem, StockAnalysis, StockSnapshot, ScoredNewsItem, MarketContext, TechnicalIndicators, SanitizedPortfoilio } from "./types";
 
 // FORAMT one stock data into redable text fro prompts
@@ -27,7 +26,6 @@ function formatStockData(s: StockSnapshot): string {
 // LLM ANALYSIS PROMPT - ASK LLM NOT DECIDE
 export function buildAnalysisPrompt(stocks: StockSnapshot[], news: NewsItem[], selectionReason?: Record<string, string>): string {
 
-    // const stockDataText = stocks.map((s) => `\nSTOCK: ${s.ticker}\n${formatStockData(s)}`).join('\n');
     const stockDataText = stocks.map((s) => {
         const reason = selectionReason?.[s.ticker];
         const reasonLine = reason ? `\n SELECTED BECAUSE: ${reason}` : '';
@@ -224,43 +222,49 @@ export function buildNewsClassifyPrompt(articles: ScoredNewsItem[]): string {
 export function buildStockExtractPrompt(articles: ScoredNewsItem[], maxBudget: number, dynamicSectorMap?: Record<string, string[]>): string {
     const mapToUse = dynamicSectorMap ?? SECTOR_MAP;
 
-    const sectorRules = Object.entries(mapToUse).map(([sector, tickers]) => `- ${sector} -> ${tickers.join(', ')}`).join('\n\n');
+    // const sectorRules = Object.entries(mapToUse).map(([sector, tickers]) => `- ${sector} -> ${tickers.join(', ')}`).join('\n\n');
+
+    const sectorNames = Object.keys(mapToUse).join(', ');
 
     const articleList = articles.map((a, i) => `${i + 1}. ${a.title}\n  ${a.description}`).join('\n\n');
 
 
-    return `You are a STOCK IDENTIFIER for the Indian market (NSE). Read the news articles below and identify which specific NSE stocks are mentioned or DIRECTLY affected.
+    // IMPORTANT: Only suggest stocks priced BELOW Rs.${maxBudget} per share.
+    // Skip expensive stocks like MRF (Rs. 1,20,000+), BOSCHLTD (Rs. 30,000+),etc.
+    // Focus on stocks a retail investor with limited budget can actually buy.
+    // SECTOR MAPPING (use these to connect news to stocks):
+    // ${sectorRules}
+    // - Only output NSE tickers with .NS suffix (e.g, RELIANCE.NS)
+    // - Only suggest stocks priced BELOW Rs.${maxBudget} per share
+    // - If a news article mentions a company directly, include that ticker(if affordable)
+    // - If a news article affects a SECTOR, include the AFFORDABLE tickers from the mapping above
+    // - Maximum 20 tickers total
+    return `You are a NEWS ANALYST for the Indian stock market (NSE). Read the news below and identify which SECTOR and specific NSE stocks(COMPANIES) are mentioned or DIRECTLY affected.
     
-    USER BUDGET: Rs.${maxBudget} per stock maximumm.
-    IMPORTANT: Only suggest stocks priced BELOW Rs.${maxBudget} per share.
-    Skip expensive stocks like MRF (Rs. 1,20,000+), BOSCHLTD (Rs. 30,000+),etc.
-    Focus on stocks a retail investor with limited budget can actually buy.
+    USER BUDGET: Rs.${maxBudget} per stock maximumm. Skip expensive stocks.
+    AVAILABLE SECTORS: ${sectorNames}
 
-    SECTOR MAPPING 9use these to connect news to stocks):
-    ${sectorRules}
-    
     RULES:
-    - Only output NSE tickers with .NS suffix (e.g, RELIANCE.NS)
-    - Only suggest stocks priced BELOW Rs.${maxBudget} per share
-    - If a news article mentions a company directly, include that ticker(if affordable)
-    - If a news article affects a SECTOR, include the AFFORDABLE tickers from the mapping above
-    - For each ticker, write a short reason WHY this news affects it
-    - Do NOT guess or include stocks that are not clearly affected
-    - Maximum 20 tickers total
+    - Return affected SECTOR NAMES form the list above(our system maps sectors -> tickers)
+    - Also return any spcific COMPANY NAMES or NSE TICKERS mentioned directly in the news
+    - For each, write a short reason WHY the news affects it
+    - Do NOT guess - only include sectors/companies affected
     
-    NEWS ARTICLES:
+    NEWS:
     ${articleList}
     
-    Respond in this JSON structure:
+    Respond in this JSON:
     {
-    "stocks":[
-    {
-    "ticker": "<TICKER.NS>;
-    "reason": "<why this stock is affected by the news>"
-    
-    }]
-    
+    "sectors": [{"sector":"<sector name from the list above>", "reason":"<why affected>"}],
+    "companies": [{"ticker":"<TICKER.NS>", "reason": "<why this stock is affected by the news>"}]
+        
     }`
+    // "stocks":[
+    // {
+    // "ticker": "<TICKER.NS>;
+    // "reason": "<why this stock is affected by the news>"
+
+    // }]
 };
 
 

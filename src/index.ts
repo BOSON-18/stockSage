@@ -1,11 +1,12 @@
 import { jevCommitteeVote, runCommittee } from "./ai/committee";
 import { jevClassifyNews, } from "./ai/jev-decision";
+import { getJevProvider } from "./ai/jev-procider";
 import { callLLM } from "./ai/llm-client";
 import { buildCandidateList, extractStocksFromNews, filterByBudget, jevGateCandidates } from "./ai/stock-discovery";
 import { computeAllIndicators } from "./analysis/compute-all";
 import { DELAY_BETWEEN_CALLS_MS, LLM_MODEL, MAX_RETRIES, RETRY_DELAY_MS, WATCHLIST, USE_LOCAL } from "./config";
 import { fetchHistoricalBatch } from "./data/historical-fetcher";
-import { fetchAllNews } from "./data/news-fetcher";
+import { fetchAllNews, fetchStockNewsBatch } from "./data/news-fetcher";
 import { filterByScore, scoreNewsBatch } from "./data/news-scoreer";
 import { fetchPortfolio } from "./data/portfolio-fetcher";
 import { fetchMarketContext, fetchStockData, formatStockData } from "./data/stock-fetcher";
@@ -22,6 +23,13 @@ import { AnalysisResponseSchema, Recommendation, SanitizedPortfoilio, StockAnaly
 // ORCHESTRATOR -> Refer LLD Dig for steps
 
 async function main(): Promise<void> {
+
+    // const jev = getJevProvider();
+    // const test = await jev.noul(
+    //     'The sky is blue. The grass is green',
+    //     'Is the sky blue?'
+    // )
+    // console.log('FULL RES', JSON.stringify(test, null, 2));
     console.log('Stock sage v0.6 starting...\n');
     console.log(` Mode: ${USE_LOCAL ? 'LOCAL (Ollama)' : 'CLOUD (Groq)'}`);
     console.log(` Model: ${LLM_MODEL}\n`)
@@ -29,7 +37,7 @@ async function main(): Promise<void> {
     console.log('Phase 0: Building stock universe...');
     const universe = await fetchStockUniverse();
     const dynamicSectorMap = buildDynamicSectorMap(universe);
-    console.log('[MAIN] Checking Sector Map: ', dynamicSectorMap)
+    // console.log('[MAIN] Checking Sector Map: ', dynamicSectorMap)
 
     console.log('Phase 0.5 Fetching Portfolio...');
     const rawPortfolio = await fetchPortfolio();
@@ -162,47 +170,38 @@ async function main(): Promise<void> {
 
     console.log()
 
+    console.log('Phase 3.5: Fetching stock-specific news...');
+    const { fetchStockNewsBatch } = require('./data/news-fetcher');
+    const stockNewsMap = await fetchStockNewsBatch(gatedStocks.map(s => ({ ticker: s.ticker, companyName: s.companyName })));
+
+    // Merge per stock news + general filtered news = full news context per stock
+    const enrichedNewsMap: Record<string, typeof filteredNews> = {};
+    for (const stock of gatedStocks) {
+        const stockSpecificnews = stockNewsMap[stock.ticker] ?? [];
+        //  Stock specific first then general dedup by title
+        const combined = [...stockSpecificnews];
+        for (const general of filteredNews) {
+            if (!combined.some(n => n.title === general.title)) {
+                combined.push(general);
+            }
+        }
+        enrichedNewsMap[stock.ticker] = combined;
+    }
+    console.log()
+
     // Phase 4 ANALYZE 
 
-    // const prompt = buildAnalysisPrompt(gatedStocks, filteredNews);
+
     const selectionReasons: Record<string, string> = {};
     for (const candidate of candidates) {
         selectionReasons[candidate.ticker] = candidate.reason;
     }
-    const prompt = buildAnalysisPrompt(gatedStocks, filteredNews, selectionReasons);
+    // const prompt = buildAnalysisPrompt(gatedStocks, filteredNews, selectionReasons);
 
-    // Step 4: Call LLM with retry (wraps call + validation together)
-    // let analyses: StockAnalysis[] | null = null;
 
-    // for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    //     try {
-    //         console.log(` Step 4: Calling LLM (attempt ${attempt}/${MAX_RETRIES})...`);
-    //         const rawRespose = await callLLM(prompt);
-    //         const parsed = JSON.parse(rawRespose)
-    //         // console.log('[MAIN] Checking LLM output', parsed)
-    //         analyses = AnalysisResponseSchema.parse(parsed).analyses;
-    //         break;
-    //     } catch (error) {
-    //         console.warn(`Attempt ${attempt} failed:`, error);
-    //         if (attempt < MAX_RETRIES) {
-    //             console.log(`Retrying in ${RETRY_DELAY_MS / 1000}s...`);
-    //             await new Promise((resolve) => setTimeout(resolve, RETRY_DELAY_MS));
-    //         }
-    //     }
-    // }
-
-    // if (!analyses || analyses.length === 0) {
-    //     console.error(`Failed to get recommendations after all retries. Exiting.`);
-    //     process.exit(1);
-    // }
-
-    // console.log('Checking Analysis: ', analyses[0])
-
-    // console.log(` LLM analyzed ${analyses.length} stocks. \n`);
-    // console.log(` Generating trading signals... `);
 
     console.log('Phase 4: Running 5 agent committee');
-    const { verdictMap, verificationMap } = await runCommittee(gatedStocks, filteredNews, marketContext, indicatorsMap, sanitizedPortfolio);
+    const { verdictMap, verificationMap } = await runCommittee(gatedStocks, filteredNews, marketContext, indicatorsMap, sanitizedPortfolio, enrichedNewsMap);
     console.log(`Committee completed.\n`);
 
 

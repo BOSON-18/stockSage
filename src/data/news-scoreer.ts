@@ -20,6 +20,16 @@ export function getSourceWeight(sourcename: string): number {
     return DEFAULT_SOURCE_WEIGHT;
 }
 
+
+
+const SCORE_WEIGHTS = {
+    relevance: 0.30,
+    severity: 0.25,
+    freshness: 0.10,
+    actionable: 0.20,
+    sourceTier: 0.15
+}
+
 // Freshness - HISTORIC news that becomes relevant again will be caught by the fresh article
 
 export function getFreshnessScore(publishedAt: string): number {
@@ -128,7 +138,7 @@ export function scoreNewsBatch(rawNews: NewsItem[]): ScoredNewsItem[] {
     // Step 3 Attach all scores to each article
 
     // return unique.map((article) => {
-    const scored = unique.map((article)=>{
+    const scored = unique.map((article) => {
         const crossCount = crossCounts.get(article.title) ?? 1;
 
 
@@ -142,15 +152,15 @@ export function scoreNewsBatch(rawNews: NewsItem[]): ScoredNewsItem[] {
     });
 
     // Step 4 : Pre filter - only top 15
-    const MAX_FOR_JEV = 25;
+    const MAX_FOR_JEV = 50;
 
-    return scored.sort((a,b)=>{
-        const scoreA = a.sourceTierWeight*a.freshnessScore*a.crossSourceMultiplier;
-        const scoreB = b.sourceTierWeight*b.freshnessScore*b.crossSourceMultiplier;
+    return scored.sort((a, b) => {
+        const scoreA = a.sourceTierWeight * a.freshnessScore * a.crossSourceMultiplier;
+        const scoreB = b.sourceTierWeight * b.freshnessScore * b.crossSourceMultiplier;
         return scoreB - scoreA;
-    }).slice(0,MAX_FOR_JEV);
+    }).slice(0, MAX_FOR_JEV);
 
-    
+
 }
 
 
@@ -177,10 +187,16 @@ export function filterByScore(
         const jev = jevClassifications[i];
 
         //  No jev classiication or classified as NOISE -> skip
-        if (!jev || jev.impactType === 'NOISE') continue;
+        if (!jev || jev.impactType === 'NOISE') {
+            console.log('No jev Impact for', article.title);
+            continue;
+        }
 
-        const finalScore = jev.relevance * (SEVERITY_WEIGHTS[jev.severity] ?? 0.3) * article.sourceTierWeight * article.freshnessScore * article.crossSourceMultiplier;
 
+        const weightedScore = (jev.relevance * SCORE_WEIGHTS.relevance) + ((SEVERITY_WEIGHTS[jev.severity] ?? 0.3) * SCORE_WEIGHTS.severity) + (jev.actionable * SCORE_WEIGHTS.actionable) + (article.sourceTierWeight * SCORE_WEIGHTS.sourceTier) + (article.freshnessScore * SCORE_WEIGHTS.freshness)
+
+        // const finalScore = jev.relevance * (SEVERITY_WEIGHTS[jev.severity] ?? 0.3) * article.sourceTierWeight * article.freshnessScore * article.crossSourceMultiplier;
+        const finalScore = weightedScore * article.crossSourceMultiplier;
         if (finalScore >= NEWS_FILTER_THRESHOLD) results.push({ article, finalScore });
 
 

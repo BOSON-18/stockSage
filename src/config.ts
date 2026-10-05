@@ -25,10 +25,10 @@ export const WATCHLIST: string[] = [
     // 'Moneyview.NS'
 ];
 
-export const MAX_CANDIDATES = 25;
+export const MAX_CANDIDATES = 10;
 export const MAX_TO_ANALYZE = 10;
 // export const MAX_PRICE_PER_STOCK = 2000;
-export const MIN_CONFIDENCE_THRESHOLD = 30;
+export const MIN_CONFIDENCE_THRESHOLD = 50;
 
 // BUDGET
 export const TOTAL_BUDGET = 2000;
@@ -105,27 +105,9 @@ export const NEWS_QUERY = {
     global: 'US tariff India OR Fed rate decision OR crude oil OPEC OR China economy trade OR war geopolitical market OR US Bond Yeild'
 }
 
-export const NEWS_FILTER_THRESHOLD = 0.30;
-
-//  Sector Mapping
-
-// export const SECTOR_MAP: Record<string, string[]> = {
-//     'Oil/Crude/OPEC': ['ONGC.NS', 'RELIANCE.NS', 'IOC.NS', 'BPCL.NS', 'HINDPETRO.NS'],
-//     'RBI/Interest rates': ['KOTAK.NS', 'HDFCBANK.NS', 'SBIN.NS', 'ICICIBANK.NS', 'AXISBANK.NS', 'BAJFINANCE.NS'],
-//     'IT/Tech/Rupee': ['TCS.NS', 'INFY.NS', 'WIPRO.NS', 'HCLTECH.NS', 'TECHM.NS'],
-//     'Auto': ['M&M.NS', 'TATAMOTORS.NS', 'MARUTI.NS', 'BAJAJ-AUTO.NS', 'HEROMOTOCO.NS'],
-//     'Pharma/Healthcare': ['SUNPHARMA.NS', 'Cipla.NS', 'DRREDDY.NS', 'LUPIN.NS', 'AUROPHARMA.NS', 'DIVISLAB.NS'],
-//     'Metal/Steel/Mining': ['TATASTEEL.NS', 'JSWSTEEL.NS', 'HINDZINC.NS', 'NALCO.NS', 'VEDL.NS', 'HINDALCO.NS', 'COALINDIA.NS'],
-//     // 'Cement/Infra': ['ULTRACHEM.NS', 'ACC.NS', 'AMBUJACEM.NS', 'SHREEPUSHK.NS', 'RAMCOCEM.NS'],
-//     'Banking/Finance': ['HDFCBANK.NS', 'ICICIBANK.NS', 'SBIN.NS', 'KOTAK.NS', 'BAJFINANCE.NS', 'AXISBANK.NS'],
-//     'War/Geopolitics/Defense': ['HAL.NS', 'BHEL.NS'],
-//     'Telecom': ['BHARTIARTL.NS', 'IDEA.NS'],
-//     'Infrastructure/GDP': ['LT.NS', 'NTPC.NS', 'POWERGRID.NS', 'NHPC.NS', 'ADANIENT.NS', 'ADANIPORTS.NS', 'ULTRAEMCO.NS'],
-//     'Insurance': ['SBILIFE.NS', 'HDFCLIFE.NS', 'ICICIGI.NS', 'LICI.NS', 'POLICYBZR.NS'],
-//     'FMCG/Consumer': ['HINDUNILVR.NS', 'ABCAPITAL.NS', 'NESTLEIND.NS', 'ITC.NS', 'BRITANNIA.NS', 'DABUR.NS', 'BECTORFOOD.NS']
+export const NEWS_FILTER_THRESHOLD = 0.40;
 
 
-// }
 
 // One array per sector: large + mid + small + cheap alternatives, all together.
 export const SECTOR_MAP: Record<string, string[]> = {

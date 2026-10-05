@@ -164,9 +164,9 @@ export class RealJevProvider implements JevProvider {
             }
         });
 
-        const answer = res.answes?.answer;
+        const answer = res.answers?.answer;
         return {
-            selected: answer?.value ?? options[0],
+            selected: answer?.choice ?? options[0],
             probabilities: answer?.probabilities ?? {}
         }
     }
@@ -182,7 +182,7 @@ export class RealJevProvider implements JevProvider {
                 answer: score(question, levels as [string, string, ...string[]])
             }
         });
-
+        console.log('FULL response SCORE: ', JSON.stringify(res, null, 2))
         const answer = res.answers?.answer;
         return {
             level: answer?.value ?? levels[Math.floor(levels.length / 2)],
@@ -202,9 +202,11 @@ export class RealJevProvider implements JevProvider {
             }
         });
 
+
+
         const answer = res.answers?.answer;
         return {
-            probability: answer?.probability ?? answer?.value ?? 0.5
+            probability: answer?.noul ?? answer?.probability ?? answer?.value ?? 0.5
         }
     }
 }

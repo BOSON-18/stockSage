@@ -1,6 +1,7 @@
 import { XMLParser } from 'fast-xml-parser';
 import { NewsItem } from '../types';
 import { NEWS_QUERY } from '../config';
+import { computeATR } from '../analysis/indicators';
 
 
 
@@ -55,4 +56,31 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
     console.log(` Global news : ${globalNews.length} articles`);
 
     return [...indianNews, ...globalNews];
+}
+
+
+export async function fetchStockNews(
+    ticker: string,
+    companyName: string
+): Promise<NewsItem[]> {
+
+    const symbol = ticker.replace('.NS', '');
+    const query = `${symbol} OR "${companyName}" NSE stock`;
+    const articles = await fetchRssFeed(query);
+    return articles.slice(0, 5);
+}
+
+
+export async function fetchStockNewsBatch(
+    stocks: { ticker: string; companyName: string }[]
+): Promise<Record<string, NewsItem[]>> {
+    const result: Record<string, NewsItem[]> = {};
+
+    for (const stock of stocks) {
+        console.log(`Fetching news for ${stock.ticker}...`);
+        result[stock.ticker] = await fetchStockNews(stock.ticker, stock.companyName);
+        console.log(`${stock.ticker}: ${result[stock.ticker].length} articles`);
+    }
+
+    return result;
 }

@@ -8,11 +8,20 @@ import { jevGateStock } from './jev-decision';
 
 
 
-const ExtractedStockSchema = z.object({
-    stocks: z.array(z.object({
+const ExtractResponseSchema = z.object({
+
+    sectors: z.array(z.object({
+        sector: z.string(),
+        reason: z.string()
+    })).optional().default([]),
+    companies: z.array(z.object({
         ticker: z.string(),
         reason: z.string()
-    }))
+    })).optional().default([])
+    // stocks: z.array(z.object({
+    //     ticker: z.string(),
+    //     reason: z.string()
+    // }))
 });
 
 // const JevGateSchema = z.object({
@@ -30,21 +39,59 @@ export async function extractStocksFromNews(
     if (filteredNews.length === 0) return [];
 
     const prompt = buildStockExtractPrompt(filteredNews, MAX_PRICE_PER_STOCK, sectorMap);
+    const candidates: CandidateStock[] = [];
 
     try {
         const raw = await callLLM(prompt);
         const parsed = JSON.parse(raw);
-        const validated = ExtractedStockSchema.parse(parsed);
+        const validated = ExtractResponseSchema.parse(parsed);
 
-        return validated.stocks.filter((s) => s.ticker && s.ticker.length > 0).map((s) => ({
-            ticker: s.ticker.endsWith('.NS') ? s.ticker : `${s.ticker}.NS`,
-            source: 'news' as const,
-            reason: s.reason
-        }))
+        if (sectorMap && validated.sectors.length > 0) {
+            for (const s of validated.sectors) {
+                const tickers = sectorMap[s.sector];
+                if (tickers && tickers.length > 0) {
+                    for (const ticker of tickers) {
+                        if (!candidates.some(c => c.ticker === ticker)) {
+                            candidates.push({
+                                ticker,
+                                source: 'news',
+                                reason: `${s.sector}: ${s.reason}`
+                            })
+                        }
+                    }
+                    console.log(`Sector "${s.sector}" -> ${tickers.length} tickers`);
+                } else {
+                    console.log(`Sector "${s.sector}" not found in map`)
+                }
+            }
+        }
+
+        for (const c of validated.companies) {
+            if (!c.ticker || c.ticker.length === 0) continue;
+            const ticker = c.ticker.endsWith('NS') ? c.ticker : `${c.ticker}.NS`;
+            if (!candidates.some(cand => cand.ticker === ticker)) {
+                candidates.push(
+                    {
+                        ticker,
+                        source: 'news',
+                        reason: c.reason
+                    }
+                )
+            }
+        }
+
+        console.log(`Extraction: ${validated.sectors.length} sectors + ${validated.companies.length} companies -> ${candidates.length} tickers`);
+        // return validated.stocks.filter((s) => s.ticker && s.ticker.length > 0).map((s) => ({
+        //     ticker: s.ticker.endsWith('.NS') ? s.ticker : `${s.ticker}.NS`,
+        //     source: 'news' as const,
+        //     reason: s.reason
+        // }))
     } catch (error) {
         console.warn('Stock extraction from news failed:', error);
         return []
     }
+
+    return candidates;
 }
 
 const DISCOVERY_POOL = [
@@ -137,21 +184,10 @@ export async function jevGateCandidates(
 ): Promise<string[]> {
 
     if (stocks.length === 0) return [];
-    // const prompt = buildJevGatePrompt(stocks, filteredNews, marketContext);
+
 
     try {
-        // const raw = await callLLM(prompt);
-        // const parsed = JSON.parse(raw);
 
-        // // console.log('[JEV-GATE] Checking parsed output: ', parsed)
-        // const validated = JevGateSchema.parse(parsed);
-
-        // const passed = validated.gates.filter((g) => g.worthAnalyzing >= threshold).map((g) => g.ticker)
-        // validated.gates.forEach((g) => {
-        //     const status = g.worthAnalyzing >= threshold ? 'PASS' : 'FAIL';
-        //     console.log(`${status} ${g.ticker}: ${(g.worthAnalyzing * 100).toFixed(0)}%`)
-        // })
-        // console.log(`🚀 JEV GATE: Passed ${passed.length}`)
         const threshold = marketContext.jevGateThreshold;
         console.log(`Gate results (threshold ${(threshold * 100).toFixed(0)}%):`);
 

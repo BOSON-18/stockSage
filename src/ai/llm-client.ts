@@ -5,7 +5,8 @@ import { LLM_MODEL, USE_LOCAL } from '../config';
 const llmClient = new OpenAI(
     USE_LOCAL
         ? { apiKey: 'ollama', baseURL: 'http://localhost:11434/v1' }
-        : { apiKey: process.env.GROQ_API_KEY, baseURL: 'https://api.groq.com/openai/v1' }
+        : { apiKey: process.env.DEEPSEEK_API_KEY, baseURL: 'https://api.deepseek.com' }
+    // : { apiKey: process.env.GROQ_API_KEY, baseURL: 'https://api.groq.com/openai/v1' }
 );
 
 

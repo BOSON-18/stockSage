@@ -27,10 +27,9 @@ export async function verifyClaims(
             `${dataContext}\n\nCLAIM TO VERIFY: "${claim}"\n\n A claim is supported if the data above contains numbers, facts, or indicators that directly justify it. A claim is NOT SUPPORTED if it makes predications, estimates, or statements not found in the data.`,
             'Based ONLY on the data above, is this specifc claim factually supported? (1.0 = clearly supported by the numbers, 0.0 = no data supports this claim)'
         );
-        // const result = await jev.noul(
-        //     `DATA AVAILABLE: \n${dataContext}\n\nCLAIM: "${claim}"`,
-        //     'Is this claim directly supported by the data provided above?'
-        // );
+
+        console.log('[Verifier] Chceking result before status assign: ', result)
+
 
         let status: VerfiedClaim['status'];
         if (result.probability >= 0.70) status = 'VERIFIED';

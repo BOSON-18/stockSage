@@ -2,7 +2,7 @@ import { MAX_RETRIES, RETRY_DELAY_MS, USE_LOCAL } from "../config";
 import { buildBatchJevPrompt, buildNewsClassifyPrompt, buildSingleJevPrompt } from "../prompts";
 import { JevBatchResponseSchema, JevDecision, JevDecisionSchema, JevNewsClassification, JevNewsClassificationBatchSchema, ScoredNewsItem, StockAnalysis, StockSnapshot } from "../types";
 import { getJevProvider } from "./jev-procider";
-import { callLLM } from "./llm-client";
+
 
 
 
@@ -13,7 +13,7 @@ export async function jevClassifyNews(
 ): Promise<JevNewsClassification[]> {
     if (scoredNews.length === 0) return [];
 
-    // const prompt = buildNewsClassifyPrompt(scoredNews);
+
 
     const classifications: JevNewsClassification[] = [];
     const jev = getJevProvider();
@@ -33,12 +33,7 @@ export async function jevClassifyNews(
              Domestic events (RBI decisions, GDP data, govt policy, earnings) directly impact specific stocks. 
              `;
 
-            // const [relevance, impactType, severity, actionable] = await Promise.all([
-            //     jev.noul(context, 'Is this news relevant to the Indian stock market (NSE/BSE)?'),
-            //     jev.choice(context, 'What type of market impact does this news have?', ['MACRO', 'SECTOR', 'COMPANY', "NOISE"]),
-            //     jev.choice(context, 'How severe is the potential market impact?', ['HIGH', 'MEDIUM', 'LOW']),
-            //     jev.noul(context, 'is this news actionable for a trader TODAY?')
-            // ]);
+
 
             const relevance = await jev.noul(
                 context,
@@ -53,7 +48,7 @@ export async function jevClassifyNews(
             const severity = await jev.choice(
                 context,
                 'How much could this news move stock prices? HIGH = can move stocks 2%+ (e.g. RBI rate change, major policy). MEDIUM = can move 0.5-2% (e.g. sector news). LOW = minor or indirect effect.',
-                ['HIGH','MEDIUM','LOW']
+                ['HIGH', 'MEDIUM', 'LOW']
             );
             const actionable = await jev.noul(
                 context,
@@ -71,105 +66,29 @@ export async function jevClassifyNews(
         }
     }
 
-    // console.log('[Classify News - JEV] Checking for classification', classifications)
+
     return classifications;
 
 }
 
 
-// const AVOID_DECISION: JevDecision = {
-//     action: 'AVOID',
-//     actionProbabilities: { BUY: 0, SELL: 0, HOLD: 0, AVOID: 1 },
-//     holdingPeriod: 'INTRADAY',
-//     confidence: 0,
-//     riskLevel: 'HIGH'
-// }
 
 
-// async function singleJevDecision(stock: StockSnapshot, analysis: StockAnalysis): Promise<JevDecision> {
 export async function jevGateStock(context: string): Promise<number> {
 
-    // const prompt = buildSingleJevPrompt(stock, analysis);
+
     const jev = getJevProvider();
 
-    // for (let attempt = 1; attempt <= 2; attempt++) {
-    //     try {
-
-    //         const raw = await callLLM(prompt);
-    //         const parsed = JSON.parse(raw);
-    //         console.log('[JEV-DECISION] Checking parsed output: \n', parsed)
-    //         return JevDecisionSchema.parse(parsed);
-    //     } catch (error) {
-    //         console.warn(` Jev batch attempt ${attempt} failed:`, error);
-    //         if (attempt == 2) {
-    //             console.warn(` jev failed for ${stock.ticker}, defaulting to AVOID`)
-    //             return AVOID_DECISION;
-    //         }
-    //     }
-    // }
-
-    // throw new Error('Unreachable');
 
     try {
-        const result = await jev.noul(context, 'Is this stock worth deep analysis today? Consider: news catalyst, price movement, volume.');
+        const result = await jev.noul(context, 'Based on the data above, is there a CLEAR trading opportunity in this stock TODAY? Answer YES (high probability) if: the stock has unusual volume (>1.5x average), OR significant price movement (>1%), OR is directly mentioned in today\'s news, OR has strong technical signals. Answer No (low probability) if the stock is flat with normal volume and no catalyst.');
         return result.probability;
-    } catch (error) {
+    } catch (error: any) {
+        console.log('JEV Gate failed: ', error.message);
         return 0.5
     }
 }
 
 
-// async function batchJevDecisions(stocks: StockSnapshot[], analyses: StockAnalysis[]): Promise<JevDecision[]> {
-//     const prompt = buildBatchJevPrompt(stocks, analyses);
-
-//     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-//         try {
-
-//             const raw = await callLLM(prompt);
-//             const parsed = JSON.parse(raw);
-//             const validated = JevBatchResponseSchema.parse(parsed);
-//             return validated.decisions;
-
-//         } catch (error) {
-//             console.warn(` Jev batch attempt ${attempt} failed:`, error);
-//             if (attempt < MAX_RETRIES) {
-//                 await new Promise((r) => setTimeout(r, RETRY_DELAY_MS))
-//             }
-//         }
-//     }
-
-//     console.warn('All Jev retries failed. Defaulting all stokcs to AVOID');
-
-//     return stocks.map(() => ({
-//         ...AVOID_DECISION
-//     }))
 
 
-// }
-
-
-
-// export async function runJevDecisions(
-//     stocks: StockSnapshot[],
-//     analyses: StockAnalysis[]
-// ): Promise<JevDecision[]> {
-
-//     if (USE_LOCAL) {
-//         const decisions: JevDecision[] = [];
-
-//         for (const stock of stocks) {
-//             const analysis = analyses.find((a) => a.ticker === stock.ticker);
-
-//             if (!analysis) {
-//                 decisions.push(AVOID_DECISION);
-//                 continue;
-//             }
-//             console.log(` Jev deciding on ${stock.ticker}...`);
-//             decisions.push(await singleJevDecision(stock, analysis));
-//         }
-//         return decisions;
-//     } else {
-//         return batchJevDecisions(stocks, analyses);
-//     }
-
-// }
