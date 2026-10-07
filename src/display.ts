@@ -106,7 +106,7 @@ export function displayResults(recommendations: Recommendation[], marketContext?
             console.log();
             console.log('CLAIM VERIFICATION:');
             claims.forEach((c) => {
-                const icon = c.status === 'VERIFIED' ? '✅' : c.status === 'INFERRED' ? '⚠️' : '❌';
+                const icon = c.status === 'VERIFIED' ? '✅' : c.status === 'OPINION' ? '👁️' : '❌';
                 console.log(`${icon} ${c.status}: ${c.claim}`)
             })
         }

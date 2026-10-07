@@ -1,3 +1,4 @@
+import { StockFinancials } from "../data/financial-fetcher";
 import { MarketContext, StockSnapshot, TechnicalIndicators } from "../types";
 import { getJevProvider } from "./jev-procider";
 
@@ -84,7 +85,8 @@ export async function technicalAgentJev(
 }
 
 export async function fundamentalAgentjev(
-    stocks: StockSnapshot[]
+    stocks: StockSnapshot[],
+    financials?: Record<string, StockFinancials>
 ): Promise<AgentResult[]> {
 
     const jev = getJevProvider();
@@ -93,13 +95,25 @@ export async function fundamentalAgentjev(
     for (const stock of stocks) {
 
         const signals: string[] = [];
+        const fin = financials?.[stock.ticker];
 
         if (stock.pe !== null) {
-            if (stock.pe < 15) signals.push(`PE ${stock.pe.toFixed(1)} - potentially undervalued ✅`);
-            else if (stock.pe < 30) signals.push(`PE ${stock.pe.toFixed(1)} - fairly valued`);
+            if (stock.pe < 15) signals.push(`PE ${stock.pe.toFixed(1)} - undervalued ✅`);
+            else if (stock.pe < 30) signals.push(`PE ${stock.pe.toFixed(1)} - fair`);
             else signals.push(`PE ${stock.pe.toFixed(1)} - expensive ⚠️`);
         } else {
-            signals.push(`PE N/A - loss making or no data ⚠️`);
+            signals.push(`PE N/A - loss making ⚠️`);
+        }
+
+        if (fin) {
+            if (fin.revenueGrowthYoy !== null) signals.push(`Revenue Growth: ${(fin.revenueGrowthYoy * 100).toFixed(0)}% YoY${fin.revenueGrowthYoy > 0.1 ? '✅' : fin.revenueGrowthYoy < 0 ? '⚠️' : ''}`);
+            if (fin.profitMargin !== null) signals.push(`Profit Margin ${(fin.profitMargin * 100).toFixed(0)}%${fin.profitMargin > 0.1 ? '✅' : '⚠️'}`);
+            if (fin.debtToEquity !== null) signals.push(`Debt/Equity: ${fin.debtToEquity.toFixed(2)}${fin.debtToEquity < 1 ? '✅' : '⚠️ High debt'}`);
+            if (fin.returnOnEquity !== null) signals.push(`ROE: ${(fin.returnOnEquity * 100).toFixed(0)}%${fin.returnOnEquity > 0 / 15 ? '✅' : ''}`)
+            if (fin.recommendationMean !== null) {
+                const rating = fin.recommendationMean <= 2.5 ? 'Buy ✅' : fin.recommendationMean <= 3.5 ? 'Hold' : 'Sell ⚠️';
+                signals.push(`Analyst ${rating} (${fin.numberOfAnalysts ?? 0} analysts)`)
+            }
         }
 
         const mktCapCr = stock.marketCap / 1e7;

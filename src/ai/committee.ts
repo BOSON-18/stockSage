@@ -1,5 +1,5 @@
-import { buildFundamentalAgentPrompt, buildJevVotePrompt, buildMacroAgentPrompt, buildNewsAgentPrompt, buildRiskAgentPrompt, buildTechnicalAgentPrompt } from "../prompts";
-import { AgentBatchVerdictSchema, AgentVerdict, JevBatchResponseSchema, JevDecision, JevDecisionSchema, MarketContext, SanitizedPortfoilio, ScoredNewsItem, StockSnapshot, TechnicalIndicators } from "../types";
+import { buildNewsAgentPrompt, buildRiskAgentPrompt } from "../prompts";
+import { AgentBatchVerdictSchema, AgentVerdict, JevDecision, MarketContext, SanitizedPortfoilio, ScoredNewsItem, StockSnapshot, TechnicalIndicators } from "../types";
 import { fundamentalAgentjev, macroAgentJev, technicalAgentJev } from "./jev-agents";
 import { getJevProvider } from "./jev-procider";
 import { callLLM } from "./llm-client";
@@ -33,7 +33,8 @@ export async function runCommittee(
     marketContext: MarketContext,
     indicators?: Record<string, TechnicalIndicators>,
     portfolio?: SanitizedPortfoilio | null,
-    stockNewsMap?: Record<string, { title: string; description: string; source: string; publishedAt: string }[]>
+    stockNewsMap?: Record<string, { title: string; description: string; source: string; publishedAt: string }[]>,
+    financials?: Record<string, any>
 ): Promise<{
     verdictMap: Record<string, { agent: string; sentiment: string; confidence: number; expectedMovePercent: number; reasoning: string }[]>;
     verificationMap: Record<string, VerfiedClaim[]>;
@@ -44,16 +45,14 @@ export async function runCommittee(
     const allStockNews: ScoredNewsItem[] = stockNewsMap ? [...new Map([...news, ...Object.values(stockNewsMap).flat()].map(n => [n.title, n])).values()] as ScoredNewsItem[] : news
     const newsVerdicts = await runLLMAgent('NEWS ANALYST', buildNewsAgentPrompt(tickers, allStockNews));
     const riskVerdicts = await runLLMAgent('RISK ANALYST', buildRiskAgentPrompt(stocks, allStockNews, marketContext, indicators, portfolio));
-    // const techVerdicts = await runLLMAgent('TECHNICAL ANALYST', buildTechnicalAgentPrompt(stocks, indicators));
-    // const fundVerdicts = await runLLMAgent('FUNDAMENTAL ANALYST', buildFundamentalAgentPrompt(stocks));
-    // const macroVerdicts = await runLLMAgent('MACRO ANALYST', buildMacroAgentPrompt(tickers, marketContext));
+
 
     console.log('Running TECHNICAL JEV...');
     const techVerdicts = await technicalAgentJev(stocks, indicators ?? {});
     console.log(`TECHINCAL: ${techVerdicts.length} verdicts`)
     console.log('Running TECHNICAL JEV...');
 
-    const fundVerdicts = await fundamentalAgentjev(stocks);
+    const fundVerdicts = await fundamentalAgentjev(stocks, financials);
     console.log(`FUNADMENTAL: ${techVerdicts.length} verdicts`)
     console.log('Running TECHNICAL JEV...');
 
@@ -85,7 +84,7 @@ export async function runCommittee(
 
     }
 
-        console.log('[COMMITTEE.js] Checking Verdict Map: ',verdictMap)
+    // console.log('[COMMITTEE.js] Checking Verdict Map: ',verdictMap)
 
 
 
@@ -112,18 +111,18 @@ export async function runCommittee(
         `
     }
     const verificationMap = await verifyCommitteeResults(verdictMap, dataContexts);
-    console.log('[COMMITTEE] Verfication Map: ', verificationMap);
+    // console.log('[COMMITTEE] Verfication Map: ', verificationMap);
 
     const totalClaims = Object.values(verificationMap).flat();
     const verified = totalClaims.filter(c => c.status === 'VERIFIED').length;
-    const inferred = totalClaims.filter(c => c.status === 'INFERRED').length;
-    const unsupported = totalClaims.filter(c => c.status === 'UNSUPPORTED').length;
+    const disputed = totalClaims.filter(c => c.status === 'DISPUTED').length;
+    const opinion = totalClaims.filter(c => c.status === 'OPINION').length;
 
     console.log('\n Claim Verification Statistics:');
     console.log(`Total Claims: ${totalClaims.length}`);
     console.log(`Verified: ${verified}`);
-    console.log(`Disputed: ${inferred}`);
-    console.log(`Invalid: ${unsupported}`);
+    console.log(`Disputed: ${disputed}`);
+    console.log(`Opinion: ${opinion}`);
 
 
 
@@ -136,7 +135,8 @@ export async function runCommittee(
 
 export async function jevCommitteeVote(
     stocks: StockSnapshot[],
-    verdictMap: Record<string, { agent: string; sentiment: string; confidence: number; expectedMovePercent: number; reasoning: string }[]>
+    verdictMap: Record<string, { agent: string; sentiment: string; confidence: number; expectedMovePercent: number; reasoning: string; }[]>,
+    ownedTickers: string[]
 ): Promise<JevDecision[]> {
 
     // const prompt = buildJevVotePrompt(stocks, verdictMap);
@@ -146,20 +146,22 @@ export async function jevCommitteeVote(
     for (const stock of stocks) {
         const verdicts = verdictMap[stock.ticker] ?? [];
         const verdictSummary = verdicts.map(v => `${v.agent}: ${v.sentiment} (${v.confidence}%) - ${v.reasoning}`).join('\n');
+        const isOwned = ownedTickers?.includes(stock.ticker) ?? false;
 
-        const context = `Stock: ${stock.ticker} (Rs.${stock.price.toFixed(2)})\n\nCOMMITTEE VERDICTS:\n${verdictSummary}`
+
+        const context = `Stock: ${stock.ticker} (Rs.${stock.price.toFixed(2)})${isOwned ? 'USER OWNS THIS STOCK' : 'USER DOWS NOT WON THIS STOCK - only BUY or AVOID makes sense'}\n\nCOMMITTEE VERDICTS:\n${verdictSummary}`
 
         try {
 
-            // const raw = await callLLM(prompt);
-            // const parsed = JSON.parse(raw);
-            // const validated = JevBatchResponseSchema.parse(parsed);
-            // return validated.decisions;
+
+            const option = isOwned ? ['BUY_MORE', 'HOLD', 'SELL', 'AVOID'] : ['BUY', 'AVOID']
 
             const action = await jev.choice(
                 context,
-                'based on all expert opinions, what action should the trader take?',
-                ['BUY', 'SELL', 'HOLD', 'AVOID'],
+                isOwned ? 'User owns this stock. Should they buy more, hold, sell, or avoid?' :
+                    'User does NOT own this stock. SHould they buy it or avoid it?',
+                // 'based on all expert opinions, what action should the trader take?',
+                option,
             );
 
             const holding = await jev.choice(

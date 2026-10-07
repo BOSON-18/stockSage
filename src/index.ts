@@ -6,10 +6,11 @@ import { buildCandidateList, extractStocksFromNews, filterByBudget, jevGateCandi
 import { computeAllIndicators } from "./analysis/compute-all";
 import { DELAY_BETWEEN_CALLS_MS, LLM_MODEL, MAX_RETRIES, RETRY_DELAY_MS, WATCHLIST, USE_LOCAL } from "./config";
 import { fetchHistoricalBatch } from "./data/historical-fetcher";
+import { fetchMarketContext } from "./data/market-context";
 import { fetchAllNews, fetchStockNewsBatch } from "./data/news-fetcher";
 import { filterByScore, scoreNewsBatch } from "./data/news-scoreer";
 import { fetchPortfolio } from "./data/portfolio-fetcher";
-import { fetchMarketContext, fetchStockData, formatStockData } from "./data/stock-fetcher";
+import { fetchStockData, formatStockData } from "./data/stock-fetcher";
 import { buildDynamicSectorMap, fetchStockUniverse } from "./data/stock-universe";
 import { displayResults } from "./display";
 import { mergeResults } from "./logic/merge";
@@ -24,31 +25,25 @@ import { AnalysisResponseSchema, Recommendation, SanitizedPortfoilio, StockAnaly
 
 async function main(): Promise<void> {
 
-    // const jev = getJevProvider();
-    // const test = await jev.noul(
-    //     'The sky is blue. The grass is green',
-    //     'Is the sky blue?'
-    // )
-    // console.log('FULL RES', JSON.stringify(test, null, 2));
     console.log('Stock sage v0.6 starting...\n');
-    console.log(` Mode: ${USE_LOCAL ? 'LOCAL (Ollama)' : 'CLOUD (Groq)'}`);
+    console.log(` Mode: ${USE_LOCAL ? 'LOCAL (Ollama)' : 'CLOUD (DeepSeek)'}`);
     console.log(` Model: ${LLM_MODEL}\n`)
 
     console.log('Phase 0: Building stock universe...');
     const universe = await fetchStockUniverse();
     const dynamicSectorMap = buildDynamicSectorMap(universe);
-    // console.log('[MAIN] Checking Sector Map: ', dynamicSectorMap)
+
 
     console.log('Phase 0.5 Fetching Portfolio...');
     const rawPortfolio = await fetchPortfolio();
     let sanitizedPortfolio: SanitizedPortfoilio | null = null;
 
     if (rawPortfolio) {
-        // console.log("Raw Portifolio: ", rawPortfolio)
+
         sanitizedPortfolio = sanitizePortfolio(rawPortfolio);
         console.log(`${sanitizedPortfolio.overallStatus}`);
         console.log(`Existing tickers: ${sanitizedPortfolio.existingTickers.join(', ') || 'none'}`);
-        console.log('[MAIN] Checking Portfolio: ', sanitizedPortfolio)
+        // console.log('[MAIN] Checking Portfolio: ', sanitizedPortfolio)
 
 
     } else {
@@ -56,7 +51,7 @@ async function main(): Promise<void> {
     }
     console.log()
 
-    // STEP ! -> Fetch STOCK
+    // STEP 1 -> Fetch STOCK
     console.log('Phase 1: Collecting market context + news (Parallel) ...');
 
     const [marketContext, allNews] = await Promise.all([
@@ -90,7 +85,7 @@ async function main(): Promise<void> {
 
     console.log(` After combined filter: ${filteredNews.length} high-quality articles\n`)
 
-    //  Phase 3-6 Exisiting pipeline
+
 
     //  PHASE 3 : DISCOVER STOCKS (NEW PIPELINE)
 
@@ -189,6 +184,14 @@ async function main(): Promise<void> {
     }
     console.log()
 
+
+    //  ======================== PHASE 3.6 Full Financials (Deep dive) ====================================
+    console.log('Phase 3.6: Fetching full financials');
+    const { fetchFinancialsBatch, formatFinancialsForPrompt } = await import('./data/financial-fetcher');
+    const financialMap = await fetchFinancialsBatch(gatedStocks.map(s => s.ticker));
+
+    console.log(`Financials: ${Object.keys(financialMap).length} stocks\n`)
+
     // Phase 4 ANALYZE 
 
 
@@ -201,7 +204,7 @@ async function main(): Promise<void> {
 
 
     console.log('Phase 4: Running 5 agent committee');
-    const { verdictMap, verificationMap } = await runCommittee(gatedStocks, filteredNews, marketContext, indicatorsMap, sanitizedPortfolio, enrichedNewsMap);
+    const { verdictMap, verificationMap } = await runCommittee(gatedStocks, filteredNews, marketContext, indicatorsMap, sanitizedPortfolio, enrichedNewsMap, financialMap);
     console.log(`Committee completed.\n`);
 
 
@@ -215,7 +218,8 @@ async function main(): Promise<void> {
     // PHASE -5 Jev FINAL VOTE
 
     console.log('Phase 5: Jev Final vote...');
-    const decisions = await jevCommitteeVote(gatedStocks, verdictMap);
+    const ownedTickers = sanitizedPortfolio?.existingTickers ?? [];
+    const decisions = await jevCommitteeVote(gatedStocks, verdictMap, ownedTickers);
     console.log(`Decisions: ${decisions.length}\n`);
 
 

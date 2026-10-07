@@ -25,14 +25,15 @@ export const WATCHLIST: string[] = [
     // 'Moneyview.NS'
 ];
 
-export const MAX_CANDIDATES = 10;
+export const MAX_CANDIDATES = 50;
 export const MAX_TO_ANALYZE = 10;
 // export const MAX_PRICE_PER_STOCK = 2000;
-export const MIN_CONFIDENCE_THRESHOLD = 50;
+export const MIN_CONFIDENCE_THRESHOLD = 30;
+export const MAX_RECOMMENDATION = 7;
 
 // BUDGET
 export const TOTAL_BUDGET = 2000;
-export const MAX_STOCKS = 5;
+export const MAX_STOCKS = 2;
 export const PER_STOCK_BUDGET = Math.floor(TOTAL_BUDGET / MAX_STOCKS);
 export const MAX_PRICE_PER_STOCK = PER_STOCK_BUDGET
 
@@ -45,19 +46,19 @@ export const REGIME_THRESHOLD = {
         maxNiftyChange: 1.0,
         upside: { min: 1, max: 0 },
         downside: { min: 1, max: 2 },
-        jevGate: 0.60
+        jevGate: 0.50
     },
     VOLATILE: {
         maxNiftyChange: 3.0,
         upside: { min: 2, max: 5 },
         downside: { min: 1.5, max: 3 },
-        jevGate: 0.50
+        jevGate: 0.40
     },
     CRASH_OR_RALLY: {
         maxNiftyChange: Infinity,
         upside: { min: 3, max: 15 },
         downside: { min: 2, max: 15 },
-        jevGate: 0.40
+        jevGate: 0.30
     },
 
 }
@@ -102,9 +103,19 @@ export const DEFAULT_SOURCE_WEIGHT = 0.3;
 
 export const NEWS_QUERY = {
     indian: 'Indian stock market Sensex Nifty BSE NSE',
-    global: 'US tariff India OR Fed rate decision OR crude oil OPEC OR China economy trade OR war geopolitical market OR US Bond Yeild'
+    global: 'US tariff India OR Fed rate decision OR crude oil OPEC OR China economy trade OR war geopolitical market OR US Bond Yeild',
+    // moneyCOntrol: 'site:moneycontrol.com stocks market today',
+    // economicTimes: 'site:economictimes.com market stocks NSE',
+    premarket: 'GIFT Nifty pre-market Indian today opening'
 }
 
+export const DIRECT_RSS_FEEDS = [
+    'https://www.moneycontrol.com/rss/marketreports.xml',
+    'https://www.moneycontrol.com/rss/stocknews.xml',
+    'https://economictimes.indiatimes.com/markets/rssfeeds/1077021501.cms',
+    'https://economictimes.indiatimes.com/markets/stocks/rssfeeds/2146842.cms',
+    'https://www.livemint.com/rss/market'
+]
 export const NEWS_FILTER_THRESHOLD = 0.40;
 
 

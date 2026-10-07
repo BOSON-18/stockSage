@@ -66,26 +66,34 @@ export async function extractStocksFromNews(
             }
         }
 
+        const { isValidTicker } = await import('../data/stock-universe');
+
+
         for (const c of validated.companies) {
             if (!c.ticker || c.ticker.length === 0) continue;
             const ticker = c.ticker.endsWith('NS') ? c.ticker : `${c.ticker}.NS`;
+
+            const valid = await isValidTicker(ticker);
+            if (!valid) {
+                console.log(` Rejected "${ticker}" - not found in EQUITY_L (Hallucinated)`);
+                continue;
+            }
             if (!candidates.some(cand => cand.ticker === ticker)) {
-                candidates.push(
-                    {
-                        ticker,
-                        source: 'news',
-                        reason: c.reason
-                    }
-                )
+                // candidates.push(
+                //     {
+                //         ticker,
+                //         source: 'news',
+                //         reason: c.reason
+                //     }
+                // )
+
+                candidates.push({ ticker, source: 'news', reason: c.reason });
+                console.log(`${ticker} validated`)
             }
         }
 
         console.log(`Extraction: ${validated.sectors.length} sectors + ${validated.companies.length} companies -> ${candidates.length} tickers`);
-        // return validated.stocks.filter((s) => s.ticker && s.ticker.length > 0).map((s) => ({
-        //     ticker: s.ticker.endsWith('.NS') ? s.ticker : `${s.ticker}.NS`,
-        //     source: 'news' as const,
-        //     reason: s.reason
-        // }))
+
     } catch (error) {
         console.warn('Stock extraction from news failed:', error);
         return []

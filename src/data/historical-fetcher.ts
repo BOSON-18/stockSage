@@ -9,36 +9,6 @@ function getDateString(date: Date): string {
     return date.toISOString().split('T')[0];
 }
 
-// async function fetchHistoricalData(
-//     ticker: string,
-//     months: number = 6
-// ): Promise<OHLCV[]> {
-
-
-//     try {
-//         const today = new Date();
-//         const startDate = new Date();
-//         startDate.setMonth(today.getMonth() - months)
-
-//         const result = await yahooFinance.historical(ticker, {
-//             period1: getDateString(startDate),
-//             period2: getDateString(today),
-//             interval: '1d'
-//         }, { validateResult: false })
-
-//         return (result as any[]).map((row: any) => ({
-//             date: new Date(row.date),
-//             open: row.open ?? 0,
-//             high: row.high ?? 0,
-//             low: row.low ?? 0,
-//             close: row.close ?? 0,
-//             volume: row.volume ?? 0,
-//         }))
-//     } catch (error) {
-//         console.warn(`Historical fetch failed for ${ticker}: `, error);
-//         return [];
-//     }
-// }
 
 async function fetchHistoricalData(
     ticker: string,

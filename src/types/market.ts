@@ -12,4 +12,7 @@ export interface MarketContext {
     upsideRange: { min: number; max: number };
     downsideRange: { min: number; max: number };
     jevGateThreshold: number;
+
+    giftNiftyChange?: number;
+    marketState?: string
 }

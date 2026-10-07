@@ -6,80 +6,80 @@ import { REGIME_THRESHOLD } from "../config";
 const yahooFinance = new YahooFinance({ suppressNotices: ['yahooSurvey'] });
 
 
-function computeRegime(niftyChangePercent: number): MarketRegime {
-    const absChange = Math.abs(niftyChangePercent);
+// function computeRegime(niftyChangePercent: number): MarketRegime {
+//     const absChange = Math.abs(niftyChangePercent);
 
-    if (absChange < REGIME_THRESHOLD.CALM.maxNiftyChange) return 'CALM';
-    if (absChange < REGIME_THRESHOLD.VOLATILE.maxNiftyChange) return 'VOLATILE';
-    return 'CRASH_OR_RALLY'
-}
+//     if (absChange < REGIME_THRESHOLD.CALM.maxNiftyChange) return 'CALM';
+//     if (absChange < REGIME_THRESHOLD.VOLATILE.maxNiftyChange) return 'VOLATILE';
+//     return 'CRASH_OR_RALLY'
+// }
 
-function buildMarketContext(
-    niftyPrice: number,
-    niftyChange: number,
-    sensexChange: number
-): MarketContext {
-    const regime = computeRegime(niftyChange);
+// function buildMarketContext(
+//     niftyPrice: number,
+//     niftyChange: number,
+//     sensexChange: number
+// ): MarketContext {
+//     const regime = computeRegime(niftyChange);
 
-    const thresholds = REGIME_THRESHOLD[regime];
+//     const thresholds = REGIME_THRESHOLD[regime];
 
-    return {
-        niftyPrice,
-        niftyChangePercent: niftyChange,
-        sensexChangePercent: sensexChange,
-        regime,
-        upsideRange: thresholds.upside,
-        downsideRange: thresholds.downside,
-        jevGateThreshold: thresholds.jevGate
-    }
-}
+//     return {
+//         niftyPrice,
+//         niftyChangePercent: niftyChange,
+//         sensexChangePercent: sensexChange,
+//         regime,
+//         upsideRange: thresholds.upside,
+//         downsideRange: thresholds.downside,
+//         jevGateThreshold: thresholds.jevGate
+//     }
+// }
 
-export async function fetchMarketContext(): Promise<MarketContext> {
-    console.log('[STOCK-FETCHER] fetching market data...')
-    try {
-        const [nifty, sensex] = await Promise.all([
-            yahooFinance.quote('^NSEI'),
-            yahooFinance.quote('^BSESN')
-        ]);
+// export async function fetchMarketContext(): Promise<MarketContext> {
+//     console.log('[STOCK-FETCHER] fetching market data...')
+//     try {
+//         const [nifty, sensex] = await Promise.all([
+//             yahooFinance.quote('^NSEI'),
+//             yahooFinance.quote('^BSESN')
+//         ]);
 
-        const niftyPrice = (nifty as any).regularMarketPrice ?? 0;
-        const niftyChange = (nifty as any).regularMarketChangePercent ?? 0;
-        const sensexChange = (sensex as any).regularMarketChangePercent ?? 0;
-        const marketState = (nifty as any).marketState ?? 'CLOSED';
+//         const niftyPrice = (nifty as any).regularMarketPrice ?? 0;
+//         const niftyChange = (nifty as any).regularMarketChangePercent ?? 0;
+//         const sensexChange = (sensex as any).regularMarketChangePercent ?? 0;
+//         const marketState = (nifty as any).marketState ?? 'CLOSED';
 
-        // If market closed used relaxed thresolds
-        if (marketState === 'CLOSED' || marketState == "POSTPOST") {
+//         // If market closed used relaxed thresolds
+//         if (marketState === 'CLOSED' || marketState == "POSTPOST") {
 
-            console.log('MARKET is CLOSED - using relaxed thresholds for testing');
+//             console.log('MARKET is CLOSED - using relaxed thresholds for testing');
 
-            return {
-                niftyPrice,
-                niftyChangePercent: niftyChange,
-                sensexChangePercent: sensexChange,
-                regime: 'VOLATILE' as const,
-                upsideRange: REGIME_THRESHOLD.VOLATILE.upside,
-                downsideRange: REGIME_THRESHOLD.VOLATILE.downside,
-                jevGateThreshold: 0.40,
-            }
+//             return {
+//                 niftyPrice,
+//                 niftyChangePercent: niftyChange,
+//                 sensexChangePercent: sensexChange,
+//                 regime: 'VOLATILE' as const,
+//                 upsideRange: REGIME_THRESHOLD.VOLATILE.upside,
+//                 downsideRange: REGIME_THRESHOLD.VOLATILE.downside,
+//                 jevGateThreshold: 0.40,
+//             }
 
-        }
+//         }
 
-        return buildMarketContext(niftyPrice, niftyChange, sensexChange);
+//         return buildMarketContext(niftyPrice, niftyChange, sensexChange);
 
-    } catch (error) {
+//     } catch (error) {
 
-        console.warn('Market context fetch failed, using default CALM regime:', error);
-        return {
-            niftyPrice: 0,
-            niftyChangePercent: 0,
-            sensexChangePercent: 0,
-            regime: 'CALM',
-            upsideRange: REGIME_THRESHOLD.CALM.upside,
-            downsideRange: REGIME_THRESHOLD.CALM.downside,
-            jevGateThreshold: REGIME_THRESHOLD.CALM.jevGate
-        }
-    }
-}
+//         console.warn('Market context fetch failed, using default CALM regime:', error);
+//         return {
+//             niftyPrice: 0,
+//             niftyChangePercent: 0,
+//             sensexChangePercent: 0,
+//             regime: 'CALM',
+//             upsideRange: REGIME_THRESHOLD.CALM.upside,
+//             downsideRange: REGIME_THRESHOLD.CALM.downside,
+//             jevGateThreshold: REGIME_THRESHOLD.CALM.jevGate
+//         }
+//     }
+// }
 
 
 
