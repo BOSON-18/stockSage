@@ -9,14 +9,18 @@ import { fetchHistoricalBatch } from "./data/historical-fetcher";
 import { fetchMarketContext } from "./data/market-context";
 import { fetchAllNews, fetchStockNewsBatch } from "./data/news-fetcher";
 import { filterByScore, scoreNewsBatch } from "./data/news-scoreer";
+import { checkOutcomes, getPerformanceSummary, saveRecommendations, getLessonsForPrompt } from "./data/paper-trade";
 import { fetchPortfolio } from "./data/portfolio-fetcher";
+import { runQuantScanner } from "./data/quant-scanner";
 import { fetchStockData, formatStockData } from "./data/stock-fetcher";
 import { buildDynamicSectorMap, fetchStockUniverse } from "./data/stock-universe";
 import { displayResults } from "./display";
 import { mergeResults } from "./logic/merge";
 import { rankAndFilter } from "./logic/rank";
 import { buildAnalysisPrompt } from "./prompts";
+import { validateEnv } from "./security/env-validator";
 import { sanitizePortfolio } from "./security/sanitizer";
+import { checkDailyLimit, getCostSummary } from "./security/tracker";
 import { AnalysisResponseSchema, Recommendation, SanitizedPortfoilio, StockAnalysis, TechnicalIndicators } from "./types";
 
 
@@ -25,9 +29,36 @@ import { AnalysisResponseSchema, Recommendation, SanitizedPortfoilio, StockAnaly
 
 async function main(): Promise<void> {
 
-    console.log('Stock sage v0.6 starting...\n');
+    console.log('Stock sage v0.8 starting...\n');
     console.log(` Mode: ${USE_LOCAL ? 'LOCAL (Ollama)' : 'CLOUD (DeepSeek)'}`);
     console.log(` Model: ${LLM_MODEL}\n`)
+
+    if (!validateEnv()) {
+        console.error('Startup aborted - fix .env first.\n');
+        process.exit(1);
+    }
+
+    const { ok: withinBudget, todaySpend } = checkDailyLimit();
+    if (!withinBudget) {
+        console.error(` ⚠️ Daily cost limit exceeded ($${todaySpend.toFixed(4)}). Try again tomorrow.\n`);
+        process.exit(1);
+    }
+    console.log(` ${getCostSummary()}`)
+
+    console.log(' -1: Checking past paper trades')
+    const outcomes = await checkOutcomes();
+    if (outcomes.checked > 0) {
+        console.log(`Checked ${outcomes.checked} past trades: ${outcomes.wins} wins, ${outcomes.losses} losses`);
+        console.log(`Win rate: ${outcomes.winRate.toFixed(0)}% | Avg P&L: ${outcomes.avgPnl.toFixed(1)}%`);
+        outcomes.lessons.forEach(l => console.log(` ${l}`))
+        console.log();
+
+    } else {
+        console.log('No past trades to check yet');
+    }
+
+    console.log(` ${getPerformanceSummary()}`);
+    console.log()
 
     console.log('Phase 0: Building stock universe...');
     const universe = await fetchStockUniverse();
@@ -90,14 +121,22 @@ async function main(): Promise<void> {
     //  PHASE 3 : DISCOVER STOCKS (NEW PIPELINE)
 
     // Extract candidates from news
-    console.log('Phase 3: Discovering stocks from news...');
+    console.log('Phase 3: Discovering stocks...');
+
+    console.log('3a: From news...')
     const newsStocks = await extractStocksFromNews(filteredNews, dynamicSectorMap)
     console.log(`News-driven stocks: ${newsStocks.length}`);
     // newsStocks.forEach((s) => console.log(`${s.ticker}-${s.reason}`));
 
+    console.log('3b: Quant Scanner...');
+    const allTickersForScan = universe.map(u => u.ticker);
+    const scannerStocks = await runQuantScanner(allTickersForScan);
+    console.log(`Scanner found stocks: ${scannerStocks.length}`);
+
     // Step 3b: Build candidate list (news+watchlist+dedup)
-    let candidates = await buildCandidateList(newsStocks);
-    console.log(`Total candidates: ${candidates.length}`);
+    const combinedDiscoveries = [...newsStocks, ...scannerStocks];
+    let candidates = await buildCandidateList(combinedDiscoveries);
+    console.log(`Total candidates: ${newsStocks.length} news + ${scannerStocks.length} scanner + watchlist = ${candidates.length} candidates`);
 
     if (sanitizedPortfolio && sanitizedPortfolio.existingTickers.length > 0) {
         const before = candidates.length;
@@ -192,6 +231,12 @@ async function main(): Promise<void> {
 
     console.log(`Financials: ${Object.keys(financialMap).length} stocks\n`)
 
+    //  ============PHASE 3.7: MARKET DATA (FII/DII + Earnings) =====================
+    console.log('Phase 3.7: Fetching market data...');
+    const { fetchMarketData, formatFiiDii } = await import('./data/market-data');
+    const { fiiDii, earnings } = await fetchMarketData(gatedStocks.map(s => s.ticker));
+    console.log()
+
     // Phase 4 ANALYZE 
 
 
@@ -204,16 +249,13 @@ async function main(): Promise<void> {
 
 
     console.log('Phase 4: Running 5 agent committee');
-    const { verdictMap, verificationMap } = await runCommittee(gatedStocks, filteredNews, marketContext, indicatorsMap, sanitizedPortfolio, enrichedNewsMap, financialMap);
+    const fiiDiiContext = fiiDii ? formatFiiDii(fiiDii) : undefined;
+    const { verdictMap, verificationMap } = await runCommittee(gatedStocks, filteredNews, marketContext, indicatorsMap, sanitizedPortfolio, enrichedNewsMap, financialMap, fiiDiiContext, earnings);
     console.log(`Committee completed.\n`);
 
 
 
-    // Step 5: Delay before Jev decision for cloud
-    // if (!USE_LOCAL) {
-    //     console.log(`Step 5: Waiting ${DELAY_BETWEEN_CALLS_MS / 1000}s before Jev decisions...`);
-    //     await new Promise((r) => setTimeout(r, DELAY_BETWEEN_CALLS_MS))
-    // }
+
 
     // PHASE -5 Jev FINAL VOTE
 
@@ -222,20 +264,6 @@ async function main(): Promise<void> {
     const decisions = await jevCommitteeVote(gatedStocks, verdictMap, ownedTickers);
     console.log(`Decisions: ${decisions.length}\n`);
 
-
-
-    // Step 6: Batch Jev decisions - ALL stocks in ONE call 
-    // console.log('Phase 5: Running Jev decisions...')
-    // const decisions = await runJevDecisions(gatedStocks, analyses);
-    // console.log(`Step 6: Got ${decisions.length} decisions\n`);
-    // console.log('[MAIN] Checking JEV OUTPUT ',decisions[0])
-
-    // console.log('PHASE 6: OUTPUT')
-    // // Step 7 Merge stock data + analysis + decisions
-    // const merged = mergeResults(gatedStocks, analyses, decisions);
-
-    // // Step 8 Rank by confidence
-    // const recommendations = rankAndFilter(merged);
 
     //  PHASE 6 - OUTPUT
 
@@ -283,10 +311,91 @@ async function main(): Promise<void> {
 
     const ranked = rankAndFilter(recommendations);
 
+    // SAVE PAPER TRADES
+    if (ranked.length > 0) {
+        saveRecommendations(ranked);
+        console.log('[INFO] Recommendations saved to paper-trades.json');
+    }
 
 
     // Step 9 Display results
     displayResults(ranked, marketContext, indicatorsMap, verificationMap);
+
+    //  ====================== PHASE 7 PORTFOLIO ANALYZING +=====================
+
+    if (rawPortfolio && rawPortfolio.holdings.length > 0) {
+        console.log('=========== ANALYSZING YOUR PORTFOLIO =================');
+
+        const holdingSnapshots = rawPortfolio.holdings.map(h => ({
+            ticker: h.ticker,
+            companyName: h.companyName,
+            price: h.currentPrice,
+            changePercent: 0, // Not available from holdings
+            pe: null as number | null,
+            marketCap: 0,
+            volume: 0,
+            avgVolume: 0,
+            fiftyTwoWeekHigh: 0,
+            fiftyTwoWeekLow: 0,
+            fiftyDayAvg: 0,
+            twohundredDayAvg: 0
+
+        }))
+
+        console.log('Fetching current data for hioldings....');
+        const holdingRawQuotes = await fetchStockData(holdingSnapshots.map(s => s.ticker));
+        const freshHoldings = formatStockData(holdingRawQuotes);
+
+        if (freshHoldings.length > 0) {
+            const holdingHistory = await (await import('./data/historical-fetcher')).fetchHistoricalBatch(freshHoldings.map(s => s.ticker));
+            const holdingIndicators: Record<string, TechnicalIndicators> = {};
+            for (const stock of freshHoldings) {
+                const ohlcv = holdingHistory[stock.ticker] ?? [];
+                if (ohlcv.length > 0) {
+                    holdingIndicators[stock.ticker] = (await import('./analysis/compute-all')).computeAllIndicators(ohlcv, stock.price);
+                }
+            }
+
+            const holdingTickers = freshHoldings.map(s => s.ticker);
+            const { verdictMap: holdVerdicts } = await runCommittee(
+                freshHoldings, filteredNews, marketContext, holdingIndicators, sanitizedPortfolio, undefined, undefined, fiiDiiContext, earnings
+            );
+
+            const holdDecisions = await jevCommitteeVote(freshHoldings, holdVerdicts, holdingTickers);
+
+            console.log('\n YOUR HOLDINGS - AI + jev Analysis:');
+            console.log(' ' + '-'.repeat(50));
+
+            for (let i = 0; i < freshHoldings.length; i++) {
+                const stock = freshHoldings[i];
+                const holding = rawPortfolio.holdings.find(h => h.ticker === stock.ticker);
+                const decision = holdDecisions[i];
+                const verdicts = holdVerdicts[stock.ticker] ?? [];
+
+                if (!holding) continue;
+
+                const pnlIcon = holding.pnlPercent >= 0 ? '🟢' : '🔴';
+                console.log(`\n ${pnlIcon} ${stock.ticker} - ${stock.companyName}`);
+                console.log(`Avg: Rs.${holding.avgPrice.toFixed(2)} | Now: Rs.${stock.price.toFixed(2)} | P&L: ${holding.pnlPercent >= 0 ? '+' : ''} ${holding.pnlPercent.toFixed(1)}%`);
+                console.log(`Qty: ${holding.quantity} | Value: Rs.${(holding.quantity * stock.price).toFixed(0)}`);
+
+
+                if (verdicts.length > 0) {
+                    verdicts.forEach(v => {
+                        const icon = v.sentiment === 'BULLISH' ? '🟢' : v.sentiment === 'BEARISH' ? '🔴' : v.sentiment === 'CAUTION' ? '🟡' : '⚪';
+                        console.log(`${icon} ${v.agent}: ${v.sentiment} ${v.confidence}%`);
+                    })
+                }
+
+                console.log(`-> JEV: ${decision?.action ?? 'N/A'} (${decision?.confidence ?? 0}% confidence)`)
+            }
+
+            const totalValue = rawPortfolio.holdings.reduce((s, h) => s + h.quantity * h.currentPrice, 0);
+            console.log(`\n Overall Portfolio: Rs.${totalValue.toFixed(0)} | P&L: ${rawPortfolio.overallPnlPercent >= 0 ? '+' : ''}${rawPortfolio.overallPnlPercent.toFixed(1)}%`);
+        }
+
+        console.log('\n====================================================')
+    }
 
 }
 

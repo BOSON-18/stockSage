@@ -1,0 +1,131 @@
+[
+  {
+    "date": "2026-10-08",
+    "ticker": "INFY.NS",
+    "action": "BUY",
+    "entryPrice": 997,
+    "targetPrice": 1024.5836666666667,
+    "stopLoss": 957.12,
+    "confidence": 42,
+    "jevBuyProb": 0.87,
+    "holdingPeriod": "SWING",
+    "currentPrice": 997,
+    "checkedDate": "2026-10-09",
+    "pnlPercent": 0,
+    "outcome": "LOSS"
+  },
+  {
+    "date": "2026-10-08",
+    "ticker": "EMAMILTD.NS",
+    "action": "BUY",
+    "entryPrice": 367.25,
+    "targetPrice": 376.1864166666667,
+    "stopLoss": 348.8875,
+    "confidence": 37,
+    "jevBuyProb": 0.53,
+    "holdingPeriod": "SWING",
+    "currentPrice": 367.25,
+    "checkedDate": "2026-10-09",
+    "pnlPercent": 0,
+    "outcome": "LOSS"
+  },
+  {
+    "date": "2026-10-09",
+    "ticker": "BAJAJHFL.NS",
+    "action": "BUY",
+    "entryPrice": 82.14,
+    "targetPrice": 84.41254,
+    "stopLoss": 78.8544,
+    "confidence": 39,
+    "jevBuyProb": 0.54,
+    "holdingPeriod": "SWING"
+  },
+  {
+    "date": "2026-10-09",
+    "ticker": "OIL.NS",
+    "action": "BUY",
+    "entryPrice": 447,
+    "targetPrice": 457.28099999999995,
+    "stopLoss": 433.59,
+    "confidence": 39,
+    "jevBuyProb": 0.68,
+    "holdingPeriod": "SWING"
+  },
+  {
+    "date": "2026-10-09",
+    "ticker": "CANBK.NS",
+    "action": "BUY",
+    "entryPrice": 117.35,
+    "targetPrice": 119.697,
+    "stopLoss": 113.24274999999999,
+    "confidence": 37,
+    "jevBuyProb": 0.58,
+    "holdingPeriod": "POSITIONAL"
+  },
+  {
+    "date": "2026-10-09",
+    "ticker": "CENTRALBK.NS",
+    "action": "BUY",
+    "entryPrice": 30.1,
+    "targetPrice": 30.702,
+    "stopLoss": 29.4378,
+    "confidence": 37,
+    "jevBuyProb": 0.75,
+    "holdingPeriod": "POSITIONAL"
+  },
+  {
+    "date": "2026-10-09",
+    "ticker": "BANKINDIA.NS",
+    "action": "BUY",
+    "entryPrice": 134.46,
+    "targetPrice": 137.1492,
+    "stopLoss": 131.0985,
+    "confidence": 37,
+    "jevBuyProb": 0.52,
+    "holdingPeriod": "POSITIONAL"
+  },
+  {
+    "date": "2026-10-09",
+    "ticker": "GICRE.NS",
+    "action": "BUY",
+    "entryPrice": 312.6,
+    "targetPrice": 318.85200000000003,
+    "stopLoss": 302.59680000000003,
+    "confidence": 40,
+    "jevBuyProb": 0.91,
+    "holdingPeriod": "SWING"
+  },
+  {
+    "date": "2026-10-09",
+    "ticker": "AADHARHFC.NS",
+    "action": "BUY",
+    "entryPrice": 443.65,
+    "targetPrice": 452.52299999999997,
+    "stopLoss": 430.34049999999996,
+    "confidence": 37,
+    "jevBuyProb": 0.55,
+    "holdingPeriod": "SWING"
+  },
+  {
+    "date": "2026-10-09",
+    "ticker": "ANGELONE.NS",
+    "action": "BUY",
+    "entryPrice": 292,
+    "targetPrice": 297.84000000000003,
+    "stopLoss": 280.904,
+    "confidence": 42,
+    "jevBuyProb": 0.72,
+    "holdingPeriod": "SWING"
+  },
+  {
+    "date": "2026-10-09",
+    "ticker": "GROWW.NS",
+    "action": "BUY",
+    "entryPrice": 192.39,
+    "targetPrice": 196.2378,
+    "stopLoss": 185.07917999999998,
+    "confidence": 38,
+    "jevBuyProb": 0.53,
+    "holdingPeriod": "SWING"
+  }
+]

@@ -8,7 +8,10 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "npx tsx src/index.ts",
-    "cache-sectors": "npx tsx src/cache-sectors.ts"
+    "cache-sectors": "npx tsx src/cache-sectors.ts",
+    "docker:build": "docker build -t stock-sage .",
+    "docker:run": "docker compose up",
+    "docker:shell": "docker run -it --env-file .env -v ./data:/app/data stock-sage sh"
   },
   "keywords": [],
   "author": "",

@@ -152,7 +152,9 @@ export async function fundamentalAgentjev(
 
 export async function macroAgentJev(
     stocks: StockSnapshot[],
-    marketContext: MarketContext
+    marketContext: MarketContext,
+    fiiDiiContext?: string,
+    earningsMap?: Record<string, { isUpcoming: boolean; daysUntilEarnings: number | null }>
 ): Promise<AgentResult[]> {
     const jev = getJevProvider();
     const results: AgentResult[] = [];
@@ -164,9 +166,17 @@ export async function macroAgentJev(
     else marketSignals.push(`Nifty ${marketContext.niftyChangePercent.toFixed(1)}% - flat market`);
 
     marketSignals.push(`Regime: ${marketContext.regime}`);
+    if (fiiDiiContext) marketSignals.push(fiiDiiContext);
+    if (marketContext.giftNiftyChange !== undefined) {
+        marketSignals.push(`GIFT Nifty: ${marketContext.giftNiftyChange >= 0 ? '+':''}${marketContext.giftNiftyChange.toFixed(1)}%`)
+    }
+
+
 
     for (const stock of stocks) {
-        const reasoning = marketSignals.join(' | ');
+        const earningsNote = earningsMap?.[stock.ticker]?.isUpcoming ? `| 📅 Earnings in ${earningsMap[stock.ticker].daysUntilEarnings} days!`:'';
+
+        const reasoning = marketSignals.join(' | ') + earningsNote;
         const context = `Market:  ${reasoning}. Stock: ${stock.ticker}`;
 
         const verdict = await jev.choice(

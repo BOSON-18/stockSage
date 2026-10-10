@@ -7,7 +7,7 @@ export function mergeResults(
     stocks: StockSnapshot[],
     analyses: StockAnalysis[],
     decisions: JevDecision[]
-): Recommendation[] {
+): any[] {
 
 
     return stocks.map((stock, i) => {

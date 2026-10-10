@@ -185,6 +185,7 @@ export function filterByScore(
     for (let i = 0; i < scoredNews.length; i++) {
         const article = scoredNews[i];
         const jev = jevClassifications[i];
+        // console.log('[SCORER} Checking for jev or impactType', jev, jev.impactType)
 
         //  No jev classiication or classified as NOISE -> skip
         if (!jev || jev.impactType === 'NOISE') {

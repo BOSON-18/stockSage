@@ -1,0 +1,13 @@
+node_modules
+dist
+.env
+*.log
+.git
+.claude
+design
+notes*.md
+HANDOFF.md
+data/sector-cache.json
+data/paper-trades.json
+data/auto-lessons.json
+data/cost-log.json

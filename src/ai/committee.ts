@@ -34,7 +34,9 @@ export async function runCommittee(
     indicators?: Record<string, TechnicalIndicators>,
     portfolio?: SanitizedPortfoilio | null,
     stockNewsMap?: Record<string, { title: string; description: string; source: string; publishedAt: string }[]>,
-    financials?: Record<string, any>
+    financials?: Record<string, any>,
+    fiiDiiContext?: string,
+    earningsMap?: Record<string,{isUpcoming: boolean;daysUntilEarnings: number | null}>
 ): Promise<{
     verdictMap: Record<string, { agent: string; sentiment: string; confidence: number; expectedMovePercent: number; reasoning: string }[]>;
     verificationMap: Record<string, VerfiedClaim[]>;
@@ -56,7 +58,7 @@ export async function runCommittee(
     console.log(`FUNADMENTAL: ${techVerdicts.length} verdicts`)
     console.log('Running TECHNICAL JEV...');
 
-    const macroVerdicts = await macroAgentJev(stocks, marketContext);
+    const macroVerdicts = await macroAgentJev(stocks, marketContext,fiiDiiContext,earningsMap);
     console.log(`MACRO: ${techVerdicts.length} verdicts`)
 
 

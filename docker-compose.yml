@@ -1,0 +1,10 @@
+
+
+services:
+  stock-sage:
+    build: .
+    container_name: stock_sage
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    restart: no
