@@ -1,6 +1,7 @@
 import { promises } from "node:dns";
 import { callLLM } from "./llm-client";
 import 'dotenv/config'
+import { trackCost } from "../security/tracker";
 
 
 
@@ -205,6 +206,7 @@ export class RealJevProvider implements JevProvider {
 
 
         const answer = res.answers?.answer;
+        trackCost('jev', context.length + question.length, 50); //estimate tokens
         return {
             probability: answer?.noul ?? answer?.probability ?? answer?.value ?? 0.5
         }

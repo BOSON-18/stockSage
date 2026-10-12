@@ -1,6 +1,7 @@
 import YahooFinance from "yahoo-finance2";
 import { safeLog } from "../security/sanitizer";
 import { Holding, PortfolioSummary } from "../types";
+import { auditBrokerCall } from "../security/audit-logger";
 
 
 const GROWW_API_KEY = process.env.GROWW_API_KEY || '';
@@ -28,6 +29,7 @@ export async function fetchPortfolio(): Promise<PortfolioSummary | null> {
 
 
         const holdingsData = await groww.holdings.list().catch(() => null);
+        auditBrokerCall('holdings.list', !!holdingsData, `${Array.isArray(holdingsData) ? holdingsData.length : 0} holdings`)
 
 
 

@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2026-10-12T15:18:19.219Z",
+    "action": "holdings.list",
+    "detail": "1 holdings",
+    "success": true,
+    "provider": "groww"
+  }
+]

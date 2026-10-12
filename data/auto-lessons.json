@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "date": "2026-10-12",
+    "type": "entry_timing",
+    "lesson": "BANKINDIA.NS: entered at Rs.134 which was the day's high (Rs.136). Wait for pullback or use VWAP as entry.",
+    "ticker": "BANKINDIA.NS",
+    "severity": "critical",
+    "count": 1
+  },
+  {
+    "date": "2026-10-12",
+    "type": "correct_call",
+    "lesson": "GICRE.NS: moved 1.2% - no strong signal either way.",
+    "ticker": "GICRE.NS",
+    "severity": "medium",
+    "count": 1
+  },
+  {
+    "date": "2026-10-12",
+    "type": "entry_timing",
+    "lesson": "AADHARHFC.NS: entered at Rs.444 which was the day's high (Rs.447). Wait for pullback or use VWAP as entry.",
+    "ticker": "AADHARHFC.NS",
+    "severity": "critical",
+    "count": 1
+  },
+  {
+    "date": "2026-10-12",
+    "type": "entry_price",
+    "lesson": "ANGELONE.NS: entry Rs.292  was below day's low (Rs.294).Use market order or set limit at/above current price.",
+    "ticker": "ANGELONE.NS",
+    "severity": "critical",
+    "count": 1
+  },
+  {
+    "date": "2026-10-12",
+    "type": "correct_call",
+    "lesson": "GROWW.NS: moved 0.1% - no strong signal either way.",
+    "ticker": "GROWW.NS",
+    "severity": "medium",
+    "count": 1
+  },
+  {
+    "date": "2026-10-12",
+    "type": "entry_timing",
+    "lesson": "BAJAJHFL.NS: entered at Rs.82 which was the day's high (Rs.83). Wait for pullback or use VWAP as entry.",
+    "ticker": "BAJAJHFL.NS",
+    "severity": "critical",
+    "count": 1
+  },
+  {
+    "date": "2026-10-12",
+    "type": "entry_timing",
+    "lesson": "OIL.NS: entered at Rs.447 which was the day's high (Rs.448). Wait for pullback or use VWAP as entry.",
+    "ticker": "OIL.NS",
+    "severity": "critical",
+    "count": 1
+  },
+  {
+    "date": "2026-10-12",
+    "type": "entry_price",
+    "lesson": "CANBK.NS: entry Rs.117  was below day's low (Rs.118).Use market order or set limit at/above current price.",
+    "ticker": "CANBK.NS",
+    "severity": "critical",
+    "count": 1
+  },
+  {
+    "date": "2026-10-12",
+    "type": "exit_strategy",
+    "lesson": "CENTRALBK.NS: price reached Rs.30 (within 1% of target Rs.31) but reversed to Rs.30. Use trailiung stop loss  when 70%+ of target is reached.",
+    "ticker": "CENTRALBK.NS",
+    "severity": "high",
+    "count": 1
+  }
+]

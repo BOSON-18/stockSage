@@ -38,7 +38,15 @@
     "stopLoss": 78.8544,
     "confidence": 39,
     "jevBuyProb": 0.54,
-    "holdingPeriod": "SWING"
+    "holdingPeriod": "SWING",
+    "currentPrice": 81.29,
+    "dayHigh": 82.5,
+    "dayLow": 81.22,
+    "checkedDate": "2026-10-12",
+    "pnlPercent": -1.034818602386163,
+    "outcome": "LOSS",
+    "failureReason": "Entry at day high - bought at worst possible price",
+    "lessonGenerated": "BAJAJHFL.NS: entered at Rs.82 which was the day's high (Rs.83). Wait for pullback or use VWAP as entry."
   },
   {
     "date": "2026-10-09",
@@ -49,7 +57,15 @@
     "stopLoss": 433.59,
     "confidence": 39,
     "jevBuyProb": 0.68,
-    "holdingPeriod": "SWING"
+    "holdingPeriod": "SWING",
+    "currentPrice": 441.55,
+    "dayHigh": 448.45,
+    "dayLow": 441,
+    "checkedDate": "2026-10-12",
+    "pnlPercent": -1.219239373601787,
+    "outcome": "LOSS",
+    "failureReason": "Entry at day high - bought at worst possible price",
+    "lessonGenerated": "OIL.NS: entered at Rs.447 which was the day's high (Rs.448). Wait for pullback or use VWAP as entry."
   },
   {
     "date": "2026-10-09",
@@ -60,7 +76,15 @@
     "stopLoss": 113.24274999999999,
     "confidence": 37,
     "jevBuyProb": 0.58,
-    "holdingPeriod": "POSITIONAL"
+    "holdingPeriod": "POSITIONAL",
+    "currentPrice": 118.38,
+    "dayHigh": 120.1,
+    "dayLow": 117.71,
+    "checkedDate": "2026-10-12",
+    "pnlPercent": 0.8777162334895622,
+    "outcome": "WIN",
+    "failureReason": "Entry below day low - order would never fill",
+    "lessonGenerated": "CANBK.NS: entry Rs.117  was below day's low (Rs.118).Use market order or set limit at/above current price."
   },
   {
     "date": "2026-10-09",
@@ -71,7 +95,15 @@
     "stopLoss": 29.4378,
     "confidence": 37,
     "jevBuyProb": 0.75,
-    "holdingPeriod": "POSITIONAL"
+    "holdingPeriod": "POSITIONAL",
+    "currentPrice": 30.07,
+    "dayHigh": 30.47,
+    "dayLow": 29.97,
+    "checkedDate": "2026-10-12",
+    "pnlPercent": -0.0996677740863825,
+    "outcome": "LOSS",
+    "failureReason": "Target nearly hit mid-day but reversed - no trailing SL",
+    "lessonGenerated": "CENTRALBK.NS: price reached Rs.30 (within 1% of target Rs.31) but reversed to Rs.30. Use trailiung stop loss  when 70%+ of target is reached."
   },
   {
     "date": "2026-10-09",
@@ -82,7 +114,15 @@
     "stopLoss": 131.0985,
     "confidence": 37,
     "jevBuyProb": 0.52,
-    "holdingPeriod": "POSITIONAL"
+    "holdingPeriod": "POSITIONAL",
+    "currentPrice": 133.4,
+    "dayHigh": 135.55,
+    "dayLow": 132.11,
+    "checkedDate": "2026-10-12",
+    "pnlPercent": -0.7883385393425572,
+    "outcome": "LOSS",
+    "failureReason": "Entry at day high - bought at worst possible price",
+    "lessonGenerated": "BANKINDIA.NS: entered at Rs.134 which was the day's high (Rs.136). Wait for pullback or use VWAP as entry."
   },
   {
     "date": "2026-10-09",
@@ -93,7 +133,15 @@
     "stopLoss": 302.59680000000003,
     "confidence": 40,
     "jevBuyProb": 0.91,
-    "holdingPeriod": "SWING"
+    "holdingPeriod": "SWING",
+    "currentPrice": 316.2,
+    "dayHigh": 317.85,
+    "dayLow": 311.65,
+    "checkedDate": "2026-10-12",
+    "pnlPercent": 1.1516314779270522,
+    "outcome": "WIN",
+    "failureReason": "Minor move (1.2% - no strong signal either way)",
+    "lessonGenerated": "GICRE.NS: moved 1.2% - no strong signal either way."
   },
   {
     "date": "2026-10-09",
@@ -104,7 +152,15 @@
     "stopLoss": 430.34049999999996,
     "confidence": 37,
     "jevBuyProb": 0.55,
-    "holdingPeriod": "SWING"
+    "holdingPeriod": "SWING",
+    "currentPrice": 441.2,
+    "dayHigh": 446.95,
+    "dayLow": 438.2,
+    "checkedDate": "2026-10-12",
+    "pnlPercent": -0.5522371238588952,
+    "outcome": "LOSS",
+    "failureReason": "Entry at day high - bought at worst possible price",
+    "lessonGenerated": "AADHARHFC.NS: entered at Rs.444 which was the day's high (Rs.447). Wait for pullback or use VWAP as entry."
   },
   {
     "date": "2026-10-09",
@@ -115,7 +171,15 @@
     "stopLoss": 280.904,
     "confidence": 42,
     "jevBuyProb": 0.72,
-    "holdingPeriod": "SWING"
+    "holdingPeriod": "SWING",
+    "currentPrice": 302.25,
+    "dayHigh": 305.9,
+    "dayLow": 294.25,
+    "checkedDate": "2026-10-12",
+    "pnlPercent": 3.51027397260274,
+    "outcome": "HIT_TARGET",
+    "failureReason": "Entry below day low - order would never fill",
+    "lessonGenerated": "ANGELONE.NS: entry Rs.292  was below day's low (Rs.294).Use market order or set limit at/above current price."
   },
   {
     "date": "2026-10-09",
@@ -126,6 +190,14 @@
     "stopLoss": 185.07917999999998,
     "confidence": 38,
     "jevBuyProb": 0.53,
-    "holdingPeriod": "SWING"
+    "holdingPeriod": "SWING",
+    "currentPrice": 192.61,
+    "dayHigh": 195.16,
+    "dayLow": 190.79,
+    "checkedDate": "2026-10-12",
+    "pnlPercent": 0.11435105774729834,
+    "outcome": "WIN",
+    "failureReason": "Minor move (0.1% - no strong signal either way)",
+    "lessonGenerated": "GROWW.NS: moved 0.1% - no strong signal either way."
   }
 ]

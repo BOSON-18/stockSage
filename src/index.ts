@@ -1,13 +1,11 @@
 import { jevCommitteeVote, runCommittee } from "./ai/committee";
 import { jevClassifyNews, } from "./ai/jev-decision";
-import { getJevProvider } from "./ai/jev-procider";
-import { callLLM } from "./ai/llm-client";
 import { buildCandidateList, extractStocksFromNews, filterByBudget, jevGateCandidates } from "./ai/stock-discovery";
 import { computeAllIndicators } from "./analysis/compute-all";
-import { DELAY_BETWEEN_CALLS_MS, LLM_MODEL, MAX_RETRIES, RETRY_DELAY_MS, WATCHLIST, USE_LOCAL } from "./config";
+import { LLM_MODEL, USE_LOCAL } from "./config";
 import { fetchHistoricalBatch } from "./data/historical-fetcher";
 import { fetchMarketContext } from "./data/market-context";
-import { fetchAllNews, fetchStockNewsBatch } from "./data/news-fetcher";
+import { fetchAllNews } from "./data/news-fetcher";
 import { filterByScore, scoreNewsBatch } from "./data/news-scoreer";
 import { checkOutcomes, getPerformanceSummary, saveRecommendations, getLessonsForPrompt } from "./data/paper-trade";
 import { fetchPortfolio } from "./data/portfolio-fetcher";
@@ -15,13 +13,12 @@ import { runQuantScanner } from "./data/quant-scanner";
 import { fetchStockData, formatStockData } from "./data/stock-fetcher";
 import { buildDynamicSectorMap, fetchStockUniverse } from "./data/stock-universe";
 import { displayResults } from "./display";
-import { mergeResults } from "./logic/merge";
 import { rankAndFilter } from "./logic/rank";
-import { buildAnalysisPrompt } from "./prompts";
+
 import { validateEnv } from "./security/env-validator";
 import { sanitizePortfolio } from "./security/sanitizer";
 import { checkDailyLimit, getCostSummary } from "./security/tracker";
-import { AnalysisResponseSchema, Recommendation, SanitizedPortfoilio, StockAnalysis, TechnicalIndicators } from "./types";
+import { Recommendation, SanitizedPortfoilio, TechnicalIndicators } from "./types";
 
 
 
