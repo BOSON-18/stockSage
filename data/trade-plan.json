@@ -1,0 +1,50 @@
+[
+  {
+    "ticker": "HINDZINC.NS",
+    "companyName": "HINDUSTAN ZINC LIMITED",
+    "plannedEntry": 538.4,
+    "targetPrice": 561.2819999999999,
+    "stopLoss": 527.632,
+    "action": "BUY",
+    "confidence": 38,
+    "buyProbability": 0.77,
+    "holidingPeriod": "SWING",
+    "planTime": "2026-10-19T19:42:08.562Z"
+  },
+  {
+    "ticker": "BANKINDIA.NS",
+    "companyName": "BANK OF INDIA",
+    "plannedEntry": 136.78,
+    "targetPrice": 140.24509333333336,
+    "stopLoss": 133.3605,
+    "action": "BUY",
+    "confidence": 36,
+    "buyProbability": 0.53,
+    "holidingPeriod": "SWING",
+    "planTime": "2026-10-19T19:42:08.562Z"
+  },
+  {
+    "ticker": "BAJFINANCE.NS",
+    "companyName": "BAJAJ FINANCE LIMITED",
+    "plannedEntry": 957.35,
+    "targetPrice": 981.6028666666667,
+    "stopLoss": 923.84275,
+    "action": "BUY",
+    "confidence": 39,
+    "buyProbability": 0.57,
+    "holidingPeriod": "SWING",
+    "planTime": "2026-10-19T19:42:08.562Z"
+  },
+  {
+    "ticker": "BANKBARODA.NS",
+    "companyName": "BANK OF BARODA",
+    "plannedEntry": 238.2,
+    "targetPrice": 242.964,
+    "stopLoss": 232.24499999999998,
+    "action": "BUY",
+    "confidence": 38,
+    "buyProbability": 0.71,
+    "holidingPeriod": "SWING",
+    "planTime": "2026-10-19T19:42:08.562Z"
+  }
+]

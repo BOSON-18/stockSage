@@ -16,12 +16,12 @@
     "count": 1
   },
   {
-    "date": "2026-10-12",
+    "date": "2026-10-19",
     "type": "entry_timing",
     "lesson": "AADHARHFC.NS: entered at Rs.444 which was the day's high (Rs.447). Wait for pullback or use VWAP as entry.",
     "ticker": "AADHARHFC.NS",
     "severity": "critical",
-    "count": 1
+    "count": 2
   },
   {
     "date": "2026-10-12",
@@ -69,6 +69,86 @@
     "lesson": "CENTRALBK.NS: price reached Rs.30 (within 1% of target Rs.31) but reversed to Rs.30. Use trailiung stop loss  when 70%+ of target is reached.",
     "ticker": "CENTRALBK.NS",
     "severity": "high",
+    "count": 1
+  },
+  {
+    "date": "2026-10-15",
+    "type": "entry_timing",
+    "lesson": "BANKBARODA.NS: entered at Rs.238 which was the day's high (Rs.230). Wait for pullback or use VWAP as entry.",
+    "ticker": "BANKBARODA.NS",
+    "severity": "critical",
+    "count": 1
+  },
+  {
+    "date": "2026-10-15",
+    "type": "exit_strategy",
+    "lesson": "CANBK.NS: price reached Rs.124 (within 1% of target Rs.123) but reversed to Rs.117. Use trailiung stop loss  when 70%+ of target is reached.",
+    "ticker": "CANBK.NS",
+    "severity": "high",
+    "count": 1
+  },
+  {
+    "date": "2026-10-15",
+    "type": "entry_price",
+    "lesson": "ZENSARTECH.NS: entry Rs.479  was below day's low (Rs.489).Use market order or set limit at/above current price.",
+    "ticker": "ZENSARTECH.NS",
+    "severity": "critical",
+    "count": 1
+  },
+  {
+    "date": "2026-10-19",
+    "type": "entry_price",
+    "lesson": "CENTRALBK.NS: entry Rs.30  was below day's low (Rs.31).Use market order or set limit at/above current price.",
+    "ticker": "CENTRALBK.NS",
+    "severity": "critical",
+    "count": 2
+  },
+  {
+    "date": "2026-10-15",
+    "type": "correct_call",
+    "lesson": "CAMS.NS: moved 0.5% - no strong signal either way.",
+    "ticker": "CAMS.NS",
+    "severity": "medium",
+    "count": 1
+  },
+  {
+    "date": "2026-10-15",
+    "type": "entry_price",
+    "lesson": "AUBANK.NS: entry Rs.992  was below day's low (Rs.992).Use market order or set limit at/above current price.",
+    "ticker": "AUBANK.NS",
+    "severity": "critical",
+    "count": 1
+  },
+  {
+    "date": "2026-10-15",
+    "type": "entry_timing",
+    "lesson": "ABCAPITAL.NS: entered at Rs.385 which was the day's high (Rs.385). Wait for pullback or use VWAP as entry.",
+    "ticker": "ABCAPITAL.NS",
+    "severity": "critical",
+    "count": 1
+  },
+  {
+    "date": "2026-10-19",
+    "type": "entry_price",
+    "lesson": "BANKINDIA.NS: entry Rs.130  was below day's low (Rs.133).Use market order or set limit at/above current price.",
+    "ticker": "BANKINDIA.NS",
+    "severity": "critical",
+    "count": 1
+  },
+  {
+    "date": "2026-10-19",
+    "type": "entry_timing",
+    "lesson": "ANGELONE.NS: entered at Rs.313 which was the day's high (Rs.304). Wait for pullback or use VWAP as entry.",
+    "ticker": "ANGELONE.NS",
+    "severity": "critical",
+    "count": 1
+  },
+  {
+    "date": "2026-10-19",
+    "type": "correct_call",
+    "lesson": "ZENSARTECH.NS: moved 1.7% - no strong signal either way.",
+    "ticker": "ZENSARTECH.NS",
+    "severity": "medium",
     "count": 1
   }
 ]

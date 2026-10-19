@@ -1833,7 +1833,6412 @@
       "inputTokens": 1892,
       "outputTokens": 50,
       "costUsd": 0.00007946400000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1638,
+      "outputTokens": 50,
+      "costUsd": 0.000068796
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1632,
+      "outputTokens": 50,
+      "costUsd": 0.000068544
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 902,
+      "outputTokens": 50,
+      "costUsd": 0.000037884000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 896,
+      "outputTokens": 50,
+      "costUsd": 0.000037632
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 906,
+      "outputTokens": 50,
+      "costUsd": 0.000038052
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 900,
+      "outputTokens": 50,
+      "costUsd": 0.000037800000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1161,
+      "outputTokens": 50,
+      "costUsd": 0.000048762
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1155,
+      "outputTokens": 50,
+      "costUsd": 0.00004851
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1290,
+      "outputTokens": 50,
+      "costUsd": 0.00005418
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1284,
+      "outputTokens": 50,
+      "costUsd": 0.000053928
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1023,
+      "outputTokens": 50,
+      "costUsd": 0.000042966
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1017,
+      "outputTokens": 50,
+      "costUsd": 0.000042714
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1275,
+      "outputTokens": 50,
+      "costUsd": 0.00005355000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1269,
+      "outputTokens": 50,
+      "costUsd": 0.000053298000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 926,
+      "outputTokens": 50,
+      "costUsd": 0.000038892
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 920,
+      "outputTokens": 50,
+      "costUsd": 0.00003864
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1276,
+      "outputTokens": 50,
+      "costUsd": 0.000053592000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1270,
+      "outputTokens": 50,
+      "costUsd": 0.00005334000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1299,
+      "outputTokens": 50,
+      "costUsd": 0.000054558
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1293,
+      "outputTokens": 50,
+      "costUsd": 0.000054306000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1363,
+      "outputTokens": 50,
+      "costUsd": 0.00005724600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1357,
+      "outputTokens": 50,
+      "costUsd": 0.000056994
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1304,
+      "outputTokens": 50,
+      "costUsd": 0.00005476800000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1298,
+      "outputTokens": 50,
+      "costUsd": 0.000054516
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1364,
+      "outputTokens": 50,
+      "costUsd": 0.000057288000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1358,
+      "outputTokens": 50,
+      "costUsd": 0.00005703600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1236,
+      "outputTokens": 50,
+      "costUsd": 0.000051912
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1230,
+      "outputTokens": 50,
+      "costUsd": 0.000051660000000000003
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1255,
+      "outputTokens": 50,
+      "costUsd": 0.00005271
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1249,
+      "outputTokens": 50,
+      "costUsd": 0.000052458
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1317,
+      "outputTokens": 50,
+      "costUsd": 0.000055314000000000006
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1311,
+      "outputTokens": 50,
+      "costUsd": 0.00005506200000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1613,
+      "outputTokens": 50,
+      "costUsd": 0.00006774600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1607,
+      "outputTokens": 50,
+      "costUsd": 0.000067494
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1332,
+      "outputTokens": 50,
+      "costUsd": 0.000055944000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1326,
+      "outputTokens": 50,
+      "costUsd": 0.000055692
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1249,
+      "outputTokens": 50,
+      "costUsd": 0.000052458
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1243,
+      "outputTokens": 50,
+      "costUsd": 0.000052206
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1256,
+      "outputTokens": 50,
+      "costUsd": 0.000052752
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1250,
+      "outputTokens": 50,
+      "costUsd": 0.0000525
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1199,
+      "outputTokens": 50,
+      "costUsd": 0.000050358
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1193,
+      "outputTokens": 50,
+      "costUsd": 0.000050106000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1292,
+      "outputTokens": 50,
+      "costUsd": 0.000054264
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1286,
+      "outputTokens": 50,
+      "costUsd": 0.000054012000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1753,
+      "outputTokens": 50,
+      "costUsd": 0.000073626
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1747,
+      "outputTokens": 50,
+      "costUsd": 0.000073374
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1295,
+      "outputTokens": 50,
+      "costUsd": 0.00005439
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1289,
+      "outputTokens": 50,
+      "costUsd": 0.000054138
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1311,
+      "outputTokens": 50,
+      "costUsd": 0.00005506200000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1305,
+      "outputTokens": 50,
+      "costUsd": 0.00005481
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1926,
+      "outputTokens": 50,
+      "costUsd": 0.000080892
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1920,
+      "outputTokens": 50,
+      "costUsd": 0.00008064
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1848,
+      "outputTokens": 50,
+      "costUsd": 0.00007761600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1842,
+      "outputTokens": 50,
+      "costUsd": 0.00007736400000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1336,
+      "outputTokens": 50,
+      "costUsd": 0.000056112
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1330,
+      "outputTokens": 50,
+      "costUsd": 0.000055860000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1884,
+      "outputTokens": 50,
+      "costUsd": 0.000079128
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1878,
+      "outputTokens": 50,
+      "costUsd": 0.000078876
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1802,
+      "outputTokens": 50,
+      "costUsd": 0.000075684
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1796,
+      "outputTokens": 50,
+      "costUsd": 0.000075432
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1593,
+      "outputTokens": 50,
+      "costUsd": 0.000066906
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1587,
+      "outputTokens": 50,
+      "costUsd": 0.000066654
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1940,
+      "outputTokens": 50,
+      "costUsd": 0.00008148000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1934,
+      "outputTokens": 50,
+      "costUsd": 0.000081228
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1655,
+      "outputTokens": 50,
+      "costUsd": 0.00006951
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1649,
+      "outputTokens": 50,
+      "costUsd": 0.000069258
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1699,
+      "outputTokens": 50,
+      "costUsd": 0.000071358
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1693,
+      "outputTokens": 50,
+      "costUsd": 0.000071106
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1798,
+      "outputTokens": 50,
+      "costUsd": 0.000075516
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1792,
+      "outputTokens": 50,
+      "costUsd": 0.000075264
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1715,
+      "outputTokens": 50,
+      "costUsd": 0.00007203
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1709,
+      "outputTokens": 50,
+      "costUsd": 0.000071778
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1682,
+      "outputTokens": 50,
+      "costUsd": 0.000070644
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1676,
+      "outputTokens": 50,
+      "costUsd": 0.000070392
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1709,
+      "outputTokens": 50,
+      "costUsd": 0.000071778
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1703,
+      "outputTokens": 50,
+      "costUsd": 0.000071526
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1736,
+      "outputTokens": 50,
+      "costUsd": 0.000072912
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1730,
+      "outputTokens": 50,
+      "costUsd": 0.00007266
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1868,
+      "outputTokens": 50,
+      "costUsd": 0.00007845600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1862,
+      "outputTokens": 50,
+      "costUsd": 0.000078204
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1887,
+      "outputTokens": 50,
+      "costUsd": 0.00007925400000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1881,
+      "outputTokens": 50,
+      "costUsd": 0.00007900200000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1207,
+      "outputTokens": 50,
+      "costUsd": 0.000050694
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1201,
+      "outputTokens": 50,
+      "costUsd": 0.000050442
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2102,
+      "outputTokens": 50,
+      "costUsd": 0.00008828400000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2096,
+      "outputTokens": 50,
+      "costUsd": 0.00008803200000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1572,
+      "outputTokens": 50,
+      "costUsd": 0.000066024
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1566,
+      "outputTokens": 50,
+      "costUsd": 0.000065772
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1584,
+      "outputTokens": 50,
+      "costUsd": 0.000066528
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1578,
+      "outputTokens": 50,
+      "costUsd": 0.000066276
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1837,
+      "outputTokens": 50,
+      "costUsd": 0.00007715400000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1831,
+      "outputTokens": 50,
+      "costUsd": 0.000076902
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1223,
+      "outputTokens": 50,
+      "costUsd": 0.000051366
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1217,
+      "outputTokens": 50,
+      "costUsd": 0.000051114000000000006
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1208,
+      "outputTokens": 50,
+      "costUsd": 0.00005073600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1202,
+      "outputTokens": 50,
+      "costUsd": 0.000050484
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1242,
+      "outputTokens": 50,
+      "costUsd": 0.000052164000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1236,
+      "outputTokens": 50,
+      "costUsd": 0.000051912
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2202,
+      "outputTokens": 50,
+      "costUsd": 0.000092484
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2196,
+      "outputTokens": 50,
+      "costUsd": 0.00009223200000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "deepseek",
+      "inputTokens": 7605,
+      "outputTokens": 7692,
+      "costUsd": 0.005755949999999999
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 777,
+      "outputTokens": 50,
+      "costUsd": 0.000032634
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 780,
+      "outputTokens": 50,
+      "costUsd": 0.000032760000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 777,
+      "outputTokens": 50,
+      "costUsd": 0.000032634
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 780,
+      "outputTokens": 50,
+      "costUsd": 0.000032760000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 783,
+      "outputTokens": 50,
+      "costUsd": 0.000032886
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 780,
+      "outputTokens": 50,
+      "costUsd": 0.000032760000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 777,
+      "outputTokens": 50,
+      "costUsd": 0.000032634
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 779,
+      "outputTokens": 50,
+      "costUsd": 0.000032718
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 780,
+      "outputTokens": 50,
+      "costUsd": 0.000032760000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 783,
+      "outputTokens": 50,
+      "costUsd": 0.000032886
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 783,
+      "outputTokens": 50,
+      "costUsd": 0.000032886
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 777,
+      "outputTokens": 50,
+      "costUsd": 0.000032634
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 777,
+      "outputTokens": 50,
+      "costUsd": 0.000032634
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 780,
+      "outputTokens": 50,
+      "costUsd": 0.000032760000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "deepseek",
+      "inputTokens": 39595,
+      "outputTokens": 4003,
+      "costUsd": 0.00834105
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "deepseek",
+      "inputTokens": 1974,
+      "outputTokens": 6829,
+      "costUsd": 0.0043935
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 224,
+      "outputTokens": 50,
+      "costUsd": 0.000009408
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 170,
+      "outputTokens": 50,
+      "costUsd": 0.000007140000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 246,
+      "outputTokens": 50,
+      "costUsd": 0.000010332000000000002
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 172,
+      "outputTokens": 50,
+      "costUsd": 0.000007224000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 174,
+      "outputTokens": 50,
+      "costUsd": 0.000007308
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 219,
+      "outputTokens": 50,
+      "costUsd": 0.000009198
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 170,
+      "outputTokens": 50,
+      "costUsd": 0.000007140000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 197,
+      "outputTokens": 50,
+      "costUsd": 0.000008274
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 252,
+      "outputTokens": 50,
+      "costUsd": 0.000010584
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 195,
+      "outputTokens": 50,
+      "costUsd": 0.000008190000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 166,
+      "outputTokens": 50,
+      "costUsd": 0.000006972
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 200,
+      "outputTokens": 50,
+      "costUsd": 0.000008400000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 168,
+      "outputTokens": 50,
+      "costUsd": 0.000007056
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 169,
+      "outputTokens": 50,
+      "costUsd": 0.000007098
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 193,
+      "outputTokens": 50,
+      "costUsd": 0.000008106
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 200,
+      "outputTokens": 50,
+      "costUsd": 0.000008400000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 196,
+      "outputTokens": 50,
+      "costUsd": 0.000008232
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 225,
+      "outputTokens": 50,
+      "costUsd": 0.000009450000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 189,
+      "outputTokens": 50,
+      "costUsd": 0.000007938000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 168,
+      "outputTokens": 50,
+      "costUsd": 0.000007056
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 194,
+      "outputTokens": 50,
+      "costUsd": 0.000008148
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 208,
+      "outputTokens": 50,
+      "costUsd": 0.000008736
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 219,
+      "outputTokens": 50,
+      "costUsd": 0.000009198
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 219,
+      "outputTokens": 50,
+      "costUsd": 0.000009198
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 207,
+      "outputTokens": 50,
+      "costUsd": 0.000008694
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 211,
+      "outputTokens": 50,
+      "costUsd": 0.000008862000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 203,
+      "outputTokens": 50,
+      "costUsd": 0.000008526000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 219,
+      "outputTokens": 50,
+      "costUsd": 0.000009198
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 214,
+      "outputTokens": 50,
+      "costUsd": 0.000008988000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 221,
+      "outputTokens": 50,
+      "costUsd": 0.000009282
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 215,
+      "outputTokens": 50,
+      "costUsd": 0.00000903
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 178,
+      "outputTokens": 50,
+      "costUsd": 0.000007476
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 205,
+      "outputTokens": 50,
+      "costUsd": 0.00000861
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 219,
+      "outputTokens": 50,
+      "costUsd": 0.000009198
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 177,
+      "outputTokens": 50,
+      "costUsd": 0.000007434
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 224,
+      "outputTokens": 50,
+      "costUsd": 0.000009408
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 220,
+      "outputTokens": 50,
+      "costUsd": 0.000009240000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 175,
+      "outputTokens": 50,
+      "costUsd": 0.000007350000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 191,
+      "outputTokens": 50,
+      "costUsd": 0.000008022
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 215,
+      "outputTokens": 50,
+      "costUsd": 0.00000903
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 171,
+      "outputTokens": 50,
+      "costUsd": 0.000007182000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 166,
+      "outputTokens": 50,
+      "costUsd": 0.000006972
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 133,
+      "outputTokens": 50,
+      "costUsd": 0.000005586
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 135,
+      "outputTokens": 50,
+      "costUsd": 0.000005670000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 132,
+      "outputTokens": 50,
+      "costUsd": 0.000005544000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 136,
+      "outputTokens": 50,
+      "costUsd": 0.0000057120000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 136,
+      "outputTokens": 50,
+      "costUsd": 0.0000057120000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 136,
+      "outputTokens": 50,
+      "costUsd": 0.0000057120000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 133,
+      "outputTokens": 50,
+      "costUsd": 0.000005586
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 138,
+      "outputTokens": 50,
+      "costUsd": 0.000005796
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 132,
+      "outputTokens": 50,
+      "costUsd": 0.000005544000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 136,
+      "outputTokens": 50,
+      "costUsd": 0.0000057120000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 133,
+      "outputTokens": 50,
+      "costUsd": 0.000005586
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 134,
+      "outputTokens": 50,
+      "costUsd": 0.000005628
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 136,
+      "outputTokens": 50,
+      "costUsd": 0.0000057120000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 138,
+      "outputTokens": 50,
+      "costUsd": 0.000005796
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 138,
+      "outputTokens": 50,
+      "costUsd": 0.000005796
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 138,
+      "outputTokens": 50,
+      "costUsd": 0.000005796
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 132,
+      "outputTokens": 50,
+      "costUsd": 0.000005544000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 133,
+      "outputTokens": 50,
+      "costUsd": 0.000005586
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1837,
+      "outputTokens": 50,
+      "costUsd": 0.00007715400000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1863,
+      "outputTokens": 50,
+      "costUsd": 0.00007824600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1836,
+      "outputTokens": 50,
+      "costUsd": 0.000077112
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1843,
+      "outputTokens": 50,
+      "costUsd": 0.00007740600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2023,
+      "outputTokens": 50,
+      "costUsd": 0.00008496600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1883,
+      "outputTokens": 50,
+      "costUsd": 0.000079086
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1873,
+      "outputTokens": 50,
+      "costUsd": 0.00007866600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1872,
+      "outputTokens": 50,
+      "costUsd": 0.000078624
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1875,
+      "outputTokens": 50,
+      "costUsd": 0.00007875
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1890,
+      "outputTokens": 50,
+      "costUsd": 0.00007938
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1856,
+      "outputTokens": 50,
+      "costUsd": 0.000077952
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1854,
+      "outputTokens": 50,
+      "costUsd": 0.00007786800000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1857,
+      "outputTokens": 50,
+      "costUsd": 0.000077994
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1841,
+      "outputTokens": 50,
+      "costUsd": 0.000077322
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1841,
+      "outputTokens": 50,
+      "costUsd": 0.000077322
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1952,
+      "outputTokens": 50,
+      "costUsd": 0.000081984
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1993,
+      "outputTokens": 50,
+      "costUsd": 0.000083706
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1896,
+      "outputTokens": 50,
+      "costUsd": 0.000079632
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1883,
+      "outputTokens": 50,
+      "costUsd": 0.000079086
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2015,
+      "outputTokens": 50,
+      "costUsd": 0.00008463
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1999,
+      "outputTokens": 50,
+      "costUsd": 0.000083958
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1965,
+      "outputTokens": 50,
+      "costUsd": 0.00008253000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1964,
+      "outputTokens": 50,
+      "costUsd": 0.000082488
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1966,
+      "outputTokens": 50,
+      "costUsd": 0.000082572
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1967,
+      "outputTokens": 50,
+      "costUsd": 0.000082614
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1977,
+      "outputTokens": 50,
+      "costUsd": 0.000083034
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1977,
+      "outputTokens": 50,
+      "costUsd": 0.000083034
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1801,
+      "outputTokens": 50,
+      "costUsd": 0.000075642
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1816,
+      "outputTokens": 50,
+      "costUsd": 0.000076272
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1803,
+      "outputTokens": 50,
+      "costUsd": 0.000075726
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2099,
+      "outputTokens": 50,
+      "costUsd": 0.00008815800000000002
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2096,
+      "outputTokens": 50,
+      "costUsd": 0.00008803200000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1985,
+      "outputTokens": 50,
+      "costUsd": 0.00008337
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1996,
+      "outputTokens": 50,
+      "costUsd": 0.000083832
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1985,
+      "outputTokens": 50,
+      "costUsd": 0.00008337
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1996,
+      "outputTokens": 50,
+      "costUsd": 0.000083832
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1839,
+      "outputTokens": 50,
+      "costUsd": 0.00007723800000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1836,
+      "outputTokens": 50,
+      "costUsd": 0.000077112
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1829,
+      "outputTokens": 50,
+      "costUsd": 0.000076818
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1933,
+      "outputTokens": 50,
+      "costUsd": 0.000081186
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1944,
+      "outputTokens": 50,
+      "costUsd": 0.000081648
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1865,
+      "outputTokens": 50,
+      "costUsd": 0.00007833
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1876,
+      "outputTokens": 50,
+      "costUsd": 0.00007879200000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1875,
+      "outputTokens": 50,
+      "costUsd": 0.00007875
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1867,
+      "outputTokens": 50,
+      "costUsd": 0.000078414
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2061,
+      "outputTokens": 50,
+      "costUsd": 0.000086562
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2058,
+      "outputTokens": 50,
+      "costUsd": 0.000086436
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1979,
+      "outputTokens": 50,
+      "costUsd": 0.000083118
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1969,
+      "outputTokens": 50,
+      "costUsd": 0.000082698
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1975,
+      "outputTokens": 50,
+      "costUsd": 0.00008295000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1971,
+      "outputTokens": 50,
+      "costUsd": 0.00008278200000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1938,
+      "outputTokens": 50,
+      "costUsd": 0.000081396
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1947,
+      "outputTokens": 50,
+      "costUsd": 0.00008177400000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1910,
+      "outputTokens": 50,
+      "costUsd": 0.00008022
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1916,
+      "outputTokens": 50,
+      "costUsd": 0.000080472
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1916,
+      "outputTokens": 50,
+      "costUsd": 0.000080472
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1907,
+      "outputTokens": 50,
+      "costUsd": 0.00008009400000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1915,
+      "outputTokens": 50,
+      "costUsd": 0.00008043
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1870,
+      "outputTokens": 50,
+      "costUsd": 0.00007854
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1855,
+      "outputTokens": 50,
+      "costUsd": 0.00007791
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1866,
+      "outputTokens": 50,
+      "costUsd": 0.000078372
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1855,
+      "outputTokens": 50,
+      "costUsd": 0.00007791
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1954,
+      "outputTokens": 50,
+      "costUsd": 0.000082068
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1940,
+      "outputTokens": 50,
+      "costUsd": 0.00008148000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1963,
+      "outputTokens": 50,
+      "costUsd": 0.000082446
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2022,
+      "outputTokens": 50,
+      "costUsd": 0.000084924
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1903,
+      "outputTokens": 50,
+      "costUsd": 0.00007992600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1888,
+      "outputTokens": 50,
+      "costUsd": 0.00007929600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1899,
+      "outputTokens": 50,
+      "costUsd": 0.000079758
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1895,
+      "outputTokens": 50,
+      "costUsd": 0.00007959
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1991,
+      "outputTokens": 50,
+      "costUsd": 0.000083622
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1898,
+      "outputTokens": 50,
+      "costUsd": 0.00007971600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1895,
+      "outputTokens": 50,
+      "costUsd": 0.00007959
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1888,
+      "outputTokens": 50,
+      "costUsd": 0.00007929600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1907,
+      "outputTokens": 50,
+      "costUsd": 0.00008009400000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1922,
+      "outputTokens": 50,
+      "costUsd": 0.00008072400000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1880,
+      "outputTokens": 50,
+      "costUsd": 0.00007896
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1962,
+      "outputTokens": 50,
+      "costUsd": 0.00008240400000000002
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1886,
+      "outputTokens": 50,
+      "costUsd": 0.00007921200000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1871,
+      "outputTokens": 50,
+      "costUsd": 0.000078582
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1871,
+      "outputTokens": 50,
+      "costUsd": 0.000078582
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2034,
+      "outputTokens": 50,
+      "costUsd": 0.000085428
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1925,
+      "outputTokens": 50,
+      "costUsd": 0.00008085000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1952,
+      "outputTokens": 50,
+      "costUsd": 0.000081984
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1909,
+      "outputTokens": 50,
+      "costUsd": 0.000080178
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1929,
+      "outputTokens": 50,
+      "costUsd": 0.000081018
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1912,
+      "outputTokens": 50,
+      "costUsd": 0.00008030400000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1910,
+      "outputTokens": 50,
+      "costUsd": 0.00008022
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1955,
+      "outputTokens": 50,
+      "costUsd": 0.00008211000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1979,
+      "outputTokens": 50,
+      "costUsd": 0.000083118
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2042,
+      "outputTokens": 50,
+      "costUsd": 0.000085764
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1993,
+      "outputTokens": 50,
+      "costUsd": 0.000083706
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1963,
+      "outputTokens": 50,
+      "costUsd": 0.000082446
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1959,
+      "outputTokens": 50,
+      "costUsd": 0.000082278
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1957,
+      "outputTokens": 50,
+      "costUsd": 0.000082194
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1980,
+      "outputTokens": 50,
+      "costUsd": 0.00008316000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1924,
+      "outputTokens": 50,
+      "costUsd": 0.000080808
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1952,
+      "outputTokens": 50,
+      "costUsd": 0.000081984
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2005,
+      "outputTokens": 50,
+      "costUsd": 0.00008421
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1934,
+      "outputTokens": 50,
+      "costUsd": 0.000081228
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1919,
+      "outputTokens": 50,
+      "costUsd": 0.000080598
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1926,
+      "outputTokens": 50,
+      "costUsd": 0.000080892
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1994,
+      "outputTokens": 50,
+      "costUsd": 0.00008374800000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1958,
+      "outputTokens": 50,
+      "costUsd": 0.000082236
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1955,
+      "outputTokens": 50,
+      "costUsd": 0.00008211000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1949,
+      "outputTokens": 50,
+      "costUsd": 0.000081858
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1935,
+      "outputTokens": 50,
+      "costUsd": 0.00008127000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1868,
+      "outputTokens": 50,
+      "costUsd": 0.00007845600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1873,
+      "outputTokens": 50,
+      "costUsd": 0.00007866600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1990,
+      "outputTokens": 50,
+      "costUsd": 0.00008358000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1880,
+      "outputTokens": 50,
+      "costUsd": 0.00007896
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1877,
+      "outputTokens": 50,
+      "costUsd": 0.000078834
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1871,
+      "outputTokens": 50,
+      "costUsd": 0.000078582
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1227,
+      "outputTokens": 50,
+      "costUsd": 0.000051534000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 996,
+      "outputTokens": 50,
+      "costUsd": 0.000041832
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1067,
+      "outputTokens": 50,
+      "costUsd": 0.000044814
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 924,
+      "outputTokens": 50,
+      "costUsd": 0.000038808000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 978,
+      "outputTokens": 50,
+      "costUsd": 0.000041076
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 977,
+      "outputTokens": 50,
+      "costUsd": 0.000041034
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 957,
+      "outputTokens": 50,
+      "costUsd": 0.000040194
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1015,
+      "outputTokens": 50,
+      "costUsd": 0.000042630000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 948,
+      "outputTokens": 50,
+      "costUsd": 0.000039816
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 930,
+      "outputTokens": 50,
+      "costUsd": 0.00003906
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 911,
+      "outputTokens": 50,
+      "costUsd": 0.000038262
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 983,
+      "outputTokens": 50,
+      "costUsd": 0.000041286
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 945,
+      "outputTokens": 50,
+      "costUsd": 0.00003969
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 887,
+      "outputTokens": 50,
+      "costUsd": 0.000037254
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 934,
+      "outputTokens": 50,
+      "costUsd": 0.000039228000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 949,
+      "outputTokens": 50,
+      "costUsd": 0.000039858000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 907,
+      "outputTokens": 50,
+      "costUsd": 0.000038094000000000005
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 967,
+      "outputTokens": 50,
+      "costUsd": 0.000040614
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 939,
+      "outputTokens": 50,
+      "costUsd": 0.000039438
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 954,
+      "outputTokens": 50,
+      "costUsd": 0.000040068
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 922,
+      "outputTokens": 50,
+      "costUsd": 0.000038724000000000004
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "deepseek",
+      "inputTokens": 7468,
+      "outputTokens": 1291,
+      "costUsd": 0.0018947999999999999
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "deepseek",
+      "inputTokens": 674,
+      "outputTokens": 1192,
+      "costUsd": 0.0008163
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 167,
+      "outputTokens": 50,
+      "costUsd": 0.000007014
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 133,
+      "outputTokens": 50,
+      "costUsd": 0.000005586
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 132,
+      "outputTokens": 50,
+      "costUsd": 0.000005544000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2128,
+      "outputTokens": 50,
+      "costUsd": 0.000089376
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2056,
+      "outputTokens": 50,
+      "costUsd": 0.00008635200000000002
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2020,
+      "outputTokens": 50,
+      "costUsd": 0.00008484000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2082,
+      "outputTokens": 50,
+      "costUsd": 0.00008744400000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2084,
+      "outputTokens": 50,
+      "costUsd": 0.000087528
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2010,
+      "outputTokens": 50,
+      "costUsd": 0.00008442000000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1992,
+      "outputTokens": 50,
+      "costUsd": 0.000083664
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 2033,
+      "outputTokens": 50,
+      "costUsd": 0.00008538600000000001
+    },
+    {
+      "date": "2026-10-14",
+      "provider": "jev",
+      "inputTokens": 1998,
+      "outputTokens": 50,
+      "costUsd": 0.00008391600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1662,
+      "outputTokens": 50,
+      "costUsd": 0.00006980400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1656,
+      "outputTokens": 50,
+      "costUsd": 0.000069552
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1190,
+      "outputTokens": 50,
+      "costUsd": 0.000049980000000000006
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1184,
+      "outputTokens": 50,
+      "costUsd": 0.000049728
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1121,
+      "outputTokens": 50,
+      "costUsd": 0.00004708200000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1115,
+      "outputTokens": 50,
+      "costUsd": 0.00004683000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1117,
+      "outputTokens": 50,
+      "costUsd": 0.000046914
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1111,
+      "outputTokens": 50,
+      "costUsd": 0.000046662
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1179,
+      "outputTokens": 50,
+      "costUsd": 0.000049518
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1173,
+      "outputTokens": 50,
+      "costUsd": 0.000049266000000000006
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1299,
+      "outputTokens": 50,
+      "costUsd": 0.000054558
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1293,
+      "outputTokens": 50,
+      "costUsd": 0.000054306000000000005
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1263,
+      "outputTokens": 50,
+      "costUsd": 0.00005304600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1257,
+      "outputTokens": 50,
+      "costUsd": 0.00005279400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1169,
+      "outputTokens": 50,
+      "costUsd": 0.000049097999999999996
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1163,
+      "outputTokens": 50,
+      "costUsd": 0.000048846
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1275,
+      "outputTokens": 50,
+      "costUsd": 0.00005355000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1269,
+      "outputTokens": 50,
+      "costUsd": 0.000053298000000000004
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1121,
+      "outputTokens": 50,
+      "costUsd": 0.00004708200000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1115,
+      "outputTokens": 50,
+      "costUsd": 0.00004683000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1267,
+      "outputTokens": 50,
+      "costUsd": 0.000053213999999999996
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1261,
+      "outputTokens": 50,
+      "costUsd": 0.000052962
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1272,
+      "outputTokens": 50,
+      "costUsd": 0.000053424
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1266,
+      "outputTokens": 50,
+      "costUsd": 0.000053172000000000005
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1178,
+      "outputTokens": 50,
+      "costUsd": 0.000049476000000000005
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1172,
+      "outputTokens": 50,
+      "costUsd": 0.00004922400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1208,
+      "outputTokens": 50,
+      "costUsd": 0.00005073600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1202,
+      "outputTokens": 50,
+      "costUsd": 0.000050484
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1261,
+      "outputTokens": 50,
+      "costUsd": 0.000052962
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1255,
+      "outputTokens": 50,
+      "costUsd": 0.00005271
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1149,
+      "outputTokens": 50,
+      "costUsd": 0.000048258000000000005
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1143,
+      "outputTokens": 50,
+      "costUsd": 0.000048006
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1216,
+      "outputTokens": 50,
+      "costUsd": 0.00005107200000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1210,
+      "outputTokens": 50,
+      "costUsd": 0.00005082
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1360,
+      "outputTokens": 50,
+      "costUsd": 0.00005712000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1354,
+      "outputTokens": 50,
+      "costUsd": 0.000056868
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1186,
+      "outputTokens": 50,
+      "costUsd": 0.000049812000000000004
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1180,
+      "outputTokens": 50,
+      "costUsd": 0.000049560000000000007
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1225,
+      "outputTokens": 50,
+      "costUsd": 0.000051450000000000004
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1219,
+      "outputTokens": 50,
+      "costUsd": 0.00005119800000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1083,
+      "outputTokens": 50,
+      "costUsd": 0.000045486000000000005
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1077,
+      "outputTokens": 50,
+      "costUsd": 0.00004523400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 888,
+      "outputTokens": 50,
+      "costUsd": 0.000037296000000000003
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 882,
+      "outputTokens": 50,
+      "costUsd": 0.000037044
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "deepseek",
+      "inputTokens": 2285,
+      "outputTokens": 6869,
+      "costUsd": 0.00446415
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 777,
+      "outputTokens": 50,
+      "costUsd": 0.000032634
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 780,
+      "outputTokens": 50,
+      "costUsd": 0.000032760000000000005
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 777,
+      "outputTokens": 50,
+      "costUsd": 0.000032634
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 780,
+      "outputTokens": 50,
+      "costUsd": 0.000032760000000000005
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 783,
+      "outputTokens": 50,
+      "costUsd": 0.000032886
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 780,
+      "outputTokens": 50,
+      "costUsd": 0.000032760000000000005
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 777,
+      "outputTokens": 50,
+      "costUsd": 0.000032634
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 780,
+      "outputTokens": 50,
+      "costUsd": 0.000032760000000000005
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 783,
+      "outputTokens": 50,
+      "costUsd": 0.000032886
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 783,
+      "outputTokens": 50,
+      "costUsd": 0.000032886
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 777,
+      "outputTokens": 50,
+      "costUsd": 0.000032634
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 777,
+      "outputTokens": 50,
+      "costUsd": 0.000032634
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 780,
+      "outputTokens": 50,
+      "costUsd": 0.000032760000000000005
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "deepseek",
+      "inputTokens": 3615,
+      "outputTokens": 1954,
+      "costUsd": 0.0017146499999999999
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "deepseek",
+      "inputTokens": 1661,
+      "outputTokens": 4210,
+      "costUsd": 0.00277515
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 166,
+      "outputTokens": 50,
+      "costUsd": 0.000006972
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 220,
+      "outputTokens": 50,
+      "costUsd": 0.000009240000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 169,
+      "outputTokens": 50,
+      "costUsd": 0.000007098
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 171,
+      "outputTokens": 50,
+      "costUsd": 0.000007182000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 247,
+      "outputTokens": 50,
+      "costUsd": 0.000010374
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 202,
+      "outputTokens": 50,
+      "costUsd": 0.000008484
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 221,
+      "outputTokens": 50,
+      "costUsd": 0.000009282
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 193,
+      "outputTokens": 50,
+      "costUsd": 0.000008106
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 228,
+      "outputTokens": 50,
+      "costUsd": 0.000009576000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 200,
+      "outputTokens": 50,
+      "costUsd": 0.000008400000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 168,
+      "outputTokens": 50,
+      "costUsd": 0.000007056
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 196,
+      "outputTokens": 50,
+      "costUsd": 0.000008232
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 228,
+      "outputTokens": 50,
+      "costUsd": 0.000009576000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 193,
+      "outputTokens": 50,
+      "costUsd": 0.000008106
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 201,
+      "outputTokens": 50,
+      "costUsd": 0.000008442000000000002
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 219,
+      "outputTokens": 50,
+      "costUsd": 0.000009198
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 207,
+      "outputTokens": 50,
+      "costUsd": 0.000008694
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 199,
+      "outputTokens": 50,
+      "costUsd": 0.000008358
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 219,
+      "outputTokens": 50,
+      "costUsd": 0.000009198
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 207,
+      "outputTokens": 50,
+      "costUsd": 0.000008694
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 214,
+      "outputTokens": 50,
+      "costUsd": 0.000008988000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 221,
+      "outputTokens": 50,
+      "costUsd": 0.000009282
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 213,
+      "outputTokens": 50,
+      "costUsd": 0.000008946
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 210,
+      "outputTokens": 50,
+      "costUsd": 0.00000882
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 178,
+      "outputTokens": 50,
+      "costUsd": 0.000007476
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 205,
+      "outputTokens": 50,
+      "costUsd": 0.00000861
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 219,
+      "outputTokens": 50,
+      "costUsd": 0.000009198
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 175,
+      "outputTokens": 50,
+      "costUsd": 0.000007350000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 186,
+      "outputTokens": 50,
+      "costUsd": 0.000007812
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 215,
+      "outputTokens": 50,
+      "costUsd": 0.00000903
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 183,
+      "outputTokens": 50,
+      "costUsd": 0.000007686
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 166,
+      "outputTokens": 50,
+      "costUsd": 0.000006972
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 132,
+      "outputTokens": 50,
+      "costUsd": 0.000005544000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 133,
+      "outputTokens": 50,
+      "costUsd": 0.000005586
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 135,
+      "outputTokens": 50,
+      "costUsd": 0.000005670000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 133,
+      "outputTokens": 50,
+      "costUsd": 0.000005586
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 138,
+      "outputTokens": 50,
+      "costUsd": 0.000005796
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 135,
+      "outputTokens": 50,
+      "costUsd": 0.000005670000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 132,
+      "outputTokens": 50,
+      "costUsd": 0.000005544000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 136,
+      "outputTokens": 50,
+      "costUsd": 0.0000057120000000000005
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 133,
+      "outputTokens": 50,
+      "costUsd": 0.000005586
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 138,
+      "outputTokens": 50,
+      "costUsd": 0.000005796
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 132,
+      "outputTokens": 50,
+      "costUsd": 0.000005544000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 133,
+      "outputTokens": 50,
+      "costUsd": 0.000005586
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2101,
+      "outputTokens": 50,
+      "costUsd": 0.000088242
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2070,
+      "outputTokens": 50,
+      "costUsd": 0.00008693999999999999
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2093,
+      "outputTokens": 50,
+      "costUsd": 0.000087906
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2082,
+      "outputTokens": 50,
+      "costUsd": 0.00008744400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2063,
+      "outputTokens": 50,
+      "costUsd": 0.00008664600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2099,
+      "outputTokens": 50,
+      "costUsd": 0.00008815800000000002
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2146,
+      "outputTokens": 50,
+      "costUsd": 0.000090132
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2085,
+      "outputTokens": 50,
+      "costUsd": 0.00008757
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2086,
+      "outputTokens": 50,
+      "costUsd": 0.00008761200000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2075,
+      "outputTokens": 50,
+      "costUsd": 0.00008715
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2107,
+      "outputTokens": 50,
+      "costUsd": 0.000088494
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2104,
+      "outputTokens": 50,
+      "costUsd": 0.000088368
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2139,
+      "outputTokens": 50,
+      "costUsd": 0.000089838
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2074,
+      "outputTokens": 50,
+      "costUsd": 0.00008710800000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2096,
+      "outputTokens": 50,
+      "costUsd": 0.00008803200000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2077,
+      "outputTokens": 50,
+      "costUsd": 0.000087234
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2082,
+      "outputTokens": 50,
+      "costUsd": 0.00008744400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2077,
+      "outputTokens": 50,
+      "costUsd": 0.000087234
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2081,
+      "outputTokens": 50,
+      "costUsd": 0.000087402
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2080,
+      "outputTokens": 50,
+      "costUsd": 0.00008736
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2066,
+      "outputTokens": 50,
+      "costUsd": 0.00008677200000000002
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2115,
+      "outputTokens": 50,
+      "costUsd": 0.00008883000000000002
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2067,
+      "outputTokens": 50,
+      "costUsd": 0.000086814
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2091,
+      "outputTokens": 50,
+      "costUsd": 0.000087822
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2094,
+      "outputTokens": 50,
+      "costUsd": 0.000087948
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2069,
+      "outputTokens": 50,
+      "costUsd": 0.00008689800000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2082,
+      "outputTokens": 50,
+      "costUsd": 0.00008744400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2082,
+      "outputTokens": 50,
+      "costUsd": 0.00008744400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2098,
+      "outputTokens": 50,
+      "costUsd": 0.00008811600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2079,
+      "outputTokens": 50,
+      "costUsd": 0.000087318
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2084,
+      "outputTokens": 50,
+      "costUsd": 0.000087528
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2089,
+      "outputTokens": 50,
+      "costUsd": 0.000087738
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2114,
+      "outputTokens": 50,
+      "costUsd": 0.000088788
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2083,
+      "outputTokens": 50,
+      "costUsd": 0.00008748600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2085,
+      "outputTokens": 50,
+      "costUsd": 0.00008757
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2070,
+      "outputTokens": 50,
+      "costUsd": 0.00008693999999999999
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2097,
+      "outputTokens": 50,
+      "costUsd": 0.000088074
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2103,
+      "outputTokens": 50,
+      "costUsd": 0.000088326
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2108,
+      "outputTokens": 50,
+      "costUsd": 0.00008853600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2077,
+      "outputTokens": 50,
+      "costUsd": 0.000087234
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2069,
+      "outputTokens": 50,
+      "costUsd": 0.00008689800000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2085,
+      "outputTokens": 50,
+      "costUsd": 0.00008757
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2111,
+      "outputTokens": 50,
+      "costUsd": 0.00008866200000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2082,
+      "outputTokens": 50,
+      "costUsd": 0.00008744400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2076,
+      "outputTokens": 50,
+      "costUsd": 0.00008719200000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2073,
+      "outputTokens": 50,
+      "costUsd": 0.00008706600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2103,
+      "outputTokens": 50,
+      "costUsd": 0.000088326
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2101,
+      "outputTokens": 50,
+      "costUsd": 0.000088242
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2082,
+      "outputTokens": 50,
+      "costUsd": 0.00008744400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2112,
+      "outputTokens": 50,
+      "costUsd": 0.00008870400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2069,
+      "outputTokens": 50,
+      "costUsd": 0.00008689800000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2074,
+      "outputTokens": 50,
+      "costUsd": 0.00008710800000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2069,
+      "outputTokens": 50,
+      "costUsd": 0.00008689800000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2063,
+      "outputTokens": 50,
+      "costUsd": 0.00008664600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2017,
+      "outputTokens": 50,
+      "costUsd": 0.00008471400000000002
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2028,
+      "outputTokens": 50,
+      "costUsd": 0.000085176
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2096,
+      "outputTokens": 50,
+      "costUsd": 0.00008803200000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2082,
+      "outputTokens": 50,
+      "costUsd": 0.00008744400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2077,
+      "outputTokens": 50,
+      "costUsd": 0.000087234
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2071,
+      "outputTokens": 50,
+      "costUsd": 0.000086982
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2073,
+      "outputTokens": 50,
+      "costUsd": 0.00008706600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2035,
+      "outputTokens": 50,
+      "costUsd": 0.00008547
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2012,
+      "outputTokens": 50,
+      "costUsd": 0.000084504
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2041,
+      "outputTokens": 50,
+      "costUsd": 0.000085722
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2023,
+      "outputTokens": 50,
+      "costUsd": 0.00008496600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2007,
+      "outputTokens": 50,
+      "costUsd": 0.000084294
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2007,
+      "outputTokens": 50,
+      "costUsd": 0.000084294
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2019,
+      "outputTokens": 50,
+      "costUsd": 0.00008479800000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2020,
+      "outputTokens": 50,
+      "costUsd": 0.00008484000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2068,
+      "outputTokens": 50,
+      "costUsd": 0.00008685600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2082,
+      "outputTokens": 50,
+      "costUsd": 0.00008744400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2080,
+      "outputTokens": 50,
+      "costUsd": 0.00008736
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2080,
+      "outputTokens": 50,
+      "costUsd": 0.00008736
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2076,
+      "outputTokens": 50,
+      "costUsd": 0.00008719200000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2121,
+      "outputTokens": 50,
+      "costUsd": 0.00008908200000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2080,
+      "outputTokens": 50,
+      "costUsd": 0.00008736
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2065,
+      "outputTokens": 50,
+      "costUsd": 0.00008673
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2071,
+      "outputTokens": 50,
+      "costUsd": 0.000086982
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2083,
+      "outputTokens": 50,
+      "costUsd": 0.00008748600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2079,
+      "outputTokens": 50,
+      "costUsd": 0.000087318
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2067,
+      "outputTokens": 50,
+      "costUsd": 0.000086814
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2092,
+      "outputTokens": 50,
+      "costUsd": 0.00008786400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2056,
+      "outputTokens": 50,
+      "costUsd": 0.00008635200000000002
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2048,
+      "outputTokens": 50,
+      "costUsd": 0.000086016
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2050,
+      "outputTokens": 50,
+      "costUsd": 0.00008610000000000002
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2072,
+      "outputTokens": 50,
+      "costUsd": 0.00008702400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2063,
+      "outputTokens": 50,
+      "costUsd": 0.00008664600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2077,
+      "outputTokens": 50,
+      "costUsd": 0.000087234
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2076,
+      "outputTokens": 50,
+      "costUsd": 0.00008719200000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2075,
+      "outputTokens": 50,
+      "costUsd": 0.00008715
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2072,
+      "outputTokens": 50,
+      "costUsd": 0.00008702400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1028,
+      "outputTokens": 50,
+      "costUsd": 0.00004317600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1119,
+      "outputTokens": 50,
+      "costUsd": 0.000046998
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 982,
+      "outputTokens": 50,
+      "costUsd": 0.000041244
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 905,
+      "outputTokens": 50,
+      "costUsd": 0.000038010000000000004
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1228,
+      "outputTokens": 50,
+      "costUsd": 0.000051576
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 979,
+      "outputTokens": 50,
+      "costUsd": 0.000041118
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 933,
+      "outputTokens": 50,
+      "costUsd": 0.000039186
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 922,
+      "outputTokens": 50,
+      "costUsd": 0.000038724000000000004
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 918,
+      "outputTokens": 50,
+      "costUsd": 0.000038556
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1084,
+      "outputTokens": 50,
+      "costUsd": 0.000045527999999999995
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 868,
+      "outputTokens": 50,
+      "costUsd": 0.000036456
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 921,
+      "outputTokens": 50,
+      "costUsd": 0.00003868200000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1013,
+      "outputTokens": 50,
+      "costUsd": 0.000042546
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 909,
+      "outputTokens": 50,
+      "costUsd": 0.000038178
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1029,
+      "outputTokens": 50,
+      "costUsd": 0.000043218
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 946,
+      "outputTokens": 50,
+      "costUsd": 0.000039732000000000005
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "deepseek",
+      "inputTokens": 2179,
+      "outputTokens": 270,
+      "costUsd": 0.00048885
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "deepseek",
+      "inputTokens": 681,
+      "outputTokens": 1144,
+      "costUsd": 0.00078855
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 167,
+      "outputTokens": 50,
+      "costUsd": 0.000007014
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 133,
+      "outputTokens": 50,
+      "costUsd": 0.000005586
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 132,
+      "outputTokens": 50,
+      "costUsd": 0.000005544000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2115,
+      "outputTokens": 50,
+      "costUsd": 0.00008883000000000002
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2174,
+      "outputTokens": 50,
+      "costUsd": 0.00009130800000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2095,
+      "outputTokens": 50,
+      "costUsd": 0.00008799
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2098,
+      "outputTokens": 50,
+      "costUsd": 0.00008811600000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2103,
+      "outputTokens": 50,
+      "costUsd": 0.000088326
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2072,
+      "outputTokens": 50,
+      "costUsd": 0.00008702400000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2145,
+      "outputTokens": 50,
+      "costUsd": 0.00009009000000000001
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 2106,
+      "outputTokens": 50,
+      "costUsd": 0.000088452
+    },
+    {
+      "date": "2026-10-15",
+      "provider": "jev",
+      "inputTokens": 1542,
+      "outputTokens": 50,
+      "costUsd": 0.000064764
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1902,
+      "outputTokens": 50,
+      "costUsd": 0.00007988400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1896,
+      "outputTokens": 50,
+      "costUsd": 0.000079632
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1773,
+      "outputTokens": 50,
+      "costUsd": 0.000074466
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1767,
+      "outputTokens": 50,
+      "costUsd": 0.000074214
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1895,
+      "outputTokens": 50,
+      "costUsd": 0.00007959
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1889,
+      "outputTokens": 50,
+      "costUsd": 0.000079338
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1631,
+      "outputTokens": 50,
+      "costUsd": 0.000068502
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1625,
+      "outputTokens": 50,
+      "costUsd": 0.00006825
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1658,
+      "outputTokens": 50,
+      "costUsd": 0.00006963600000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1652,
+      "outputTokens": 50,
+      "costUsd": 0.00006938400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1735,
+      "outputTokens": 50,
+      "costUsd": 0.00007287
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1729,
+      "outputTokens": 50,
+      "costUsd": 0.000072618
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1248,
+      "outputTokens": 50,
+      "costUsd": 0.000052416
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1242,
+      "outputTokens": 50,
+      "costUsd": 0.000052164000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1482,
+      "outputTokens": 50,
+      "costUsd": 0.00006224400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1476,
+      "outputTokens": 50,
+      "costUsd": 0.00006199200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1299,
+      "outputTokens": 50,
+      "costUsd": 0.000054558
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1293,
+      "outputTokens": 50,
+      "costUsd": 0.000054306000000000005
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1053,
+      "outputTokens": 50,
+      "costUsd": 0.000044226
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1047,
+      "outputTokens": 50,
+      "costUsd": 0.000043974
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1104,
+      "outputTokens": 50,
+      "costUsd": 0.000046368
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1098,
+      "outputTokens": 50,
+      "costUsd": 0.000046116000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1331,
+      "outputTokens": 50,
+      "costUsd": 0.000055902
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1325,
+      "outputTokens": 50,
+      "costUsd": 0.000055650000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1218,
+      "outputTokens": 50,
+      "costUsd": 0.000051155999999999996
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1212,
+      "outputTokens": 50,
+      "costUsd": 0.000050904
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1120,
+      "outputTokens": 50,
+      "costUsd": 0.00004704
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1114,
+      "outputTokens": 50,
+      "costUsd": 0.000046788
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1169,
+      "outputTokens": 50,
+      "costUsd": 0.000049097999999999996
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1163,
+      "outputTokens": 50,
+      "costUsd": 0.000048846
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1240,
+      "outputTokens": 50,
+      "costUsd": 0.00005208
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1234,
+      "outputTokens": 50,
+      "costUsd": 0.000051828000000000006
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1135,
+      "outputTokens": 50,
+      "costUsd": 0.00004767
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1129,
+      "outputTokens": 50,
+      "costUsd": 0.000047418000000000006
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1210,
+      "outputTokens": 50,
+      "costUsd": 0.00005082
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1204,
+      "outputTokens": 50,
+      "costUsd": 0.000050568
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1336,
+      "outputTokens": 50,
+      "costUsd": 0.000056112
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1330,
+      "outputTokens": 50,
+      "costUsd": 0.000055860000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1285,
+      "outputTokens": 50,
+      "costUsd": 0.00005397
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1279,
+      "outputTokens": 50,
+      "costUsd": 0.000053718
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1424,
+      "outputTokens": 50,
+      "costUsd": 0.000059808
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1418,
+      "outputTokens": 50,
+      "costUsd": 0.000059556000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1247,
+      "outputTokens": 50,
+      "costUsd": 0.000052374000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1241,
+      "outputTokens": 50,
+      "costUsd": 0.000052122
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1204,
+      "outputTokens": 50,
+      "costUsd": 0.000050568
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1198,
+      "outputTokens": 50,
+      "costUsd": 0.000050316000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1127,
+      "outputTokens": 50,
+      "costUsd": 0.000047334000000000005
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1121,
+      "outputTokens": 50,
+      "costUsd": 0.00004708200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1211,
+      "outputTokens": 50,
+      "costUsd": 0.00005086200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1205,
+      "outputTokens": 50,
+      "costUsd": 0.00005061
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1200,
+      "outputTokens": 50,
+      "costUsd": 0.0000504
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1194,
+      "outputTokens": 50,
+      "costUsd": 0.000050148
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1120,
+      "outputTokens": 50,
+      "costUsd": 0.00004704
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1114,
+      "outputTokens": 50,
+      "costUsd": 0.000046788
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1215,
+      "outputTokens": 50,
+      "costUsd": 0.00005103
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1209,
+      "outputTokens": 50,
+      "costUsd": 0.000050778
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1218,
+      "outputTokens": 50,
+      "costUsd": 0.000051155999999999996
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1212,
+      "outputTokens": 50,
+      "costUsd": 0.000050904
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "deepseek",
+      "inputTokens": 3928,
+      "outputTokens": 1787,
+      "costUsd": 0.0016614
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 784,
+      "outputTokens": 50,
+      "costUsd": 0.000032928
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 777,
+      "outputTokens": 50,
+      "costUsd": 0.000032634
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 783,
+      "outputTokens": 50,
+      "costUsd": 0.000032886
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 776,
+      "outputTokens": 50,
+      "costUsd": 0.000032592
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 783,
+      "outputTokens": 50,
+      "costUsd": 0.000032886
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 776,
+      "outputTokens": 50,
+      "costUsd": 0.000032592
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 776,
+      "outputTokens": 50,
+      "costUsd": 0.000032592
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 784,
+      "outputTokens": 50,
+      "costUsd": 0.000032928
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 783,
+      "outputTokens": 50,
+      "costUsd": 0.000032886
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 783,
+      "outputTokens": 50,
+      "costUsd": 0.000032886
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 778,
+      "outputTokens": 50,
+      "costUsd": 0.000032676000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 779,
+      "outputTokens": 50,
+      "costUsd": 0.000032718
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 780,
+      "outputTokens": 50,
+      "costUsd": 0.000032760000000000005
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 781,
+      "outputTokens": 50,
+      "costUsd": 0.000032802
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 784,
+      "outputTokens": 50,
+      "costUsd": 0.000032928
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 784,
+      "outputTokens": 50,
+      "costUsd": 0.000032928
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 783,
+      "outputTokens": 50,
+      "costUsd": 0.000032886
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 782,
+      "outputTokens": 50,
+      "costUsd": 0.000032844000000000006
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "deepseek",
+      "inputTokens": 7467,
+      "outputTokens": 4062,
+      "costUsd": 0.0035572499999999996
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "deepseek",
+      "inputTokens": 2302,
+      "outputTokens": 4634,
+      "costUsd": 0.0031257
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 227,
+      "outputTokens": 50,
+      "costUsd": 0.000009534
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 207,
+      "outputTokens": 50,
+      "costUsd": 0.000008694
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 221,
+      "outputTokens": 50,
+      "costUsd": 0.000009282
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 169,
+      "outputTokens": 50,
+      "costUsd": 0.000007098
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 196,
+      "outputTokens": 50,
+      "costUsd": 0.000008232
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 223,
+      "outputTokens": 50,
+      "costUsd": 0.000009366
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 224,
+      "outputTokens": 50,
+      "costUsd": 0.000009408
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 204,
+      "outputTokens": 50,
+      "costUsd": 0.000008568
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 201,
+      "outputTokens": 50,
+      "costUsd": 0.000008442000000000002
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 167,
+      "outputTokens": 50,
+      "costUsd": 0.000007014
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 223,
+      "outputTokens": 50,
+      "costUsd": 0.000009366
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 201,
+      "outputTokens": 50,
+      "costUsd": 0.000008442000000000002
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 222,
+      "outputTokens": 50,
+      "costUsd": 0.000009324000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 192,
+      "outputTokens": 50,
+      "costUsd": 0.000008064000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 197,
+      "outputTokens": 50,
+      "costUsd": 0.000008274
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 227,
+      "outputTokens": 50,
+      "costUsd": 0.000009534
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 222,
+      "outputTokens": 50,
+      "costUsd": 0.000009324000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 221,
+      "outputTokens": 50,
+      "costUsd": 0.000009282
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 227,
+      "outputTokens": 50,
+      "costUsd": 0.000009534
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 205,
+      "outputTokens": 50,
+      "costUsd": 0.00000861
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 224,
+      "outputTokens": 50,
+      "costUsd": 0.000009408
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 225,
+      "outputTokens": 50,
+      "costUsd": 0.000009450000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 195,
+      "outputTokens": 50,
+      "costUsd": 0.000008190000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 196,
+      "outputTokens": 50,
+      "costUsd": 0.000008232
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 252,
+      "outputTokens": 50,
+      "costUsd": 0.000010584
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 194,
+      "outputTokens": 50,
+      "costUsd": 0.000008148
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 210,
+      "outputTokens": 50,
+      "costUsd": 0.00000882
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 215,
+      "outputTokens": 50,
+      "costUsd": 0.00000903
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 219,
+      "outputTokens": 50,
+      "costUsd": 0.000009198
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 209,
+      "outputTokens": 50,
+      "costUsd": 0.000008778000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 210,
+      "outputTokens": 50,
+      "costUsd": 0.00000882
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 199,
+      "outputTokens": 50,
+      "costUsd": 0.000008358
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 206,
+      "outputTokens": 50,
+      "costUsd": 0.000008652
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 178,
+      "outputTokens": 50,
+      "costUsd": 0.000007476
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 206,
+      "outputTokens": 50,
+      "costUsd": 0.000008652
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 153,
+      "outputTokens": 50,
+      "costUsd": 0.000006426000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 203,
+      "outputTokens": 50,
+      "costUsd": 0.000008526000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 179,
+      "outputTokens": 50,
+      "costUsd": 0.000007518
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 168,
+      "outputTokens": 50,
+      "costUsd": 0.000007056
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 189,
+      "outputTokens": 50,
+      "costUsd": 0.000007938000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 219,
+      "outputTokens": 50,
+      "costUsd": 0.000009198
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 202,
+      "outputTokens": 50,
+      "costUsd": 0.000008484
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 153,
+      "outputTokens": 50,
+      "costUsd": 0.000006426000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 215,
+      "outputTokens": 50,
+      "costUsd": 0.00000903
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 210,
+      "outputTokens": 50,
+      "costUsd": 0.00000882
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 178,
+      "outputTokens": 50,
+      "costUsd": 0.000007476
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 219,
+      "outputTokens": 50,
+      "costUsd": 0.000009198
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 177,
+      "outputTokens": 50,
+      "costUsd": 0.000007434
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 212,
+      "outputTokens": 50,
+      "costUsd": 0.000008904000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 175,
+      "outputTokens": 50,
+      "costUsd": 0.000007350000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 191,
+      "outputTokens": 50,
+      "costUsd": 0.000008022
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 186,
+      "outputTokens": 50,
+      "costUsd": 0.000007812
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 140,
+      "outputTokens": 50,
+      "costUsd": 0.00000588
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 138,
+      "outputTokens": 50,
+      "costUsd": 0.000005796
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 140,
+      "outputTokens": 50,
+      "costUsd": 0.00000588
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 134,
+      "outputTokens": 50,
+      "costUsd": 0.000005628
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 134,
+      "outputTokens": 50,
+      "costUsd": 0.000005628
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 134,
+      "outputTokens": 50,
+      "costUsd": 0.000005628
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 134,
+      "outputTokens": 50,
+      "costUsd": 0.000005628
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 134,
+      "outputTokens": 50,
+      "costUsd": 0.000005628
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 134,
+      "outputTokens": 50,
+      "costUsd": 0.000005628
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 133,
+      "outputTokens": 50,
+      "costUsd": 0.000005586
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 138,
+      "outputTokens": 50,
+      "costUsd": 0.000005796
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 134,
+      "outputTokens": 50,
+      "costUsd": 0.000005628
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 139,
+      "outputTokens": 50,
+      "costUsd": 0.000005838
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 137,
+      "outputTokens": 50,
+      "costUsd": 0.000005754
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 134,
+      "outputTokens": 50,
+      "costUsd": 0.000005628
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 135,
+      "outputTokens": 50,
+      "costUsd": 0.000005670000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 136,
+      "outputTokens": 50,
+      "costUsd": 0.0000057120000000000005
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 140,
+      "outputTokens": 50,
+      "costUsd": 0.00000588
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 140,
+      "outputTokens": 50,
+      "costUsd": 0.00000588
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 140,
+      "outputTokens": 50,
+      "costUsd": 0.00000588
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 139,
+      "outputTokens": 50,
+      "costUsd": 0.000005838
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1914,
+      "outputTokens": 50,
+      "costUsd": 0.000080388
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1900,
+      "outputTokens": 50,
+      "costUsd": 0.0000798
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1925,
+      "outputTokens": 50,
+      "costUsd": 0.00008085000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 2013,
+      "outputTokens": 50,
+      "costUsd": 0.000084546
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1903,
+      "outputTokens": 50,
+      "costUsd": 0.00007992600000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1902,
+      "outputTokens": 50,
+      "costUsd": 0.00007988400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1921,
+      "outputTokens": 50,
+      "costUsd": 0.000080682
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1952,
+      "outputTokens": 50,
+      "costUsd": 0.000081984
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1955,
+      "outputTokens": 50,
+      "costUsd": 0.00008211000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1921,
+      "outputTokens": 50,
+      "costUsd": 0.000080682
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1917,
+      "outputTokens": 50,
+      "costUsd": 0.00008051400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1886,
+      "outputTokens": 50,
+      "costUsd": 0.00007921200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1916,
+      "outputTokens": 50,
+      "costUsd": 0.000080472
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1918,
+      "outputTokens": 50,
+      "costUsd": 0.000080556
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1965,
+      "outputTokens": 50,
+      "costUsd": 0.00008253000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1914,
+      "outputTokens": 50,
+      "costUsd": 0.000080388
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1898,
+      "outputTokens": 50,
+      "costUsd": 0.00007971600000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1913,
+      "outputTokens": 50,
+      "costUsd": 0.000080346
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1938,
+      "outputTokens": 50,
+      "costUsd": 0.000081396
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1952,
+      "outputTokens": 50,
+      "costUsd": 0.000081984
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1927,
+      "outputTokens": 50,
+      "costUsd": 0.000080934
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1928,
+      "outputTokens": 50,
+      "costUsd": 0.000080976
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1940,
+      "outputTokens": 50,
+      "costUsd": 0.00008148000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1936,
+      "outputTokens": 50,
+      "costUsd": 0.00008131200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1905,
+      "outputTokens": 50,
+      "costUsd": 0.00008001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1921,
+      "outputTokens": 50,
+      "costUsd": 0.000080682
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1960,
+      "outputTokens": 50,
+      "costUsd": 0.00008232
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1907,
+      "outputTokens": 50,
+      "costUsd": 0.00008009400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1909,
+      "outputTokens": 50,
+      "costUsd": 0.000080178
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1897,
+      "outputTokens": 50,
+      "costUsd": 0.00007967400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1914,
+      "outputTokens": 50,
+      "costUsd": 0.000080388
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1984,
+      "outputTokens": 50,
+      "costUsd": 0.00008332800000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1931,
+      "outputTokens": 50,
+      "costUsd": 0.00008110200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1925,
+      "outputTokens": 50,
+      "costUsd": 0.00008085000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1948,
+      "outputTokens": 50,
+      "costUsd": 0.000081816
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1995,
+      "outputTokens": 50,
+      "costUsd": 0.00008379
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1970,
+      "outputTokens": 50,
+      "costUsd": 0.00008274
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1910,
+      "outputTokens": 50,
+      "costUsd": 0.00008022
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1921,
+      "outputTokens": 50,
+      "costUsd": 0.000080682
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1915,
+      "outputTokens": 50,
+      "costUsd": 0.00008043
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1895,
+      "outputTokens": 50,
+      "costUsd": 0.00007959
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1918,
+      "outputTokens": 50,
+      "costUsd": 0.000080556
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1898,
+      "outputTokens": 50,
+      "costUsd": 0.00007971600000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1913,
+      "outputTokens": 50,
+      "costUsd": 0.000080346
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 2022,
+      "outputTokens": 50,
+      "costUsd": 0.000084924
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1968,
+      "outputTokens": 50,
+      "costUsd": 0.00008265600000000002
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1931,
+      "outputTokens": 50,
+      "costUsd": 0.00008110200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1938,
+      "outputTokens": 50,
+      "costUsd": 0.000081396
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1912,
+      "outputTokens": 50,
+      "costUsd": 0.00008030400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1924,
+      "outputTokens": 50,
+      "costUsd": 0.000080808
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1952,
+      "outputTokens": 50,
+      "costUsd": 0.000081984
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 2185,
+      "outputTokens": 50,
+      "costUsd": 0.00009177
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 2058,
+      "outputTokens": 50,
+      "costUsd": 0.000086436
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 2095,
+      "outputTokens": 50,
+      "costUsd": 0.00008799
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 2108,
+      "outputTokens": 50,
+      "costUsd": 0.00008853600000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 2083,
+      "outputTokens": 50,
+      "costUsd": 0.00008748600000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1956,
+      "outputTokens": 50,
+      "costUsd": 0.000082152
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1923,
+      "outputTokens": 50,
+      "costUsd": 0.000080766
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1911,
+      "outputTokens": 50,
+      "costUsd": 0.000080262
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1935,
+      "outputTokens": 50,
+      "costUsd": 0.00008127000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1912,
+      "outputTokens": 50,
+      "costUsd": 0.00008030400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1911,
+      "outputTokens": 50,
+      "costUsd": 0.000080262
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1902,
+      "outputTokens": 50,
+      "costUsd": 0.00007988400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1944,
+      "outputTokens": 50,
+      "costUsd": 0.000081648
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1917,
+      "outputTokens": 50,
+      "costUsd": 0.00008051400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 2016,
+      "outputTokens": 50,
+      "costUsd": 0.000084672
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1903,
+      "outputTokens": 50,
+      "costUsd": 0.00007992600000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1907,
+      "outputTokens": 50,
+      "costUsd": 0.00008009400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1911,
+      "outputTokens": 50,
+      "costUsd": 0.000080262
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1922,
+      "outputTokens": 50,
+      "costUsd": 0.00008072400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1905,
+      "outputTokens": 50,
+      "costUsd": 0.00008001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1898,
+      "outputTokens": 50,
+      "costUsd": 0.00007971600000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1941,
+      "outputTokens": 50,
+      "costUsd": 0.00008152200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1927,
+      "outputTokens": 50,
+      "costUsd": 0.000080934
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1912,
+      "outputTokens": 50,
+      "costUsd": 0.00008030400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1892,
+      "outputTokens": 50,
+      "costUsd": 0.00007946400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1935,
+      "outputTokens": 50,
+      "costUsd": 0.00008127000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1913,
+      "outputTokens": 50,
+      "costUsd": 0.000080346
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 2048,
+      "outputTokens": 50,
+      "costUsd": 0.000086016
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1936,
+      "outputTokens": 50,
+      "costUsd": 0.00008131200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1927,
+      "outputTokens": 50,
+      "costUsd": 0.000080934
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1912,
+      "outputTokens": 50,
+      "costUsd": 0.00008030400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1918,
+      "outputTokens": 50,
+      "costUsd": 0.000080556
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1901,
+      "outputTokens": 50,
+      "costUsd": 0.000079842
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1921,
+      "outputTokens": 50,
+      "costUsd": 0.000080682
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1922,
+      "outputTokens": 50,
+      "costUsd": 0.00008072400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1950,
+      "outputTokens": 50,
+      "costUsd": 0.0000819
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1902,
+      "outputTokens": 50,
+      "costUsd": 0.00007988400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1959,
+      "outputTokens": 50,
+      "costUsd": 0.000082278
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1895,
+      "outputTokens": 50,
+      "costUsd": 0.00007959
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1907,
+      "outputTokens": 50,
+      "costUsd": 0.00008009400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1931,
+      "outputTokens": 50,
+      "costUsd": 0.00008110200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1915,
+      "outputTokens": 50,
+      "costUsd": 0.00008043
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1930,
+      "outputTokens": 50,
+      "costUsd": 0.00008106000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 2021,
+      "outputTokens": 50,
+      "costUsd": 0.00008488199999999999
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1951,
+      "outputTokens": 50,
+      "costUsd": 0.00008194200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1908,
+      "outputTokens": 50,
+      "costUsd": 0.000080136
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1902,
+      "outputTokens": 50,
+      "costUsd": 0.00007988400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1924,
+      "outputTokens": 50,
+      "costUsd": 0.000080808
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1933,
+      "outputTokens": 50,
+      "costUsd": 0.000081186
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1906,
+      "outputTokens": 50,
+      "costUsd": 0.000080052
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 2035,
+      "outputTokens": 50,
+      "costUsd": 0.00008547
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1916,
+      "outputTokens": 50,
+      "costUsd": 0.000080472
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1935,
+      "outputTokens": 50,
+      "costUsd": 0.00008127000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1916,
+      "outputTokens": 50,
+      "costUsd": 0.000080472
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1905,
+      "outputTokens": 50,
+      "costUsd": 0.00008001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1996,
+      "outputTokens": 50,
+      "costUsd": 0.000083832
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1956,
+      "outputTokens": 50,
+      "costUsd": 0.000082152
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1909,
+      "outputTokens": 50,
+      "costUsd": 0.000080178
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1908,
+      "outputTokens": 50,
+      "costUsd": 0.000080136
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1941,
+      "outputTokens": 50,
+      "costUsd": 0.00008152200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1926,
+      "outputTokens": 50,
+      "costUsd": 0.000080892
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1908,
+      "outputTokens": 50,
+      "costUsd": 0.000080136
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1907,
+      "outputTokens": 50,
+      "costUsd": 0.00008009400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1913,
+      "outputTokens": 50,
+      "costUsd": 0.000080346
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1909,
+      "outputTokens": 50,
+      "costUsd": 0.000080178
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1904,
+      "outputTokens": 50,
+      "costUsd": 0.000079968
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1902,
+      "outputTokens": 50,
+      "costUsd": 0.00007988400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1926,
+      "outputTokens": 50,
+      "costUsd": 0.000080892
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1931,
+      "outputTokens": 50,
+      "costUsd": 0.00008110200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 979,
+      "outputTokens": 50,
+      "costUsd": 0.000041118
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 970,
+      "outputTokens": 50,
+      "costUsd": 0.000040740000000000006
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 997,
+      "outputTokens": 50,
+      "costUsd": 0.000041874000000000006
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 922,
+      "outputTokens": 50,
+      "costUsd": 0.000038724000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 894,
+      "outputTokens": 50,
+      "costUsd": 0.00003754800000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 959,
+      "outputTokens": 50,
+      "costUsd": 0.000040278
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 949,
+      "outputTokens": 50,
+      "costUsd": 0.000039858000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 882,
+      "outputTokens": 50,
+      "costUsd": 0.000037044
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 975,
+      "outputTokens": 50,
+      "costUsd": 0.00004095
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 809,
+      "outputTokens": 50,
+      "costUsd": 0.000033978000000000006
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1032,
+      "outputTokens": 50,
+      "costUsd": 0.000043344
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1008,
+      "outputTokens": 50,
+      "costUsd": 0.000042336
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 929,
+      "outputTokens": 50,
+      "costUsd": 0.000039018000000000005
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 859,
+      "outputTokens": 50,
+      "costUsd": 0.000036078
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1030,
+      "outputTokens": 50,
+      "costUsd": 0.00004326000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 980,
+      "outputTokens": 50,
+      "costUsd": 0.00004116
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 895,
+      "outputTokens": 50,
+      "costUsd": 0.00003759
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1015,
+      "outputTokens": 50,
+      "costUsd": 0.000042630000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 969,
+      "outputTokens": 50,
+      "costUsd": 0.000040698
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 921,
+      "outputTokens": 50,
+      "costUsd": 0.00003868200000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 979,
+      "outputTokens": 50,
+      "costUsd": 0.000041118
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 961,
+      "outputTokens": 50,
+      "costUsd": 0.000040362000000000004
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 999,
+      "outputTokens": 50,
+      "costUsd": 0.00004195800000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 918,
+      "outputTokens": 50,
+      "costUsd": 0.000038556
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1043,
+      "outputTokens": 50,
+      "costUsd": 0.00004380600000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 955,
+      "outputTokens": 50,
+      "costUsd": 0.00004011
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "deepseek",
+      "inputTokens": 3803,
+      "outputTokens": 696,
+      "costUsd": 0.00098805
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "deepseek",
+      "inputTokens": 686,
+      "outputTokens": 737,
+      "costUsd": 0.0005451
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 190,
+      "outputTokens": 50,
+      "costUsd": 0.000007980000000000002
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 133,
+      "outputTokens": 50,
+      "costUsd": 0.000005586
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 134,
+      "outputTokens": 50,
+      "costUsd": 0.000005628
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1993,
+      "outputTokens": 50,
+      "costUsd": 0.000083706
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1898,
+      "outputTokens": 50,
+      "costUsd": 0.00007971600000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1944,
+      "outputTokens": 50,
+      "costUsd": 0.000081648
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1921,
+      "outputTokens": 50,
+      "costUsd": 0.000080682
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1990,
+      "outputTokens": 50,
+      "costUsd": 0.00008358000000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1907,
+      "outputTokens": 50,
+      "costUsd": 0.00008009400000000001
+    },
+    {
+      "date": "2026-10-19",
+      "provider": "jev",
+      "inputTokens": 1836,
+      "outputTokens": 50,
+      "costUsd": 0.000077112
     }
   ],
-  "totalUsd": 0.026700311999999986
+  "totalUsd": 0.11557899599999998
 }

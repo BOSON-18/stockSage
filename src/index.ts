@@ -318,6 +318,31 @@ async function main(): Promise<void> {
     // Step 9 Display results
     displayResults(ranked, marketContext, indicatorsMap, verificationMap);
 
+    if (ranked.length > 0) {
+        // Save trade plan for Phase B confirmation (npm run confirm)
+        const tradePlan = ranked.map(r => ({
+            ticker: r.ticker,
+            companyName: r.companyName,
+            plannedEntry: r.currentPrice,
+            targetPrice: r.targetPrice,
+            stopLoss: r.stopLoss,
+            action: r.action,
+            confidence: r.confidence,
+            buyProbability: r.jevProbabilities?.BUY ?? 0,
+            holidingPeriod: r.holdingPeriod,
+            planTime: new Date().toISOString()
+        }));
+
+        const fs = await import('fs');
+        const path = await import('path');
+        const planFile = path.join(process.cwd(), 'data', 'trade-plan.json');
+        const planDir = path.dirname(planFile);
+        if (!fs.existsSync(planDir)) fs.mkdirSync(planDir, { recursive: true });
+        fs.writeFileSync(planFile, JSON.stringify(tradePlan, null, 2));
+        console.log(`\n ⚠️ PRE-MARKET PLAN saved (${ranked.length} picks)`);
+        console.log(` Run "npm run confirm" after 9:15 AM to verify with LIVE price.\n`)
+    }
+
     //  ====================== PHASE 7 PORTFOLIO ANALYZING +=====================
 
     if (rawPortfolio && rawPortfolio.holdings.length > 0) {

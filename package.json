@@ -11,7 +11,9 @@
     "cache-sectors": "npx tsx src/cache-sectors.ts",
     "docker:build": "docker build -t stock-sage .",
     "docker:run": "docker compose up",
-    "docker:shell": "docker run -it --env-file .env -v ./data:/app/data stock-sage sh"
+    "docker:shell": "docker run -it --env-file .env -v ./data:/app/data stock-sage sh",
+    "plan": "npx tsx src/index.ts",
+    "confirm": "npx tsx src/confirm-trades.ts"
   },
   "keywords": [],
   "author": "",
